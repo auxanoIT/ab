@@ -435,7 +435,7 @@ export const marketingPages: MarketingPage[] = [
           "Software & Licenses",
         ],
         metrics: [
-          { value: "12+", label: "Years in Business" },
+          { value: "15+", label: "Years in Business" },
           { value: "500+", label: "Projects delivered" },
           { value: "200+", label: "Clients served" },
           { value: "24/7", label: "Support available" },

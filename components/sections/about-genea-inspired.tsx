@@ -36,7 +36,7 @@ const fadeUp = {
 
 const metrics = [
   { value: "2012", label: "Founded", icon: "clipboard" },
-  { value: "12+", label: "Years ICT delivery", icon: "award" },
+  { value: "15+", label: "Years ICT delivery", icon: "award" },
   { value: "35%", label: "Client cost savings", icon: "savings" },
   { value: "24/7", label: "Dedicated support", icon: "headset" },
 ] satisfies Array<{

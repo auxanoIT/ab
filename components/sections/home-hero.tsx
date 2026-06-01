@@ -44,7 +44,7 @@ const SELECTOR_STROKE = 2.75;
 const SELECTOR_RADIUS = 20;
 const SELECTOR_CIRCUMFERENCE = 2 * Math.PI * SELECTOR_RADIUS;
 const HERO_STATS_FALLBACK: Metric[] = [
-  { value: "12+", label: "Years in Business" },
+  { value: "15+", label: "Years in Business" },
   { value: "500+", label: "Projects delivered" },
   { value: "200+", label: "Clients served" },
   { value: "24/7", label: "Support available" },

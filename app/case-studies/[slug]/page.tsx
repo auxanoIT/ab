@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, MapPin, ShieldCheck } from "lucide-react";
-
 import { ButtonLink } from "@/components/ui/button-link";
 import { CaseStudyCard } from "@/components/sections/case-study-card";
 import { Container } from "@/components/ui/container";
