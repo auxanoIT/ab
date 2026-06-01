@@ -132,6 +132,7 @@ function getServiceHeroImage(
   fallbackImage: ServiceNavMedia,
 ): ServiceNavMedia {
   return (
+    service.heroImage ??
     service.capabilitySections?.find((section) => section.image)?.image ??
     fallbackImage
   );

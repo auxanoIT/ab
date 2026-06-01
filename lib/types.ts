@@ -83,6 +83,7 @@ export type Service = {
   serviceMixId: string;
   navDescription: string;
   navImage: ServiceNavMedia;
+  heroImage?: ServiceNavMedia;
   detailEyebrow?: string;
   detailTitle?: string;
   detailDescription?: string;

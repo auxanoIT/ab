@@ -7,6 +7,7 @@ type ServiceSeed = {
   summary: string;
   description: string;
   navDescription: string;
+  heroImage?: Service["heroImage"];
   highlights: string[];
   capabilities: string[];
   deliverables: string[];
@@ -416,6 +417,10 @@ export const services: Service[] = [
     description:
       "Install Cat6, Cat6A, and fibre runs with clean cable management, certified testing, and as-built documentation so the network layer is dependable and supportable.",
     navDescription: "Certified cabling with clean routing, testing, and documentation.",
+    heroImage: {
+      src: "/image/lanhero.jpeg",
+      alt: "Structured LAN cabling rack with organized network equipment and patch cables",
+    },
     highlights: [
       "Cat6, Cat6A, and fibre deployments",
       "Labelled, trunked, and routed cable management",
@@ -497,8 +502,8 @@ export const services: Service[] = [
           "Stronger handover confidence",
         ],
         image: {
-          src: "/image/service-details/lan-certification-testing.webp",
-          alt: "Technician using a cable certification tester on structured LAN cabling",
+          src: "/image/lanfirst.jpeg",
+          alt: "Engineers inspecting a structured LAN cabling rack before handover",
         },
       },
       {
@@ -518,8 +523,8 @@ export const services: Service[] = [
           "More disciplined ownership after completion",
         ],
         image: {
-          src: "/image/service-details/lan-as-built-documentation.webp",
-          alt: "Structured cabling documentation and as-built network drawings reviewed by project engineers",
+          src: "/image/lansecond.jpeg",
+          alt: "Structured LAN cabling cabinet reviewed for documentation and handover records",
         },
       },
     ],
