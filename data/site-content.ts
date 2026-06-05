@@ -390,6 +390,7 @@ export const footerColumns: FooterColumn[] = [
     title: "Solutions",
     links: [
       { label: "Infrastructure", href: "/services#infrastructure" },
+      { label: "Fire Alarm & Safety", href: "/services#fire-alarm-safety" },
       { label: "Networking", href: "/services#networking" },
       { label: "Hardware Systems", href: "/services#hardware-systems" },
       { label: "Software & Licenses", href: "/services#software-licenses" },
@@ -532,7 +533,7 @@ export const marketingPages: MarketingPage[] = [
             imageSrc: "/image/service-details/fire-alarm-safety-systems.jpg",
             imageAlt: "Fire alarm and safety system devices in a commercial facility",
             ctaLabel: "Learn more",
-            ctaHref: "/services/fire-alarm-safety-systems",
+            ctaHref: "/services#fire-alarm-safety",
           },
           {
             id: "networking",

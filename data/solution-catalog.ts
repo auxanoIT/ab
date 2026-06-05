@@ -23,6 +23,10 @@ const categoryCardImages: Record<ServiceCategory, { src: string; alt: string }> 
     src: "/placeholders/infrastructure-card.svg",
     alt: "Infrastructure service placeholder graphic",
   },
+  "Fire Alarm & Safety": {
+    src: "/image/service-details/fire-alarm-safety-systems.jpg",
+    alt: "Fire alarm and safety systems service graphic",
+  },
   Networking: {
     src: "/placeholders/networking-card.svg",
     alt: "Networking service placeholder graphic",
@@ -71,7 +75,6 @@ export const solutionCategories: SolutionCategory[] = [
     serviceSlugs: [
       "door-access-control",
       "surveillance-system-cctv",
-      "fire-alarm-safety-systems",
       "structured-lan-cabling",
       "data-centre-services",
       "automated-gates-sliding-doors",
@@ -174,6 +177,23 @@ export const solutionCategories: SolutionCategory[] = [
       "it-consultancy-audit-services",
       "it-project-management",
     ],
+  },
+  {
+    id: "fire-alarm-safety",
+    label: "Fire Alarm & Safety",
+    formalTitle: "Fire Alarm & Safety Systems",
+    description:
+      "Fire alarm design, installation, commissioning, maintenance, and standards-aware compliance support for safer facilities.",
+    anchorId: "fire-alarm-safety",
+    href: "/services#fire-alarm-safety",
+    featuredTitle: "Fire alarm systems designed, installed, tested, and maintained properly.",
+    featuredDescription:
+      "This category covers fire alarm system design, installation and commissioning, testing, inspection, maintenance, and BS 5839-1-aware compliance support.",
+    featuredImage: {
+      src: "/image/service-details/fire-alarm-safety-systems.jpg",
+      alt: "Commercial fire alarm and safety systems installed in a facility",
+    },
+    serviceSlugs: ["fire-alarm-safety-systems"],
   },
 ];
 
@@ -413,7 +433,7 @@ export const services: Service[] = [
   buildService({
     slug: "fire-alarm-safety-systems",
     title: "Fire Alarm & Safety Systems",
-    category: "Infrastructure",
+    category: "Fire Alarm & Safety",
     summary: "Fire alarm system design, installation, commissioning, inspection, maintenance, and BS 5839-1 compliance support.",
     description:
       "Design and deliver fire alarm and safety systems with proper device placement, installation, commissioning, inspection, maintenance, and compliance alignment with BS 5839-1 and other global standards.",

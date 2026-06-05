@@ -34,6 +34,14 @@ const categoryNarratives: Record<
     imageAlt:
       "IT infrastructure service team in a secured business environment",
   },
+  "Fire Alarm & Safety": {
+    title: "Safety systems installed right.",
+    paragraphs: [
+      "Fire alarm design, commissioning, maintenance, and compliance support for safer facilities.",
+    ],
+    imageSrc: "/image/service-details/fire-alarm-safety-systems.jpg",
+    imageAlt: "Fire alarm and safety systems installed in a commercial facility",
+  },
   Networking: {
     title: "Designed to scale.",
     paragraphs: ["Structured networks built for speed, stability, and growth."],
@@ -73,6 +81,7 @@ const categoryOrder: ServiceCategory[] = [
   "Hardware Systems",
   "Software & Licenses",
   "Managed & Advisory",
+  "Fire Alarm & Safety",
 ];
 
 function orderCategoriesByNarrative(categories: SolutionCategory[]) {

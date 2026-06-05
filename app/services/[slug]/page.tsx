@@ -9,6 +9,7 @@ import {
   Wrench,
   BadgeCheck,
   ClipboardCheck,
+  Flame,
 } from "lucide-react";
 
 import { ServiceCapabilityFlow } from "@/components/sections/service-capability-flow";
@@ -47,6 +48,13 @@ const categoryStyles: Record<
     image: "/image/IT Infrastructure.png",
     imageAlt:
       "Biometric access control device in a secure infrastructure environment",
+  },
+  "Fire Alarm & Safety": {
+    icon: Flame,
+    accent: "#dc2626",
+    tint: "rgba(220,38,38,0.1)",
+    image: "/image/service-details/fire-alarm-safety-systems.jpg",
+    imageAlt: "Commercial fire alarm and safety systems installed in a facility",
   },
   Networking: {
     icon: Network,

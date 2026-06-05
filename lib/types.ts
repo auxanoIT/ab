@@ -47,6 +47,7 @@ export type CareerOpening = {
 
 export type ServiceCategory =
   | "Infrastructure"
+  | "Fire Alarm & Safety"
   | "Networking"
   | "Hardware Systems"
   | "Software & Licenses"
