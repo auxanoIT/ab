@@ -17,7 +17,7 @@ type SitemapEntryInput = {
   priority: number;
 };
 
-const siteLastModified = new Date("2026-05-05T00:00:00.000Z");
+const siteLastModified = new Date("2026-06-05T00:00:00.000Z");
 
 const staticRoutes: SitemapEntryInput[] = [
   {

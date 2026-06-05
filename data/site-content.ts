@@ -446,8 +446,8 @@ export const marketingPages: MarketingPage[] = [
           variant: "primary",
         },
         secondaryCta: {
-          label: "Contact Sales",
-          href: "/contact",
+          label: "Book Consultation",
+          href: "/book-consultation",
           variant: "secondary",
         },
         slides: [
@@ -877,8 +877,8 @@ export const marketingPages: MarketingPage[] = [
           variant: "primary",
         },
         secondaryCta: {
-          label: "Contact Sales",
-          href: "/contact",
+          label: "Book Consultation",
+          href: "/book-consultation",
           variant: "secondary",
         },
         dark: true,

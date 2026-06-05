@@ -414,24 +414,25 @@ export const services: Service[] = [
     slug: "fire-alarm-safety-systems",
     title: "Fire Alarm & Safety Systems",
     category: "Infrastructure",
-    summary: "Fire alarm systems designed, installed, commissioned, tested, and maintained around life-safety compliance.",
+    summary: "Fire alarm system design, installation, commissioning, inspection, maintenance, and BS 5839-1 compliance support.",
     description:
       "Design and deliver fire alarm and safety systems with proper device placement, installation, commissioning, inspection, maintenance, and compliance alignment with BS 5839-1 and other global standards.",
-    navDescription: "Fire alarm design, commissioning, maintenance, and compliance support.",
+    navDescription: "Fire alarm design, installation, commissioning, maintenance, and BS 5839-1 compliance support.",
     heroImage: {
       src: "/image/service-details/fire-alarm-safety-systems.jpg",
       alt: "Commercial fire alarm and safety devices installed in a professional facility",
     },
     highlights: [
       "Fire alarm system design",
-      "Installation and commissioning",
-      "Testing, inspection, and maintenance",
+      "Installation & commissioning",
+      "Testing, inspection & maintenance",
       "Compliance with BS 5839-1 and other global standards",
     ],
     capabilities: [
       "Life-safety system design",
-      "Device installation and commissioning",
-      "Inspection, testing, and compliance support",
+      "Installation & commissioning",
+      "Testing, inspection & maintenance",
+      "BS 5839-1 compliance support",
     ],
     deliverables: [
       "Fire alarm design and device layout",
@@ -446,7 +447,7 @@ export const services: Service[] = [
     capabilitySections: [
       {
         id: "fire-alarm-design",
-        navLabel: "Design",
+        navLabel: "Fire Alarm System Design",
         title: "Fire alarm system design shaped around the building, occupancy, and risk profile.",
         lead:
           "A dependable fire alarm system starts with the right detection and notification logic before devices are installed.",
@@ -461,13 +462,13 @@ export const services: Service[] = [
           "Clearer basis for installation and handover",
         ],
         image: {
-          src: "/image/service-details/fire-alarm-safety-systems.jpg",
+          src: "/image/service-details/fire-alarm-system-design.jpg",
           alt: "Fire alarm devices planned for a commercial building safety system",
         },
       },
       {
         id: "installation-commissioning",
-        navLabel: "Commissioning",
+        navLabel: "Installation & Commissioning",
         title: "Installation and commissioning completed as one accountable delivery scope.",
         lead:
           "The system should be installed cleanly, connected correctly, and proven before it is handed over.",
@@ -482,13 +483,13 @@ export const services: Service[] = [
           "Commissioning before handover",
         ],
         image: {
-          src: "/image/service-details/fire-alarm-safety-systems.jpg",
+          src: "/image/service-details/fire-alarm-installation-commissioning.jpg",
           alt: "Fire alarm control panel and safety devices commissioned for a facility",
         },
       },
       {
         id: "testing-inspection-maintenance",
-        navLabel: "Maintenance",
+        navLabel: "Testing, Inspection & Maintenance",
         title: "Testing, inspection, and maintenance that keeps the system dependable after launch.",
         lead:
           "A fire alarm system only remains trustworthy when routine checks are treated as part of ownership.",
@@ -503,13 +504,13 @@ export const services: Service[] = [
           "Clearer safety-system ownership",
         ],
         image: {
-          src: "/image/service-details/fire-alarm-safety-systems.jpg",
+          src: "/image/service-details/fire-alarm-testing-maintenance.jpg",
           alt: "Fire alarm system inspection and maintenance support for a commercial site",
         },
       },
       {
         id: "standards-compliance",
-        navLabel: "Compliance",
+        navLabel: "BS 5839-1 Compliance",
         title: "Compliance alignment with BS 5839-1 and other global standards.",
         lead:
           "Life-safety systems need documentation and delivery discipline that can stand up to review.",
@@ -524,7 +525,7 @@ export const services: Service[] = [
           "Better readiness for audits and inspections",
         ],
         image: {
-          src: "/image/service-details/fire-alarm-safety-systems.jpg",
+          src: "/image/service-details/fire-alarm-compliance-standards.jpg",
           alt: "Fire alarm compliance documentation and installed safety system readiness",
         },
       },
