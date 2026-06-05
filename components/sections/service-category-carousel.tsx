@@ -10,6 +10,7 @@ import {
   type PointerEvent,
 } from "react";
 import {
+  FiAlertTriangle,
   FiArrowLeft,
   FiArrowRight,
   FiBox,
@@ -57,6 +58,7 @@ type ServiceCategoryCarouselProps = {
 const serviceIconMap: Record<string, IconType> = {
   "door-access-control": FiLock,
   "surveillance-system-cctv": FiCamera,
+  "fire-alarm-safety-systems": FiAlertTriangle,
   "structured-lan-cabling": FiShare2,
   "data-centre-services": FiServer,
   "automated-gates-sliding-doors": FiZap,

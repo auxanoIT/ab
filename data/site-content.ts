@@ -525,6 +525,16 @@ export const marketingPages: MarketingPage[] = [
             ctaHref: "/services#infrastructure",
           },
           {
+            id: "fire-alarm-safety",
+            title: "Fire Alarm & Safety",
+            description:
+              "Fire alarm systems designed, installed, commissioned, tested, and maintained for safer facilities.",
+            imageSrc: "/image/service-details/fire-alarm-safety-systems.jpg",
+            imageAlt: "Fire alarm and safety system devices in a commercial facility",
+            ctaLabel: "Learn more",
+            ctaHref: "/services/fire-alarm-safety-systems",
+          },
+          {
             id: "networking",
             title: "Networking",
             description:

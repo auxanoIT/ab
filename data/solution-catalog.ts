@@ -71,6 +71,7 @@ export const solutionCategories: SolutionCategory[] = [
     serviceSlugs: [
       "door-access-control",
       "surveillance-system-cctv",
+      "fire-alarm-safety-systems",
       "structured-lan-cabling",
       "data-centre-services",
       "automated-gates-sliding-doors",
@@ -405,6 +406,126 @@ export const services: Service[] = [
         image: {
           src: "/image/service-details/cctv-survey-support.webp",
           alt: "Field engineer commissioning a commercial surveillance system on site",
+        },
+      },
+    ],
+  }),
+  buildService({
+    slug: "fire-alarm-safety-systems",
+    title: "Fire Alarm & Safety Systems",
+    category: "Infrastructure",
+    summary: "Fire alarm systems designed, installed, commissioned, tested, and maintained around life-safety compliance.",
+    description:
+      "Design and deliver fire alarm and safety systems with proper device placement, installation, commissioning, inspection, maintenance, and compliance alignment with BS 5839-1 and other global standards.",
+    navDescription: "Fire alarm design, commissioning, maintenance, and compliance support.",
+    heroImage: {
+      src: "/image/service-details/fire-alarm-safety-systems.jpg",
+      alt: "Commercial fire alarm and safety devices installed in a professional facility",
+    },
+    highlights: [
+      "Fire alarm system design",
+      "Installation and commissioning",
+      "Testing, inspection, and maintenance",
+      "Compliance with BS 5839-1 and other global standards",
+    ],
+    capabilities: [
+      "Life-safety system design",
+      "Device installation and commissioning",
+      "Inspection, testing, and compliance support",
+    ],
+    deliverables: [
+      "Fire alarm design and device layout",
+      "Installed and commissioned alarm system",
+      "Testing, inspection, and maintenance records",
+    ],
+    industries: ["Corporate offices", "Healthcare", "Education", "Warehousing"],
+    detailEyebrow: "Fire alarm and safety capabilities",
+    detailTitle: "Fire alarm systems delivered with design discipline, commissioning proof, and compliance awareness.",
+    detailDescription:
+      "Fire alarm work must be treated as a life-safety system, not a device-only installation. This delivery model covers design, installation, testing, maintenance, and standards-aware documentation.",
+    capabilitySections: [
+      {
+        id: "fire-alarm-design",
+        navLabel: "Design",
+        title: "Fire alarm system design shaped around the building, occupancy, and risk profile.",
+        lead:
+          "A dependable fire alarm system starts with the right detection and notification logic before devices are installed.",
+        body: [
+          "Auxano plans fire alarm layouts around building use, escape routes, sensitive rooms, ceiling conditions, device coverage, and the people who must respond when an alarm is triggered.",
+          "That keeps the system practical for the real facility rather than a generic equipment list.",
+        ],
+        points: [
+          "Detector and call-point placement planning",
+          "Sounder and strobe coverage considerations",
+          "Building and occupancy context reviewed",
+          "Clearer basis for installation and handover",
+        ],
+        image: {
+          src: "/image/service-details/fire-alarm-safety-systems.jpg",
+          alt: "Fire alarm devices planned for a commercial building safety system",
+        },
+      },
+      {
+        id: "installation-commissioning",
+        navLabel: "Commissioning",
+        title: "Installation and commissioning completed as one accountable delivery scope.",
+        lead:
+          "The system should be installed cleanly, connected correctly, and proven before it is handed over.",
+        body: [
+          "Auxano handles device mounting, cabling coordination, panel setup, zone logic, and commissioning checks so the installed system matches the agreed design.",
+          "Commissioning closes the gap between equipment being present and the safety system being ready for use.",
+        ],
+        points: [
+          "Device installation and wiring coordination",
+          "Control panel setup",
+          "Zone and alert logic verification",
+          "Commissioning before handover",
+        ],
+        image: {
+          src: "/image/service-details/fire-alarm-safety-systems.jpg",
+          alt: "Fire alarm control panel and safety devices commissioned for a facility",
+        },
+      },
+      {
+        id: "testing-inspection-maintenance",
+        navLabel: "Maintenance",
+        title: "Testing, inspection, and maintenance that keeps the system dependable after launch.",
+        lead:
+          "A fire alarm system only remains trustworthy when routine checks are treated as part of ownership.",
+        body: [
+          "Auxano supports periodic testing, inspection, fault review, device checks, and maintenance planning so the system stays ready beyond the installation date.",
+          "Records from those activities help facilities teams understand system health and act before small issues become operational risk.",
+        ],
+        points: [
+          "Routine inspection and test support",
+          "Fault review and maintenance planning",
+          "Device and panel health checks",
+          "Clearer safety-system ownership",
+        ],
+        image: {
+          src: "/image/service-details/fire-alarm-safety-systems.jpg",
+          alt: "Fire alarm system inspection and maintenance support for a commercial site",
+        },
+      },
+      {
+        id: "standards-compliance",
+        navLabel: "Compliance",
+        title: "Compliance alignment with BS 5839-1 and other global standards.",
+        lead:
+          "Life-safety systems need documentation and delivery discipline that can stand up to review.",
+        body: [
+          "Auxano aligns design, installation, testing, and handover records with the compliance expectations relevant to the building and client environment.",
+          "That includes attention to BS 5839-1 and other recognized global standards where they apply to the project scope.",
+        ],
+        points: [
+          "BS 5839-1-aware delivery",
+          "Standards-led documentation",
+          "Handover records for review",
+          "Better readiness for audits and inspections",
+        ],
+        image: {
+          src: "/image/service-details/fire-alarm-safety-systems.jpg",
+          alt: "Fire alarm compliance documentation and installed safety system readiness",
         },
       },
     ],

@@ -123,24 +123,28 @@ const leaders = [
     role: "Managing Director",
     office: "Corporate Office, Lagos",
     contact: "olatunji@auxanosolutions.net",
+    image: "/image/about/Olatunji Aduloju.jpeg",
   },
   {
     name: "Tosin Ayorinde",
     role: "IT Business & Technical Support Lead",
     office: "Corporate Office, Lagos",
     contact: "tosin@auxanosolutions.net",
+    image: "/image/about/Tosin Ayorinde.jpeg",
   },
   {
     name: "Kayode Mejabi",
     role: "Regional Technical Support Lead",
     office: "Abuja Office",
     contact: "kayode@auxanosolutions.net",
+    image: "/image/about/Kayode Mejabi.jpeg",
   },
   {
     name: "Mahmoud Khallaf",
     role: "Operations & Technical Lead, North Africa",
     office: "Cairo Office",
     contact: "mahmoudk@auxanosolutions.net",
+    image: "/image/about/Mahmoud Khallaf.jpeg",
   },
 ];
 
@@ -523,8 +527,8 @@ export function AboutGeneaInspired() {
                 <article className="group overflow-hidden rounded-lg border border-[color:rgba(10,48,71,0.1)] bg-white shadow-[0_20px_55px_rgba(10,48,71,0.08)]">
                   <div className="relative aspect-[4/4.6] overflow-hidden bg-[#0A3047]">
                     <Image
-                      src="/image/about/team-placeholder.svg"
-                      alt={`${leader.name} placeholder portrait`}
+                      src={leader.image}
+                      alt={`${leader.name}, ${leader.role}`}
                       fill
                       className="object-cover transition duration-500 group-hover:scale-105"
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
