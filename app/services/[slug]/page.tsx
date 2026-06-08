@@ -12,6 +12,7 @@ import {
   Flame,
 } from "lucide-react";
 
+import { PartnerLogoMarquee } from "@/components/sections/partner-logo-marquee";
 import { ServiceCapabilityFlow } from "@/components/sections/service-capability-flow";
 import { Container } from "@/components/ui/container";
 import { JsonLd } from "@/components/ui/json-ld";
@@ -53,8 +54,8 @@ const categoryStyles: Record<
     icon: Flame,
     accent: "#dc2626",
     tint: "rgba(220,38,38,0.1)",
-    image: "/image/service-details/fire-alarm-safety-systems.jpg",
-    imageAlt: "Commercial fire alarm and safety systems installed in a facility",
+    image: "/image/service-details/fire-alarm-hero-call-point.webp",
+    imageAlt: "Red manual fire alarm call point mounted on a clean commercial wall",
   },
   Networking: {
     icon: Network,
@@ -282,6 +283,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               alt={heroImage.alt}
               fill
               priority
+              quality={55}
               className="object-cover opacity-90"
               sizes="(min-width: 1024px) 54vw, 100vw"
             />
@@ -290,6 +292,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       <ServiceCapabilityFlow service={service} sections={capabilitySections} />
+      <PartnerLogoMarquee />
     </>
   );
 }

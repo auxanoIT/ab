@@ -37,10 +37,10 @@ const categoryNarratives: Record<
   "Fire Alarm & Safety": {
     title: "Safety systems installed right.",
     paragraphs: [
-      "Fire alarm design, commissioning, maintenance, and compliance support for safer facilities.",
+      "Fire alarm design, installation, testing, maintenance, integration, and compliance support for safer facilities.",
     ],
-    imageSrc: "/image/service-details/fire-alarm-safety-systems.jpg",
-    imageAlt: "Fire alarm and safety systems installed in a commercial facility",
+    imageSrc: "/image/service-details/fire-alarm-hero-call-point.webp",
+    imageAlt: "Red manual fire alarm call point mounted on a clean commercial wall",
   },
   Networking: {
     title: "Designed to scale.",

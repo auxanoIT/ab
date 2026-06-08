@@ -529,9 +529,9 @@ export const marketingPages: MarketingPage[] = [
             id: "fire-alarm-safety",
             title: "Fire Alarm & Safety",
             description:
-              "Fire alarm systems designed, installed, commissioned, tested, and maintained for safer facilities.",
-            imageSrc: "/image/service-details/fire-alarm-safety-systems.jpg",
-            imageAlt: "Fire alarm and safety system devices in a commercial facility",
+              "Fire alarm systems designed, installed, tested, maintained, integrated, and aligned with safety compliance requirements.",
+            imageSrc: "/image/service-details/fire-alarm-hero-call-point.webp",
+            imageAlt: "Red manual fire alarm call point mounted on a clean commercial wall",
             ctaLabel: "Learn more",
             ctaHref: "/services#fire-alarm-safety",
           },
