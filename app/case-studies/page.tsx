@@ -49,15 +49,15 @@ export default async function CaseStudiesPage() {
             </div>
           </div>
           <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/8 shadow-[0_32px_90px_rgba(0,0,0,0.26)]">
-            <div className="relative min-h-[260px] sm:min-h-[340px] lg:min-h-[360px]">
+            <div className="relative aspect-[16/10]">
               <Image
-                src="/image/case-studies/enterprise-elv-integrated-hero.webp"
+                src="/image/case-studies/enterprise-elv-integrated-hero-photo.webp"
                 alt="Integrated enterprise ELV infrastructure used for case study delivery proof"
                 fill
                 priority
                 quality={56}
                 sizes="(min-width: 1024px) 52vw, 100vw"
-                className="object-cover"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,18,32,0.18),rgba(11,18,32,0.68))]" />
             </div>

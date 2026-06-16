@@ -154,18 +154,20 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </ButtonLink>
             </div>
           </div>
-          <div className="relative min-h-[390px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/8 shadow-[0_32px_90px_rgba(0,0,0,0.28)]">
-            <Image
-              src={media.src}
-              alt={media.alt}
-              fill
-              priority
-              quality={56}
-              sizes="(min-width: 1024px) 52vw, 100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.04),rgba(11,18,32,0.72))]" />
-            <div className="absolute bottom-5 left-5 right-5 grid gap-3 rounded-[1.25rem] border border-white/10 bg-[rgba(11,18,32,0.74)] p-5 backdrop-blur sm:grid-cols-3">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/8 shadow-[0_32px_90px_rgba(0,0,0,0.28)]">
+            <div className="relative aspect-[16/10]">
+              <Image
+                src={media.src}
+                alt={media.alt}
+                fill
+                priority
+                quality={56}
+                sizes="(min-width: 1024px) 52vw, 100vw"
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.04),rgba(11,18,32,0.72))]" />
+            </div>
+            <div className="grid gap-3 border-t border-white/10 bg-[rgba(11,18,32,0.78)] p-5 backdrop-blur sm:grid-cols-3 lg:absolute lg:bottom-5 lg:left-5 lg:right-5 lg:rounded-[1.25rem] lg:border lg:bg-[rgba(11,18,32,0.74)]">
               {(metrics.length
                 ? metrics
                 : [{ value: "3", label: "delivery stages" }]

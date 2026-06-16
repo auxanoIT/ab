@@ -73,7 +73,7 @@ export const caseStudies: CaseStudy[] = [
       "fire-alarm-safety-systems",
     ],
     image: {
-      src: "/image/case-studies/cihp-headquarters-elv-infrastructure-abuja.webp",
+      src: "/image/case-studies/cihp-headquarters-elv-infrastructure-abuja-photo.webp",
       alt: "Structured network rack cabling for CIHP headquarters ELV infrastructure",
     },
   },
@@ -109,7 +109,7 @@ export const caseStudies: CaseStudy[] = [
       "it-managed-services-staff-outsourcing",
     ],
     image: {
-      src: "/image/case-studies/fringe-pci-dss-infrastructure-upgrade.webp",
+      src: "/image/case-studies/fringe-pci-dss-infrastructure-upgrade-photo.webp",
       alt: "Compliance and security infrastructure environment for Fringe PCI DSS upgrade",
     },
   },
@@ -144,8 +144,8 @@ export const caseStudies: CaseStudy[] = [
       "data-centre-services",
     ],
     image: {
-      src: "/image/case-studies/enterprise-elv-integrated-hero.webp",
-      alt: "Enterprise IT and ELV infrastructure with network rack access control CCTV and fire safety systems",
+      src: "/image/case-studies/wiocc-34-floor-it-elv-deployment-photo.webp",
+      alt: "Two-floor WIOCC IT and ELV deployment with network rack access control CCTV and safety systems",
     },
   },
   {
@@ -180,7 +180,7 @@ export const caseStudies: CaseStudy[] = [
       "data-centre-services",
     ],
     image: {
-      src: "/image/case-studies/cihp-stem-hub-relocation-ikeja.webp",
+      src: "/image/case-studies/cihp-stem-hub-relocation-ikeja-photo.webp",
       alt: "IT equipment relocation and data migration setup for CIHP STEM Hub",
     },
   },
@@ -215,7 +215,7 @@ export const caseStudies: CaseStudy[] = [
       "data-centre-services",
     ],
     image: {
-      src: "/image/case-studies/wiocc-2nd-floor-elv-deployment.webp",
+      src: "/image/case-studies/wiocc-2nd-floor-elv-deployment-photo.webp",
       alt: "Fire alarm and safety layer for WIOCC 2nd floor ELV deployment",
     },
   },
@@ -251,7 +251,7 @@ export const caseStudies: CaseStudy[] = [
       "fire-alarm-safety-systems",
     ],
     image: {
-      src: "/image/case-studies/cihp-stem-hub-elv-installation-2024.webp",
+      src: "/image/case-studies/cihp-stem-hub-elv-installation-2024-photo.webp",
       alt: "IP telephony and communication infrastructure for CIHP STEM Hub ELV installation",
     },
   },
@@ -286,7 +286,7 @@ export const caseStudies: CaseStudy[] = [
       "fire-alarm-safety-systems",
     ],
     image: {
-      src: "/image/case-studies/cihp-stem-hub-it-infrastructure-2023.webp",
+      src: "/image/case-studies/cihp-stem-hub-it-infrastructure-2023-photo.webp",
       alt: "LAN certification testing for CIHP STEM Hub IT infrastructure upgrade",
     },
   },
@@ -322,7 +322,7 @@ export const caseStudies: CaseStudy[] = [
       "data-centre-services",
     ],
     image: {
-      src: "/image/case-studies/seflam-sgl-engineering-office-elv.webp",
+      src: "/image/case-studies/seflam-sgl-engineering-office-elv-photo.webp",
       alt: "Server room cooling and ELV infrastructure for SEFLAM SGL Engineering office",
     },
   },

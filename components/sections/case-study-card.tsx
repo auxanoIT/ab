@@ -25,20 +25,19 @@ export function CaseStudyCard({ caseStudy, featured = false }: CaseStudyCardProp
           sizes={featured ? "(min-width: 1280px) 42vw, 100vw" : "(min-width: 1280px) 30vw, (min-width: 768px) 50vw, 100vw"}
           className="object-cover transition duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0)_45%,rgba(11,18,32,0.62)_100%)]" />
-        <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-white">
-          <span className="rounded-full bg-white/18 px-3 py-2 backdrop-blur">
+      </div>
+      <div className="flex h-full flex-col p-6">
+        <div className="mb-4 flex flex-wrap items-center gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)]">
+          <span className="rounded-full bg-[var(--color-cloud)] px-3 py-2">
             {caseStudy.industry || "Case Study"}
           </span>
           {caseStudy.location ? (
-            <span className="inline-flex items-center gap-1 rounded-full bg-white/18 px-3 py-2 backdrop-blur">
-              <MapPin className="h-3.5 w-3.5" />
+            <span className="inline-flex items-center gap-1 rounded-full bg-[var(--color-cloud)] px-3 py-2">
+              <MapPin className="h-3.5 w-3.5 text-[var(--color-electric)]" />
               {caseStudy.location}
             </span>
           ) : null}
         </div>
-      </div>
-      <div className="flex h-full flex-col p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-electric)]">
           {caseStudy.client || "Client outcome"}
         </p>
