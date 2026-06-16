@@ -41,95 +41,289 @@ export const navigation: NavItem[] = [
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "lagos-head-office-security-modernization",
-    title: "Security modernization for a multi-floor Lagos head office",
-    client: "Confidential Professional Services Firm",
-    industry: "Professional Services",
-    location: "Ikeja, Lagos",
+    slug: "cihp-headquarters-elv-infrastructure-abuja",
+    title: "Standards-Compliant ELV Infrastructure for CIHP Headquarters",
+    client: "Centre for Integrated Health Programs (CIHP)",
+    industry: "Healthcare and Development Programs",
+    location: "Abuja, Nigeria",
     summary:
-      "Auxano unified CCTV coverage, access control planning, and network improvements for a busy headquarters environment.",
+      "Auxano delivered a complete Extra-Low Voltage infrastructure foundation covering structured LAN cabling, CCTV cabling, fiber backbone components, cable management, underground pathways, and FM200-ready fire suppression pipework.",
     challenge:
-      "The client needed stronger perimeter visibility, a clearer visitor movement picture, and more confidence in the network serving surveillance endpoints.",
+      "CIHP needed a durable, standards-compliant ELV backbone for its headquarters that could support current ICT operations, surveillance expansion, fiber connectivity, and future life-safety systems without creating fragmented installation risk.",
     solution: [
-      "Redesigned camera coverage for entrances, lift lobbies, and shared operational zones.",
-      "Standardized network cabinet organization and cabling for cleaner surveillance performance.",
-      "Prepared phased access-control recommendations and operator handover guidance.",
+      "Supplied, delivered, installed, and commissioned structured LAN and CCTV cabling infrastructure across the facility.",
+      "Implemented fiber backbone components for high-speed connectivity and long-term network scalability.",
+      "Installed cable trays, baskets, management systems, and civil-work pathways for cleaner routing and maintainability.",
+      "Prepared FM200 fire suppression pipework so the safety layer could integrate with the wider infrastructure plan.",
+      "Completed labeling, installation labor, logistics, commissioning, and handover under a professional delivery model.",
     ],
     result:
-      "The site moved from fragmented monitoring to a cleaner, more accountable security posture with stronger operational visibility.",
+      "CIHP received a structured and labeled ELV foundation that supports LAN, CCTV, fiber backbone, and FM200 readiness with better durability, operational efficiency, and maintainability for future ICT and safety upgrades.",
     metrics: [
-      { value: "38%", label: "Reduction in blind coverage areas" },
-      { value: "3 floors", label: "Aligned under one rollout plan" },
-      { value: "7 days", label: "Targeted stabilization window after go-live" },
+      { value: "3 months", label: "March to May 2026 rollout" },
+      { value: "4 systems", label: "LAN, CCTV, fiber, FM200 readiness" },
+      { value: "1 year", label: "Professional warranty coverage" },
     ],
     relatedServices: [
-      "surveillance-system-cctv",
-      "door-access-control",
       "network-cabling",
+      "structured-lan-cabling",
+      "surveillance-system-cctv",
+      "data-centre-services",
+      "fire-alarm-safety-systems",
     ],
+    image: {
+      src: "/image/case-studies/cihp-headquarters-elv-infrastructure-abuja.webp",
+      alt: "Structured ELV cabling and fire suppression ready infrastructure for CIHP headquarters",
+    },
   },
   {
-    slug: "private-clinic-network-refresh",
-    title: "Network and continuity refresh for a private healthcare operator",
-    client: "Confidential Healthcare Group",
-    industry: "Healthcare",
-    location: "Lagos, Nigeria",
+    slug: "fringe-pci-dss-infrastructure-upgrade",
+    title: "PCI DSS-Aligned ICT Infrastructure Upgrade for Fringe",
+    client: "Fringe",
+    industry: "Financial Services and Regulated Operations",
+    location: "Nigeria",
     summary:
-      "A healthcare operator needed stronger network reliability, better monitoring, and clearer business continuity support.",
+      "Auxano consolidated server virtualization, network redesign, firewall deployment, wireless expansion, endpoint upgrades, access control, surveillance enhancement, cloud backup, and IT support into one compliance-focused infrastructure program.",
     challenge:
-      "Intermittent network issues were affecting device availability and raising concern around continuity for patient-facing operations.",
+      "Fringe needed to strengthen cybersecurity, improve network performance, modernize critical infrastructure, and align its operating environment with PCI DSS security expectations without treating each upgrade as a disconnected workstream.",
     solution: [
-      "Mapped the current environment and rebuilt topology documentation.",
-      "Introduced network monitoring and improved switching and wireless layout.",
-      "Defined continuity priorities and support response expectations for critical workflows.",
+      "Redesigned the network environment around stronger segmentation, improved performance, and better operational visibility.",
+      "Deployed firewall and security controls to support PCI DSS-aligned infrastructure hardening.",
+      "Upgraded server virtualization, wireless coverage, endpoint devices, access control, and surveillance systems as one coordinated program.",
+      "Added cloud-based data protection, improved email services, and structured IT support to stabilize operations through the transition.",
     ],
     result:
-      "The organization gained a more stable environment, better issue visibility, and a clearer recovery conversation with leadership.",
+      "The project established a more secure, scalable, and standards-aligned technology foundation with stronger network performance, improved resilience, centralized security controls, and clearer compliance readiness.",
     metrics: [
-      {
-        value: "42%",
-        label: "Fewer repeat connectivity incidents in the first quarter",
-      },
-      { value: "24/7", label: "Improved visibility for critical alerts" },
-      {
-        value: "1 playbook",
-        label: "Continuity baseline delivered to leadership",
-      },
+      { value: "8", label: "Upgrade workstreams unified" },
+      { value: "PCI DSS", label: "Security alignment objective" },
+      { value: "2025-2026", label: "Program delivery window" },
     ],
     relatedServices: [
       "network-architecture-planning",
+      "network-configurations",
+      "firewall-sales-licenses",
+      "cloud-services-licenses",
+      "server-storage-provisioning-deployment",
       "it-managed-services-staff-outsourcing",
-      "it-consultancy-audit-services",
     ],
+    image: {
+      src: "/image/case-studies/fringe-pci-dss-infrastructure-upgrade.webp",
+      alt: "PCI DSS aligned infrastructure upgrade with network security and access control systems",
+    },
   },
   {
-    slug: "warehouse-rollout-with-centralized-visibility",
-    title:
-      "Warehouse rollout with centralized visibility and support readiness",
-    client: "Confidential Distribution Business",
-    industry: "Distribution & Warehousing",
-    location: "Ogun-Lagos corridor",
+    slug: "wiocc-34-floor-it-elv-deployment",
+    title: "Two-Floor Enterprise IT and ELV Deployment for WIOCC",
+    client: "WIOCC",
+    industry: "Telecommunications",
+    location: "Victoria Island, Lagos",
     summary:
-      "Auxano helped a fast-moving operations team connect surveillance, networking, and support readiness into one deployment program.",
+      "Auxano delivered a full IT and ELV infrastructure deployment for WIOCC's 3rd and 4th floor expansion, integrating enterprise networking, fiber uplinks, wireless access, biometric access control, surveillance, grounding, rack organization, testing, and documentation.",
     challenge:
-      "The client was expanding into a more operationally demanding site and needed coverage, connectivity, and support governance to land together.",
+      "WIOCC needed a high-performance, secure, and scalable technology environment for mission-critical operations across two new office floors while maintaining clean integration with existing infrastructure.",
     solution: [
-      "Designed CCTV deployment for entry, dispatch, and storage zones.",
-      "Structured the network rollout for device density and monitoring visibility.",
-      "Created a support model for post-launch issue handling and escalation.",
+      "Installed structured LAN cabling, fiber uplinks, managed switches, wireless access points, rack power distribution, and full patching and labeling.",
+      "Deployed multi-door biometric access control and surveillance systems to strengthen security across the expanded floors.",
+      "Completed 4th-floor uplink cabling, civil works, rack organization, dedicated earthing and grounding, system testing, and documentation.",
+      "Integrated the new environment with WIOCC's existing infrastructure to preserve operational continuity and future scalability.",
     ],
     result:
-      "The warehouse opened with cleaner technical coordination, better operational assurance, and a more structured handover.",
+      "WIOCC gained a secure, scalable, and high-performance technology foundation across the 3rd and 4th floors, ready to support high-availability operations and long-term expansion.",
     metrics: [
-      { value: "60+", label: "Endpoints included in the rollout program" },
-      { value: "1 launch", label: "Single coordinated deployment window" },
-      { value: "100%", label: "Critical areas covered in the final design" },
+      { value: "2 floors", label: "3rd and 4th floor expansion" },
+      { value: "5 months", label: "July to November 2025 rollout" },
+      { value: "6 layers", label: "Network, fiber, wireless, access, CCTV, grounding" },
+    ],
+    relatedServices: [
+      "network-cabling",
+      "network-design-with-diagram",
+      "door-access-control",
+      "surveillance-system-cctv",
+      "data-centre-services",
+    ],
+    image: {
+      src: "/image/case-studies/enterprise-elv-integrated-hero.webp",
+      alt: "Enterprise IT and ELV infrastructure with network rack access control CCTV and fire safety systems",
+    },
+  },
+  {
+    slug: "cihp-stem-hub-relocation-ikeja",
+    title: "Seamless IT Infrastructure Relocation for CIHP STEM Hub",
+    client: "Centre for Integrated Health Programs (CIHP)",
+    industry: "Education, Innovation, and Development Programs",
+    location: "Ikeja, Lagos",
+    summary:
+      "Auxano relocated, reinstalled, upgraded, tested, labeled, and certified the CIHP STEM Hub infrastructure, including server rack systems, switching, wireless access points, IP telephony, UPS units, Synology storage, access control, CCTV, FM200, conference displays, and new cabling.",
+    challenge:
+      "CIHP needed to move the STEM Hub to a new Ikeja location without compromising performance, security, safety, or operational readiness for ongoing digital and STEM programs.",
+    solution: [
+      "Dismantled existing ICT, security, and safety systems, transported equipment, and reinstalled the environment at the new facility.",
+      "Relocated server racks, switches, wireless access points, IP telephones, UPS units, Synology storage, temperature sensors, FM200, access control, CCTV, and conference displays.",
+      "Supplied and installed new LAN and CCTV cabling, fiber interconnects, patch panels, access points, cable management systems, raised flooring, earthing infrastructure, and supporting civil works.",
+      "Tested, labeled, and certified systems to confirm performance and operational readiness in the new location.",
+    ],
+    result:
+      "The STEM Hub moved into a fully functional and modernized technology environment with continuity across networking, security, fire suppression, storage, collaboration, and support systems.",
+    metrics: [
+      { value: "2 months", label: "December 2024 to January 2025" },
+      { value: "10+", label: "Systems relocated and recommissioned" },
+      { value: "0 compromise", label: "Performance and readiness objective" },
+    ],
+    relatedServices: [
+      "computer-installation-setup",
+      "network-cabling",
+      "office-telephone-system-ip-pbx",
+      "surveillance-system-cctv",
+      "door-access-control",
+      "data-centre-services",
+    ],
+    image: {
+      src: "/image/case-studies/cihp-stem-hub-relocation-ikeja.webp",
+      alt: "Relocated STEM hub IT infrastructure with rack network storage and access systems",
+    },
+  },
+  {
+    slug: "wiocc-2nd-floor-elv-deployment",
+    title: "Mission-Critical ELV Infrastructure for WIOCC 2nd Floor",
+    client: "WIOCC",
+    industry: "Telecommunications",
+    location: "Victoria Island, Lagos",
+    summary:
+      "Auxano deployed a complete ELV environment for WIOCC's 2nd floor, covering surveillance, network and wireless infrastructure, biometric access control, addressable fire alarm, FM200 server room suppression, earthing, lightning protection, rack organization, patching, labeling, and documentation.",
+    challenge:
+      "WIOCC required a secure and high-performance ELV foundation for a mission-critical telecommunications office, with networking, physical security, fire protection, and electrical safety delivered as one maintainable infrastructure layer.",
+    solution: [
+      "Installed surveillance, network, wireless, and biometric access control systems using enterprise-grade equipment and structured cabling.",
+      "Deployed an addressable fire alarm system and FM200 server room suppression capability for life-safety and equipment protection.",
+      "Implemented earthing, lightning and thunder arrestor systems to protect infrastructure reliability.",
+      "Completed rack organization, patching, labeling, civil works, commissioning, and documentation for long-term maintainability.",
+    ],
+    result:
+      "WIOCC received an integrated ELV platform that strengthens operational efficiency, physical security, fire protection, electrical safety, and future scalability for a high-availability office environment.",
+    metrics: [
+      { value: "3 months", label: "September to November 2024 rollout" },
+      { value: "6 systems", label: "Integrated ELV domains" },
+      { value: "1 floor", label: "Mission-critical office environment" },
     ],
     relatedServices: [
       "surveillance-system-cctv",
-      "network-design-with-diagram",
-      "it-managed-services-staff-outsourcing",
+      "network-cabling",
+      "door-access-control",
+      "fire-alarm-safety-systems",
+      "data-centre-services",
     ],
+    image: {
+      src: "/image/case-studies/wiocc-2nd-floor-elv-deployment.webp",
+      alt: "Integrated ELV infrastructure with surveillance access control fire alarm and network systems",
+    },
+  },
+  {
+    slug: "cihp-stem-hub-elv-installation-2024",
+    title: "Integrated ELV Installation for CIHP STEM Hub",
+    client: "Centre for Integrated Health Programs (CIHP)",
+    industry: "Education, Innovation, and Development Programs",
+    location: "Ikeja GRA, Lagos",
+    summary:
+      "Auxano delivered a complete ELV installation for CIHP STEM Hub, integrating structured LAN, IP telephony, CCTV surveillance, lightning protection, FM200 fire suppression, server room raised flooring, access control, rack power distribution, civil works, labeling, cable testing, and documentation.",
+    challenge:
+      "The STEM Hub needed a modern, secure, and high-performance technology environment to support digital learning, collaboration, daily operations, and future expansion.",
+    solution: [
+      "Installed a robust structured LAN network and IP telephone system for collaboration and day-to-day operations.",
+      "Integrated CCTV surveillance, access control, lightning and thunder arrestor systems, and FM200 server room suppression.",
+      "Built server room readiness with raised flooring, rack power distribution, cable testing, labeling, documentation, and supporting civil works.",
+      "Configured, tested, and commissioned each ELV domain to support long-term reliability and maintainability.",
+    ],
+    result:
+      "CIHP STEM Hub received a secure, scalable, and future-ready infrastructure platform that supports STEM education, digital development, safety, communication, and operational continuity.",
+    metrics: [
+      { value: "7 domains", label: "ELV systems delivered" },
+      { value: "2024", label: "Completed installation year" },
+      { value: "1 hub", label: "Unified technology foundation" },
+    ],
+    relatedServices: [
+      "structured-lan-cabling",
+      "office-telephone-system-ip-pbx",
+      "surveillance-system-cctv",
+      "door-access-control",
+      "data-centre-services",
+      "fire-alarm-safety-systems",
+    ],
+    image: {
+      src: "/image/case-studies/cihp-stem-hub-elv-installation-2024.webp",
+      alt: "Education STEM hub ELV installation with network communication surveillance and safety systems",
+    },
+  },
+  {
+    slug: "cihp-stem-hub-it-infrastructure-2023",
+    title: "Future-Ready IT Infrastructure Upgrade for CIHP STEM Hub",
+    client: "Centre for Integrated Health Programs (CIHP)",
+    industry: "Education, Innovation, and Development Programs",
+    location: "Ikeja GRA, Lagos",
+    summary:
+      "Auxano delivered a full IT and ELV infrastructure upgrade for CIHP STEM Hub, covering structured LAN infrastructure, IP telephony, CCTV surveillance, lightning protection, FM200 fire suppression, server room raised flooring, and access control systems.",
+    challenge:
+      "CIHP needed to equip the STEM Hub with a stronger technology backbone capable of supporting advanced learning, digital innovation, safety systems, and efficient day-to-day operations.",
+    solution: [
+      "Designed and deployed seven major ELV domains from material supply through installation, configuration, testing, and commissioning.",
+      "Implemented structured LAN, IP telephony, CCTV surveillance, access control, lightning protection, FM200, and server room raised flooring.",
+      "Engineered each component for safety, reliability, maintainability, and scalability as the STEM Hub's digital needs grow.",
+    ],
+    result:
+      "The facility now operates on a stronger digital infrastructure and safety platform designed to support education, innovation, secure access, surveillance, and efficient operations.",
+    metrics: [
+      { value: "7 domains", label: "Infrastructure and safety layers" },
+      { value: "2023", label: "Project delivery period" },
+      { value: "End-to-end", label: "Design to commissioning scope" },
+    ],
+    relatedServices: [
+      "network-cabling",
+      "office-telephone-system-ip-pbx",
+      "surveillance-system-cctv",
+      "door-access-control",
+      "data-centre-services",
+      "fire-alarm-safety-systems",
+    ],
+    image: {
+      src: "/image/case-studies/cihp-stem-hub-it-infrastructure-2023.webp",
+      alt: "Future ready STEM hub IT infrastructure with structured network and security systems",
+    },
+  },
+  {
+    slug: "seflam-sgl-engineering-office-elv",
+    title: "Corporate ELV Infrastructure Deployment for SEFLAM SGL Engineering",
+    client: "SEFLAM SGL Engineering Office",
+    industry: "Engineering and Corporate Offices",
+    location: "Victoria Island, Lagos",
+    summary:
+      "Auxano delivered a full ELV infrastructure upgrade for SEFLAM SGL Engineering Office, integrating structured LAN, IP telephony, CCTV surveillance, lightning protection, FM200 fire suppression, fire alarm, access control, server room raised flooring, and dedicated cooling.",
+    challenge:
+      "SEFLAM SGL needed a modern, secure, and high-performance office environment that could support engineering operations, collaboration, connectivity, fire protection, access control, and server room reliability.",
+    solution: [
+      "Installed structured LAN and IP telephony to strengthen office connectivity and communication.",
+      "Deployed CCTV surveillance, access control, fire alarm, FM200 fire suppression, lightning protection, and server room systems.",
+      "Added server room raised flooring and dedicated cooling to improve infrastructure resilience and equipment protection.",
+      "Configured, tested, and commissioned each system to meet safety, reliability, and long-term performance expectations.",
+    ],
+    result:
+      "SEFLAM SGL received a unified ELV ecosystem that improves connectivity, communication, security, fire protection, server room readiness, and operational efficiency across the engineering office.",
+    metrics: [
+      { value: "9 systems", label: "ELV and server room layers" },
+      { value: "2025", label: "Victoria Island deployment" },
+      { value: "1 office", label: "Unified corporate technology setup" },
+    ],
+    relatedServices: [
+      "structured-lan-cabling",
+      "office-telephone-system-ip-pbx",
+      "surveillance-system-cctv",
+      "door-access-control",
+      "fire-alarm-safety-systems",
+      "data-centre-services",
+    ],
+    image: {
+      src: "/image/case-studies/seflam-sgl-engineering-office-elv.webp",
+      alt: "Corporate engineering office ELV infrastructure with network access control CCTV and fire safety systems",
+    },
   },
 ];
 

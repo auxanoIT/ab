@@ -6,32 +6,60 @@ const defaultCaseStudyMedia: ServiceNavMedia = {
 };
 
 const caseStudyMediaBySlug: Record<string, ServiceNavMedia> = {
-  "lagos-head-office-security-modernization": {
-    src: "/image/service-details/door-access-dashboard.webp",
-    alt: "Access control dashboard for a corporate security modernization project",
+  "cihp-headquarters-elv-infrastructure-abuja": {
+    src: "/image/case-studies/cihp-headquarters-elv-infrastructure-abuja.webp",
+    alt: "Structured ELV cabling and fire suppression ready infrastructure for CIHP headquarters",
   },
-  "private-clinic-network-refresh": {
-    src: "/image/industries/healthcare.webp",
-    alt: "Healthcare technology environment with reliable network infrastructure",
+  "fringe-pci-dss-infrastructure-upgrade": {
+    src: "/image/case-studies/fringe-pci-dss-infrastructure-upgrade.webp",
+    alt: "PCI DSS aligned infrastructure upgrade with network security and access control systems",
   },
-  "warehouse-rollout-with-centralized-visibility": {
-    src: "/image/industries/warehousing-logistics.webp",
-    alt: "Warehouse technology rollout with centralized site visibility",
+  "wiocc-34-floor-it-elv-deployment": {
+    src: "/image/case-studies/enterprise-elv-integrated-hero.webp",
+    alt: "Enterprise IT and ELV infrastructure with network rack access control CCTV and fire safety systems",
+  },
+  "cihp-stem-hub-relocation-ikeja": {
+    src: "/image/case-studies/cihp-stem-hub-relocation-ikeja.webp",
+    alt: "Relocated STEM hub IT infrastructure with rack network storage and access systems",
+  },
+  "wiocc-2nd-floor-elv-deployment": {
+    src: "/image/case-studies/wiocc-2nd-floor-elv-deployment.webp",
+    alt: "Integrated ELV infrastructure with surveillance access control fire alarm and network systems",
+  },
+  "cihp-stem-hub-elv-installation-2024": {
+    src: "/image/case-studies/cihp-stem-hub-elv-installation-2024.webp",
+    alt: "Education STEM hub ELV installation with network communication surveillance and safety systems",
+  },
+  "cihp-stem-hub-it-infrastructure-2023": {
+    src: "/image/case-studies/cihp-stem-hub-it-infrastructure-2023.webp",
+    alt: "Future ready STEM hub IT infrastructure with structured network and security systems",
+  },
+  "seflam-sgl-engineering-office-elv": {
+    src: "/image/case-studies/seflam-sgl-engineering-office-elv.webp",
+    alt: "Corporate engineering office ELV infrastructure with network access control CCTV and fire safety systems",
   },
 };
 
 const caseStudyMediaByIndustry: Record<string, ServiceNavMedia> = {
-  healthcare: {
-    src: "/image/industries/healthcare.webp",
-    alt: "Healthcare technology environment with reliable network infrastructure",
+  "healthcare and development programs": {
+    src: "/image/case-studies/cihp-headquarters-elv-infrastructure-abuja.webp",
+    alt: "Healthcare program headquarters ELV infrastructure environment",
   },
-  "professional services": {
-    src: "/image/industries/corporate-offices.webp",
-    alt: "Corporate office infrastructure and security environment",
+  "financial services and regulated operations": {
+    src: "/image/case-studies/fringe-pci-dss-infrastructure-upgrade.webp",
+    alt: "Financial services infrastructure and compliance upgrade environment",
   },
-  "distribution & warehousing": {
-    src: "/image/industries/warehousing-logistics.webp",
-    alt: "Warehouse and logistics facility with connected security systems",
+  telecommunications: {
+    src: "/image/case-studies/enterprise-elv-integrated-hero.webp",
+    alt: "Telecommunications office IT and ELV infrastructure environment",
+  },
+  "education, innovation, and development programs": {
+    src: "/image/case-studies/cihp-stem-hub-elv-installation-2024.webp",
+    alt: "STEM hub education technology and ELV infrastructure environment",
+  },
+  "engineering and corporate offices": {
+    src: "/image/case-studies/seflam-sgl-engineering-office-elv.webp",
+    alt: "Engineering office ELV infrastructure environment",
   },
 };
 

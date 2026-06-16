@@ -38,9 +38,7 @@ import {
   blogPostQuery,
   blogPostSlugsQuery,
   blogPostsQuery,
-  caseStudiesQuery,
   caseStudyQuery,
-  caseStudySlugsQuery,
   careerOpeningsQuery,
   estimatorConfigQuery,
   faqsQuery,
@@ -256,29 +254,20 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
 }
 
 export async function getCaseStudies(): Promise<CaseStudy[]> {
-  const content = await sanityFetch<CaseStudy[]>({
-    query: caseStudiesQuery,
-    preview: await isPreviewEnabled(),
-    tags: ["caseStudies"],
-  });
-
-  return content?.length ? content : caseStudies;
+  return caseStudies;
 }
 
 export async function getCaseStudySlugs(): Promise<string[]> {
-  const content = await sanityFetch<string[]>({
-    query: caseStudySlugsQuery,
-    tags: ["caseStudies"],
-  });
-
-  if (!content?.length) {
-    return caseStudies.map((item) => item.slug);
-  }
-
-  return content;
+  return caseStudies.map((item) => item.slug);
 }
 
 export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
+  const fallbackCaseStudy = caseStudies.find((item) => item.slug === slug);
+
+  if (fallbackCaseStudy) {
+    return fallbackCaseStudy;
+  }
+
   const content = await sanityFetch<CaseStudy>({
     query: caseStudyQuery,
     params: { slug },
@@ -286,7 +275,7 @@ export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null
     tags: ["caseStudies"],
   });
 
-  return content ?? caseStudies.find((item) => item.slug === slug) ?? null;
+  return content ?? null;
 }
 
 export async function getBlogPosts(): Promise<BlogPost[]> {

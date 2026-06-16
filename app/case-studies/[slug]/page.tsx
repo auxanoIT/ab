@@ -251,7 +251,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   ))
                 ) : (
                   <p className="rounded-[1.25rem] bg-[var(--color-cloud)] p-5 text-sm leading-7 text-[var(--color-muted)]">
-                    Solution steps can be added from Sanity for this case study.
+                    Solution steps are being prepared for this case study.
                   </p>
                 )}
               </div>
@@ -308,8 +308,8 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 The service areas behind this outcome
               </h2>
               <p className="mt-5 text-base leading-8 text-[var(--color-muted)]">
-                These tags keep Sanity case studies connected to the services
-                they support while keeping the visual pattern predictable.
+                These service areas show the practical delivery capabilities
+                behind the project outcome.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">

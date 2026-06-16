@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Case Studies",
   description:
-    "Explore delivery highlights across CCTV, network infrastructure, and managed support programs shaped around measurable operational outcomes.",
+    "Explore Auxano case studies across ELV infrastructure, structured cabling, cybersecurity compliance, access control, surveillance, fire safety, and enterprise IT deployment.",
   path: "/case-studies",
 });
 
@@ -33,9 +33,10 @@ export default async function CaseStudiesPage() {
               Case studies built around operational change.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
-              See how Auxano plans, installs, documents, and supports critical
-              IT, security, and network environments for organizations that need
-              clearer visibility and stronger execution.
+              See how Auxano plans, installs, documents, and commissions
+              critical IT, ELV, security, fire safety, and network environments
+              for organizations that need stronger execution and reliable
+              handover.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink href="/book-consultation">
@@ -86,12 +87,12 @@ export default async function CaseStudiesPage() {
               {
                 icon: Signal,
                 title: "Infrastructure reliability",
-                body: "Network, endpoint, and support improvements are shown through before-and-after operating signals.",
+                body: "Structured cabling, fiber backbone, wireless, server room, and endpoint improvements are framed around long-term maintainability.",
               },
               {
                 icon: Workflow,
                 title: "Repeatable handover",
-                body: "Every story keeps challenge, solution, result, and metrics in the same order so new Sanity entries stay consistent.",
+                body: "Every story keeps challenge, solution, result, and metrics in the same order so buyers can compare project outcomes quickly.",
               },
             ].map((item) => (
               <article
@@ -121,15 +122,15 @@ export default async function CaseStudiesPage() {
               Browse delivery stories by environment, challenge, and result.
             </h2>
             <p className="mt-5 text-base leading-8 text-[var(--color-muted)]">
-              Each case study follows the same content pattern from Sanity, so
-              new entries publish into a clean layout without breaking the page.
+              Each case study is structured around the business need, delivery
+              scope, commissioned systems, and measurable project outcome.
             </p>
           </div>
 
           {featured ? (
-            <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="mt-10 grid items-stretch gap-5">
               <CaseStudyCard caseStudy={featured} featured />
-              <div className="grid gap-5">
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {remaining.map((caseStudy) => (
                   <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
                 ))}

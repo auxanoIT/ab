@@ -38,7 +38,7 @@ export const industryProfiles: IndustryProfile[] = [
       "Professional services firms",
       "Administrative and back-office operations",
     ],
-    relatedCaseStudySlug: "lagos-head-office-security-modernization",
+    relatedCaseStudySlug: "seflam-sgl-engineering-office-elv",
     ctaLabel: "Book an Office Infrastructure Consultation",
   }),
   buildIndustry({
@@ -65,7 +65,7 @@ export const industryProfiles: IndustryProfile[] = [
       "Diagnostic and imaging centers",
       "Multi-branch healthcare groups",
     ],
-    relatedCaseStudySlug: "private-clinic-network-refresh",
+    relatedCaseStudySlug: "cihp-headquarters-elv-infrastructure-abuja",
     ctaLabel: "Book a Healthcare Systems Consultation",
   }),
   buildIndustry({
@@ -170,7 +170,7 @@ export const industryProfiles: IndustryProfile[] = [
       "Distribution yards and industrial compounds",
       "Multi-bay logistics facilities",
     ],
-    relatedCaseStudySlug: "warehouse-rollout-with-centralized-visibility",
+    relatedCaseStudySlug: "wiocc-34-floor-it-elv-deployment",
     ctaLabel: "Book a Warehouse Infrastructure Consultation",
   }),
   buildIndustry({
