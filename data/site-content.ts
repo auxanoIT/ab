@@ -35,6 +35,7 @@ export const siteSettings: SiteSettings = {
 export const navigation: NavItem[] = [
   { label: "Solutions", href: "/services", kind: "solutions" },
   { label: "Industries", href: "/industries", kind: "industries" },
+  { label: "Case Studies", href: "/case-studies", kind: "link" },
   { label: "Blog", href: "/blog", kind: "link" },
   { label: "About", href: "/about", kind: "link" },
 ];
@@ -73,7 +74,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: {
       src: "/image/case-studies/cihp-headquarters-elv-infrastructure-abuja.webp",
-      alt: "Structured ELV cabling and fire suppression ready infrastructure for CIHP headquarters",
+      alt: "Structured network rack cabling for CIHP headquarters ELV infrastructure",
     },
   },
   {
@@ -109,7 +110,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: {
       src: "/image/case-studies/fringe-pci-dss-infrastructure-upgrade.webp",
-      alt: "PCI DSS aligned infrastructure upgrade with network security and access control systems",
+      alt: "Compliance and security infrastructure environment for Fringe PCI DSS upgrade",
     },
   },
   {
@@ -180,7 +181,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: {
       src: "/image/case-studies/cihp-stem-hub-relocation-ikeja.webp",
-      alt: "Relocated STEM hub IT infrastructure with rack network storage and access systems",
+      alt: "IT equipment relocation and data migration setup for CIHP STEM Hub",
     },
   },
   {
@@ -215,7 +216,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: {
       src: "/image/case-studies/wiocc-2nd-floor-elv-deployment.webp",
-      alt: "Integrated ELV infrastructure with surveillance access control fire alarm and network systems",
+      alt: "Fire alarm and safety layer for WIOCC 2nd floor ELV deployment",
     },
   },
   {
@@ -251,7 +252,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: {
       src: "/image/case-studies/cihp-stem-hub-elv-installation-2024.webp",
-      alt: "Education STEM hub ELV installation with network communication surveillance and safety systems",
+      alt: "IP telephony and communication infrastructure for CIHP STEM Hub ELV installation",
     },
   },
   {
@@ -286,7 +287,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: {
       src: "/image/case-studies/cihp-stem-hub-it-infrastructure-2023.webp",
-      alt: "Future ready STEM hub IT infrastructure with structured network and security systems",
+      alt: "LAN certification testing for CIHP STEM Hub IT infrastructure upgrade",
     },
   },
   {
@@ -322,7 +323,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: {
       src: "/image/case-studies/seflam-sgl-engineering-office-elv.webp",
-      alt: "Corporate engineering office ELV infrastructure with network access control CCTV and fire safety systems",
+      alt: "Server room cooling and ELV infrastructure for SEFLAM SGL Engineering office",
     },
   },
 ];

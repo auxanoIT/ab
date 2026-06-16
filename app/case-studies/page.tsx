@@ -48,18 +48,20 @@ export default async function CaseStudiesPage() {
               </ButtonLink>
             </div>
           </div>
-          <div className="relative min-h-[360px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/8 shadow-[0_32px_90px_rgba(0,0,0,0.26)]">
-            <Image
-              src="/image/service-details/door-access-dashboard.webp"
-              alt="Security operations dashboard used for case study delivery proof"
-              fill
-              priority
-              quality={56}
-              sizes="(min-width: 1024px) 52vw, 100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,18,32,0.18),rgba(11,18,32,0.68))]" />
-            <div className="absolute bottom-6 left-6 right-6 grid gap-3 rounded-[1.25rem] border border-white/10 bg-[rgba(11,18,32,0.7)] p-5 backdrop-blur md:grid-cols-3">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/8 shadow-[0_32px_90px_rgba(0,0,0,0.26)]">
+            <div className="relative min-h-[260px] sm:min-h-[340px] lg:min-h-[360px]">
+              <Image
+                src="/image/case-studies/enterprise-elv-integrated-hero.webp"
+                alt="Integrated enterprise ELV infrastructure used for case study delivery proof"
+                fill
+                priority
+                quality={56}
+                sizes="(min-width: 1024px) 52vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,18,32,0.18),rgba(11,18,32,0.68))]" />
+            </div>
+            <div className="grid gap-3 border-t border-white/10 bg-[rgba(11,18,32,0.78)] p-5 backdrop-blur sm:p-6 md:grid-cols-3 lg:absolute lg:bottom-6 lg:left-6 lg:right-6 lg:rounded-[1.25rem] lg:border lg:bg-[rgba(11,18,32,0.7)]">
               {[
                 ["Plan", "Map the risk and operating environment."],
                 ["Deploy", "Install the physical and digital layers."],
