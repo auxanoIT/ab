@@ -14,10 +14,17 @@ import {
 
 import { PartnerLogoMarquee } from "@/components/sections/partner-logo-marquee";
 import { ServiceCapabilityFlow } from "@/components/sections/service-capability-flow";
+import { ServiceSeoAnswerBlock } from "@/components/sections/service-seo-answer-block";
 import { Container } from "@/components/ui/container";
 import { JsonLd } from "@/components/ui/json-ld";
 import { getServiceBySlug, getServiceSlugs } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
+import {
+  buildServiceSeoDescription,
+  buildServiceSeoFaqs,
+  buildServiceSeoKeywords,
+  buildServiceSeoTitle,
+} from "@/lib/service-seo";
 import { absoluteUrl } from "@/lib/utils";
 import type {
   Service,
@@ -177,21 +184,12 @@ export async function generateMetadata({
   });
 
   return buildMetadata({
-    title: service.title,
-    description: service.summary,
+    title: buildServiceSeoTitle(service),
+    description: buildServiceSeoDescription(service),
     path: `/services/${service.slug}`,
     imagePath: heroImage.src,
     imageAlt: heroImage.alt,
-    keywords: [
-      service.title,
-      service.category,
-      ...service.industries,
-      ...service.highlights.slice(0, 3),
-      ...(service.capabilitySections?.flatMap((section) => [
-        section.navLabel,
-        section.title,
-      ]) ?? []),
-    ],
+    keywords: buildServiceSeoKeywords(service),
   });
 }
 
@@ -211,6 +209,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const capabilitySections =
     service.capabilitySections ??
     buildFallbackSections(service, heroImage.src, heroImage.alt);
+  const serviceFaqs = buildServiceSeoFaqs(service);
+  const serviceUrl = absoluteUrl(`/services/${service.slug}`);
+  const organizationId = `${absoluteUrl("/")}#organization`;
 
   return (
     <>
@@ -223,12 +224,53 @@ export default async function ServicePage({ params }: ServicePageProps) {
             serviceType: service.category,
             provider: {
               "@type": "Organization",
+              "@id": organizationId,
               name: "Auxano Solutions Technology Limited",
             },
-            areaServed: "Nigeria",
-            url: absoluteUrl(`/services/${service.slug}`),
-            description: service.summary,
+            areaServed: [
+              { "@type": "Country", name: "Nigeria" },
+              { "@type": "City", name: "Lagos" },
+              { "@type": "City", name: "Abuja" },
+              { "@type": "City", name: "Port Harcourt" },
+            ],
+            availableChannel: {
+              "@type": "ServiceChannel",
+              serviceUrl,
+              servicePhone: "+234 8062 218 546",
+            },
+            audience: service.industries.map((industry) => ({
+              "@type": "Audience",
+              audienceType: industry,
+            })),
+            url: serviceUrl,
+            description: buildServiceSeoDescription(service),
             image: absoluteUrl(heroImage.src),
+            termsOfService: absoluteUrl("/terms"),
+            serviceOutput: service.deliverables,
+            offers: {
+              "@type": "Offer",
+              availability: "https://schema.org/InStock",
+              areaServed: "Nigeria",
+              url: absoluteUrl("/book-consultation"),
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                priceCurrency: "NGN",
+                description:
+                  "Pricing is scoped after a site assessment, bill of materials, implementation plan, or support requirement review.",
+              },
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: serviceFaqs.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
           },
           {
             "@context": "https://schema.org",
@@ -292,6 +334,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       <ServiceCapabilityFlow service={service} sections={capabilitySections} />
+      <ServiceSeoAnswerBlock service={service} />
       <PartnerLogoMarquee />
     </>
   );

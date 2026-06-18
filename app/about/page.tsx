@@ -2,10 +2,18 @@ import { AboutGeneaInspired } from "@/components/sections/about-genea-inspired";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "About Auxano Solutions",
+  title: "About Auxano Solutions, IT and ELV Company in Nigeria",
   description:
-    "Auxano Solutions Technology Limited delivers reliable ICT infrastructure, security, managed support, and technical project delivery across Nigeria, North Africa, East Africa, and strategic partnerships across multiple markets",
+    "Auxano Solutions Technology Limited is a Nigerian IT and ELV solutions company delivering ICT infrastructure, CCTV, access control, fire alarm systems, networking, managed support, and technical project delivery.",
   path: "/about",
+  keywords: [
+    "about Auxano Solutions",
+    "IT company in Nigeria",
+    "ELV company in Lagos",
+    "ICT infrastructure company Nigeria",
+    "CCTV and access control company Nigeria",
+    "fire alarm systems company Lagos",
+  ],
 });
 
 export default function AboutPage() {

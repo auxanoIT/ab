@@ -3,15 +3,26 @@ import Image from "next/image";
 import { PartnerLogoMarquee } from "@/components/sections/partner-logo-marquee";
 import { ServiceCategoryCarousel } from "@/components/sections/service-category-carousel";
 import { Container } from "@/components/ui/container";
+import { JsonLd } from "@/components/ui/json-ld";
 import { getServices, getSolutionCategories } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
+import { absoluteUrl } from "@/lib/utils";
 import type { Service, ServiceCategory, SolutionCategory } from "@/lib/types";
 
 export const metadata = buildMetadata({
-  title: "Services",
+  title: "IT, ELV, CCTV, Fire Alarm, and Network Services in Nigeria",
   description:
-    "Explore Auxano's full service architecture across infrastructure, networking, hardware systems, software licensing, and managed advisory delivery.",
+    "Explore Auxano's IT infrastructure, CCTV, access control, fire alarm, networking, hardware, software licensing, managed IT support, and consultancy services in Lagos and across Nigeria.",
   path: "/services",
+  keywords: [
+    "IT services Nigeria",
+    "IT solutions company Lagos",
+    "CCTV installation Nigeria",
+    "fire alarm installation Lagos",
+    "network cabling company Nigeria",
+    "managed IT services Lagos",
+    "ELV contractor Nigeria",
+  ],
 });
 
 export const revalidate = 120;
@@ -108,15 +119,46 @@ export default async function ServicesPage() {
 
   return (
     <>
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Auxano IT, ELV, CCTV, Fire Alarm, and Network Services",
+            description:
+              "Auxano Solutions service catalog for IT infrastructure, physical security, fire safety, networking, hardware, software licensing, and managed IT support in Nigeria.",
+            url: absoluteUrl("/services"),
+            inLanguage: "en-NG",
+            provider: {
+              "@type": "Organization",
+              "@id": `${absoluteUrl("/")}#organization`,
+              name: "Auxano Solutions Technology Limited",
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "Auxano service catalog",
+            itemListElement: services.map((service, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: service.title,
+              url: absoluteUrl(`/services/${service.slug}`),
+              description: service.summary,
+            })),
+          },
+        ]}
+      />
       <section className="overflow-hidden bg-[linear-gradient(135deg,#355C9A_100%,#4E73B8_50%,#6C8FD6_100%)] text-white">
         <Container className="grid min-h-[calc(100vh-5rem)] gap-10 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-16">
           <div className="max-w-3xl">
             <h1 className="text-balance text-3xl font-semibold tracking-[-0.06em] sm:text-4xl lg:text-5xl">
-              Technology services built as one operating system.
+              IT, ELV, CCTV, fire alarm, and network services for Nigeria.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              Auxano delivers infrastructure, networking, hardware, software,
-              and IT support in one seamless service model.
+              Auxano delivers IT infrastructure, physical security, fire safety,
+              networking, hardware, software licensing, and managed support for
+              organizations in Lagos and across Nigeria.
             </p>
           </div>
 

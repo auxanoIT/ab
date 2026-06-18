@@ -12,7 +12,6 @@ import { CookieConsentManager } from "@/components/layout/cookie-consent-manager
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/ui/json-ld";
-import { siteSettings as fallbackSiteSettings } from "@/data/site-content";
 import {
   getFooterColumns,
   getIndustries,
@@ -22,16 +21,18 @@ import {
   getSiteSettings,
   getSolutionCategories,
 } from "@/lib/content";
-import type { SiteSettings } from "@/lib/types";
+import type { Service, SiteSettings } from "@/lib/types";
 import { absoluteUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl("/")),
   title: {
-    default: "Auxano Solutions | Enterprise IT, CCTV, and Network Infrastructure",
+    default:
+      "Auxano Solutions | IT, CCTV, Fire Alarm, and Network Services Nigeria",
     template: "%s | Auxano Solutions",
   },
-  description: fallbackSiteSettings.description,
+  description:
+    "Auxano Solutions is a Lagos-based IT solutions company serving Nigeria with CCTV, access control, fire alarm, network cabling, hardware, software licensing, and managed IT support.",
   applicationName: "Auxano Solutions",
   authors: [{ name: "Auxano Solutions Technology Limited" }],
   creator: "Auxano Solutions Technology Limited",
@@ -40,8 +41,9 @@ export const metadata: Metadata = {
     canonical: absoluteUrl("/"),
   },
   openGraph: {
-    title: "Auxano Solutions | Enterprise IT, CCTV, and Network Infrastructure",
-    description: fallbackSiteSettings.description,
+    title: "Auxano Solutions | IT, CCTV, Fire Alarm, and Network Services Nigeria",
+    description:
+      "IT infrastructure, CCTV, access control, fire alarm, network cabling, hardware, software licensing, and managed IT support for Nigerian organizations.",
     url: absoluteUrl("/"),
     siteName: "Auxano Solutions",
     locale: "en_NG",
@@ -57,8 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Auxano Solutions | Enterprise IT, CCTV, and Network Infrastructure",
-    description: fallbackSiteSettings.description,
+    title: "Auxano Solutions | IT, CCTV, Fire Alarm, and Network Services Nigeria",
+    description:
+      "Lagos-based IT solutions company serving Nigerian organizations with infrastructure, ELV, security, safety, and managed support.",
     images: [{ url: absoluteUrl("/opengraph-image"), alt: "Auxano Solutions" }],
   },
   robots: {
@@ -74,7 +77,50 @@ export const metadata: Metadata = {
   },
 };
 
-function buildSiteJsonLd(settings: SiteSettings) {
+const fallbackOfferNames = [
+  "IT infrastructure services",
+  "CCTV installation",
+  "Door access control",
+  "Fire alarm and safety systems",
+  "Network cabling and configuration",
+  "Managed IT services",
+  "IT consultancy and audit services",
+];
+
+function buildOfferCatalog(services: Service[]) {
+  const offers = services.length
+    ? services.map((service) => ({
+        name: service.title,
+        description: service.summary,
+        url: absoluteUrl(`/services/${service.slug}`),
+        category: service.category,
+      }))
+    : fallbackOfferNames.map((name) => ({
+        name,
+        description: `${name} in Lagos and across Nigeria.`,
+        url: absoluteUrl("/services"),
+        category: "Technology services",
+      }));
+
+  return {
+    "@type": "OfferCatalog",
+    name: "Auxano IT, ELV, Security, Safety, Network, Software, and Managed Support Services",
+    itemListElement: offers.map((offer) => ({
+      "@type": "Offer",
+      areaServed: "Nigeria",
+      itemOffered: {
+        "@type": "Service",
+        name: offer.name,
+        description: offer.description,
+        category: offer.category,
+        url: offer.url,
+        areaServed: "Nigeria",
+      },
+    })),
+  };
+}
+
+function buildSiteJsonLd(settings: SiteSettings, services: Service[]) {
   const organizationId = `${absoluteUrl("/")}#organization`;
 
   return {
@@ -91,6 +137,16 @@ function buildSiteJsonLd(settings: SiteSettings) {
         description: settings.description,
         email: settings.email,
         telephone: settings.phone,
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: settings.phone,
+            email: settings.email,
+            contactType: "sales and technical consultation",
+            areaServed: "NG",
+            availableLanguage: ["English"],
+          },
+        ],
         address: {
           "@type": "PostalAddress",
           streetAddress: settings.address,
@@ -102,15 +158,36 @@ function buildSiteJsonLd(settings: SiteSettings) {
             "@type": "Country",
             name: "Nigeria",
           },
+          {
+            "@type": "City",
+            name: "Lagos",
+          },
+          {
+            "@type": "City",
+            name: "Abuja",
+          },
+          {
+            "@type": "City",
+            name: "Port Harcourt",
+          },
         ],
         knowsAbout: [
           "Managed IT support",
           "CCTV installation",
+          "Access control installation",
+          "Fire alarm system installation",
+          "Fire safety systems",
+          "Structured LAN cabling",
           "Network infrastructure",
           "Access control systems",
+          "ELV systems",
+          "Server and storage deployment",
+          "Software licensing",
+          "Firewall licenses",
           "IT audit and compliance",
           "Business continuity",
         ],
+        hasOfferCatalog: buildOfferCatalog(services),
       },
       {
         "@type": "WebSite",
@@ -166,7 +243,7 @@ export default async function RootLayout({
           <main className="flex-1">{children}</main>
           <SiteFooter columns={footerColumns} settings={siteSettings} />
         </div>
-        <JsonLd data={buildSiteJsonLd(siteSettings)} />
+        <JsonLd data={buildSiteJsonLd(siteSettings, services)} />
         <CookieConsentManager />
       </body>
     </html>

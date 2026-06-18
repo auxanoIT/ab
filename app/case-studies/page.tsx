@@ -8,10 +8,18 @@ import { getCaseStudies } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Case Studies",
+  title: "IT, ELV, CCTV, and Fire Alarm Case Studies in Nigeria",
   description:
-    "Explore Auxano case studies across ELV infrastructure, structured cabling, cybersecurity compliance, access control, surveillance, fire safety, and enterprise IT deployment.",
+    "Explore Auxano case studies in Nigeria across ELV infrastructure, structured cabling, cybersecurity compliance, access control, CCTV surveillance, fire alarm, and enterprise IT deployment.",
   path: "/case-studies",
+  keywords: [
+    "IT case studies Nigeria",
+    "ELV project case studies Lagos",
+    "CCTV installation case studies Nigeria",
+    "fire alarm project case studies Nigeria",
+    "network cabling case studies Lagos",
+    "enterprise IT deployment Nigeria",
+  ],
 });
 
 export const revalidate = 120;

@@ -9,13 +9,23 @@ import {
 import { LeadForm } from "@/components/forms/lead-form";
 import { PartnerLogoMarquee } from "@/components/sections/partner-logo-marquee";
 import { Container } from "@/components/ui/container";
+import { JsonLd } from "@/components/ui/json-ld";
 import { buildMetadata } from "@/lib/seo";
+import { absoluteUrl } from "@/lib/utils";
 
 export const metadata = buildMetadata({
-  title: "Book Consultation",
+  title: "Book IT, CCTV, Fire Alarm, and Network Consultation in Nigeria",
   description:
-    "Book a consultation with Auxano Solutions to scope managed IT, CCTV, network infrastructure, access control, or compliance work.",
+    "Book a consultation with Auxano Solutions in Lagos to scope IT infrastructure, CCTV, access control, fire alarm, network cabling, cybersecurity, software licensing, or managed IT support in Nigeria.",
   path: "/book-consultation",
+  keywords: [
+    "book IT consultation Nigeria",
+    "IT infrastructure consultation Lagos",
+    "CCTV installation consultation Nigeria",
+    "fire alarm installation consultation Lagos",
+    "network cabling consultation Nigeria",
+    "managed IT support consultation Lagos",
+  ],
 });
 
 const stats = [
@@ -39,6 +49,36 @@ const stats = [
 export default function BookConsultationPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Book IT, CCTV, Fire Alarm, and Network Consultation in Nigeria",
+            url: absoluteUrl("/book-consultation"),
+            description:
+              "Book a consultation with Auxano Solutions to scope IT infrastructure, CCTV, access control, fire alarm, network cabling, cybersecurity, software licensing, or managed IT support in Nigeria.",
+            about: [
+              "IT infrastructure consultation",
+              "CCTV installation consultation",
+              "Access control consultation",
+              "Fire alarm system consultation",
+              "Network cabling consultation",
+              "Managed IT support consultation",
+            ],
+            provider: {
+              "@type": "Organization",
+              "@id": `${absoluteUrl("/")}#organization`,
+              name: "Auxano Solutions Technology Limited",
+            },
+            potentialAction: {
+              "@type": "CommunicateAction",
+              target: absoluteUrl("/book-consultation"),
+              name: "Request a technical consultation",
+            },
+          },
+        ]}
+      />
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fbff_0%,#eef5ff_100%)] py-12 sm:py-16 lg:py-20">
         <div className="pointer-events-none absolute left-0 top-0 hidden h-56 w-56 opacity-55 [background-image:radial-gradient(#90b7f8_1.3px,transparent_1.3px)] [background-size:15px_15px] lg:block" />
 
