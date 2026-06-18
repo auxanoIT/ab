@@ -360,8 +360,8 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         <Container>
           <LeadForm
             context="consultation"
-            title="Have questions? We can help"
-            description={`Tell Auxano what your ${industry.title.toLowerCase()} environment needs to solve, and the team can shape the right consultation path.`}
+            title="Plan a stronger environment"
+            description={`Share the project goal, support requirement, or risk inside your ${industry.title.toLowerCase()} environment. Auxano will review the brief and recommend the right next step.`}
             className="mx-auto max-w-5xl rounded-lg"
             headingAlign="center"
             showEyebrow={false}

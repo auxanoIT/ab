@@ -89,24 +89,24 @@ export function buildServiceSeoFaqs(service: Service): ServiceSeoFaq[] {
 
   return [
     {
-      question: `Who provides ${serviceName} in Nigeria?`,
-      answer: `Auxano Solutions Technology Limited provides ${serviceName} in Lagos and across Nigeria for organizations that need planned deployment, reliable installation, documented handover, and ongoing technical support.`,
+      question: `How does Auxano deliver ${serviceName}?`,
+      answer: `Auxano begins with the operating environment, confirms the technical scope, then handles planning, supply, installation, testing, commissioning, documentation, and support handover as one coordinated delivery process.`,
     },
     {
-      question: `What does Auxano include in ${serviceName}?`,
-      answer: `The service covers assessment, solution design, supply or configuration, installation, testing, commissioning, and operational documentation. Key scope areas include ${primaryCapabilities || service.summary}.`,
+      question: `What is included in the project scope?`,
+      answer: `Each scope is shaped around the site, risk level, users, devices, and long-term support needs. Core delivery areas include ${primaryCapabilities || service.summary}.`,
     },
     {
-      question: `Is ${serviceName} available for businesses in Lagos, Abuja, and other Nigerian cities?`,
-      answer: `Yes. Auxano supports projects in Lagos, Abuja, Port Harcourt, and other Nigerian locations through site assessment, project planning, deployment teams, remote support, and post-installation handover.`,
+      question: `Can Auxano support multiple Nigerian locations?`,
+      answer: `Yes. Auxano supports single-site and multi-site environments in Lagos, Abuja, Port Harcourt, and other Nigerian locations, with planning and documentation that keep deployment and future support consistent.`,
     },
     {
-      question: `Which industries use ${serviceName}?`,
-      answer: `Auxano commonly supports ${firstIndustries || "corporate offices, healthcare, education, financial services, and multi-site operations"} with ${serviceName}, adapting the scope to each site's uptime, security, compliance, and support requirements.`,
+      question: `Which environments is this service suited for?`,
+      answer: `This service is suited for ${firstIndustries || "corporate offices, healthcare, education, financial services, and multi-site operations"}, with the final design adapted to each site's uptime, security, compliance, and support requirements.`,
     },
     {
-      question: `What should a client receive after a ${serviceName} project?`,
-      answer: `A completed project should leave the environment easier to operate and support. Typical handover items include ${primaryDeliverables || "configuration records, test results, user guidance, support notes, and warranty or renewal information"}.`,
+      question: `What happens at handover?`,
+      answer: `Handover is treated as part of the work, not an afterthought. Typical handover items include ${primaryDeliverables || "configuration records, test results, user guidance, support notes, and warranty or renewal information"}.`,
     },
   ];
 }
@@ -115,10 +115,10 @@ export function buildServiceSeoQuestions(service: Service) {
   const serviceName = service.title.toLowerCase();
 
   return [
-    `best ${serviceName} company in Nigeria`,
-    `${serviceName} installation in Lagos`,
-    `${serviceName} provider near me`,
-    `${serviceName} for business offices in Nigeria`,
-    `${serviceName} cost and consultation in Nigeria`,
+    `Can Auxano deliver ${serviceName} for business sites in Nigeria?`,
+    `What is included in ${serviceName}?`,
+    `How does Auxano scope and hand over ${serviceName}?`,
+    `Can ${serviceName} support offices in Lagos, Abuja, and Port Harcourt?`,
+    `How do I book a consultation for ${serviceName}?`,
   ];
 }

@@ -25,7 +25,7 @@ export async function GET() {
   const serviceLines = services.flatMap((service) => [
     markdownLink(service.title, `/services/${service.slug}`),
     `  - ${buildServiceSeoDescription(service)}`,
-    `  - Search intents: ${buildServiceSeoQuestions(service).join("; ")}.`,
+    `  - Client questions: ${buildServiceSeoQuestions(service).join("; ")}.`,
     `  - Category: ${service.category}.`,
   ]);
 
@@ -65,7 +65,7 @@ export async function GET() {
     "- Ikeja",
     "- Victoria Island",
     "",
-    "## Buying Questions Auxano Answers",
+    "## Client Questions Auxano Answers",
     "- Who is a reliable IT solutions company in Nigeria?",
     "- Which company installs CCTV, access control, and fire alarm systems in Lagos?",
     "- Who provides network cabling and structured LAN cabling in Nigeria?",

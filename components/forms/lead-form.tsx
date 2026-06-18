@@ -29,7 +29,7 @@ const serviceInterests = [
 export function LeadForm({
   context,
   title = "Start the conversation",
-  description = "Tell Auxano what needs attention and the team can shape the next step around your environment.",
+  description = "Share the environment, issue, or project goal. Auxano will review the brief and recommend the right next step.",
   className,
   headingAlign = "left",
   showEyebrow = true,

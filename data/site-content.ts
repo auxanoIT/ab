@@ -716,7 +716,7 @@ export const marketingPages: MarketingPage[] = [
             description:
               "Reliable IT infrastructure built for performance, scalability, and long-term business growth.",
             imageSrc: "/image/IT%20Infrastructure.png",
-            imageAlt: "IT Infrastructure service card placeholder",
+            imageAlt: "IT infrastructure systems for reliable business operations",
             ctaLabel: "Learn more",
             ctaHref: "/services#infrastructure",
           },
@@ -736,7 +736,7 @@ export const marketingPages: MarketingPage[] = [
             description:
               "Fast, secure networks that keep your business connected and operating without interruption.",
             imageSrc: "/image/networking.png",
-            imageAlt: "Networking service card placeholder",
+            imageAlt: "Business networking infrastructure connecting teams and devices",
             ctaLabel: "Learn more",
             ctaHref: "/services#networking",
           },
@@ -746,7 +746,7 @@ export const marketingPages: MarketingPage[] = [
             description:
               "Business-grade computers and servers for speed, reliability, and storage.",
             imageSrc: "/image/computer_and_server.png",
-            imageAlt: "Computers and servers service card placeholder",
+            imageAlt: "Business computers and servers prepared for workplace use",
             ctaLabel: "Learn more",
             ctaHref: "/services#hardware-systems",
           },
@@ -756,7 +756,7 @@ export const marketingPages: MarketingPage[] = [
             description:
               "Licensed software that keeps your business secure, compliant, and productive.",
             imageSrc: "/image/software_and_licenses.jpg",
-            imageAlt: "Software and licenses service card placeholder",
+            imageAlt: "Licensed business software and security applications",
             ctaLabel: "Learn more",
             ctaHref: "/services#software-licenses",
           },
@@ -766,7 +766,7 @@ export const marketingPages: MarketingPage[] = [
             description:
               "End-to-end IT support to keep your systems stable, secure, and optimized daily.",
             imageSrc: "/image/It_management.jpg",
-            imageAlt: "IT Management service card placeholder",
+            imageAlt: "Managed IT support environment with operational monitoring",
             ctaLabel: "Learn more",
             ctaHref: "/services/it-managed-services-staff-outsourcing",
           },
@@ -1063,7 +1063,7 @@ export const marketingPages: MarketingPage[] = [
       },
       {
         _type: "ctaBand",
-        eyebrow: "Lead magnet",
+        eyebrow: "Consultation",
         title: "Let’s design the right IT solution for your business.",
         description:
           "Partner with Auxano to deploy reliable infrastructure, strengthen security, and create technology systems built for long-term growth.",
@@ -1115,7 +1115,7 @@ export const marketingPages: MarketingPage[] = [
         content: [
           "Auxano Solutions Technology Limited works across infrastructure, networking, hardware systems, software licensing, and managed advisory support. The company is built around doing technical work properly from the beginning rather than treating quality as a later correction step.",
           "That operating view matters because surveillance depends on the network, devices depend on clean setup, licensing depends on compliance discipline, and support quality shapes what happens after deployment.",
-          "The new website positions Auxano like a serious technical partner: clear, structured, and commercially credible.",
+          "Clients get a serious technical partner with clear scoping, structured execution, and commercially credible handover.",
         ],
       },
     ],

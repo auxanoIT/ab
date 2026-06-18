@@ -137,11 +137,11 @@ export default function BookConsultationPage() {
                 </div>
                 <div>
                   <h2 className="text-lg font-semibold text-[var(--color-ink)]">
-                    No technical expertise required.
+                    Start with the outcome you need.
                   </h2>
                   <p className="mt-2 max-w-xl text-sm leading-7 text-[var(--color-ink)]">
-                    Tell us what you need, and our team will recommend the right
-                    solution for your environment.
+                    Share the site, challenge, or business goal. Auxano will
+                    translate it into a practical technical scope.
                   </p>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default function BookConsultationPage() {
             <LeadForm
               context="consultation"
               title="Talk to an Auxano specialist"
-              description="Tell us about your project, infrastructure needs, or operational challenges. Our team will review your request and recommend the right next steps."
+              description="Share the project location, required systems, timeline, and any existing issues. Our team will review the request and respond with a practical way forward."
               className="border-0 bg-transparent p-0 shadow-none"
               showEyebrow={false}
               submitLabel="Book Consultation"

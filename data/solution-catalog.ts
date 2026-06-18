@@ -24,7 +24,7 @@ const categoryCardImages: Record<
 > = {
   Infrastructure: {
     src: "/placeholders/infrastructure-card.svg",
-    alt: "Infrastructure service placeholder graphic",
+    alt: "Integrated infrastructure systems graphic",
   },
   "Fire Alarm & Safety": {
     src: "/image/service-details/fire-alarm-hero-call-point.webp",
@@ -32,19 +32,19 @@ const categoryCardImages: Record<
   },
   Networking: {
     src: "/placeholders/networking-card.svg",
-    alt: "Networking service placeholder graphic",
+    alt: "Business networking systems graphic",
   },
   "Hardware Systems": {
     src: "/placeholders/hardware-systems-card.svg",
-    alt: "Hardware systems service placeholder graphic",
+    alt: "Business hardware systems graphic",
   },
   "Software & Licenses": {
     src: "/placeholders/software-licenses-card.svg",
-    alt: "Software and licenses service placeholder graphic",
+    alt: "Software licensing and security systems graphic",
   },
   "Managed & Advisory": {
     src: "/placeholders/managed-advisory-card.svg",
-    alt: "Managed and advisory service placeholder graphic",
+    alt: "Managed IT and advisory services graphic",
   },
 };
 
@@ -74,7 +74,7 @@ export const solutionCategories: SolutionCategory[] = [
       "From access control and CCTV through structured cabling and data-centre readiness, this category covers the physical and operational backbone of critical environments.",
     featuredImage: {
       src: "/placeholders/infrastructure-large.svg",
-      alt: "Infrastructure category placeholder image",
+      alt: "Integrated infrastructure systems for secure business facilities",
     },
     serviceSlugs: [
       "door-access-control",
@@ -101,7 +101,7 @@ export const solutionCategories: SolutionCategory[] = [
       "This category covers network strategy, documentation, installation, performance, and business communications so the environment scales cleanly.",
     featuredImage: {
       src: "/placeholders/networking-large.svg",
-      alt: "Networking category placeholder image",
+      alt: "Structured business network connecting users devices and applications",
     },
     serviceSlugs: [
       "network-design-with-diagram",
@@ -126,7 +126,7 @@ export const solutionCategories: SolutionCategory[] = [
       "This category covers end-user devices, server systems, storage, print infrastructure, and the professional setup needed to make them reliable.",
     featuredImage: {
       src: "/placeholders/hardware-systems-large.svg",
-      alt: "Hardware systems category placeholder image",
+      alt: "Business computers servers storage and printer systems",
     },
     serviceSlugs: [
       "desktop-laptop-sales",
@@ -149,7 +149,7 @@ export const solutionCategories: SolutionCategory[] = [
       "This category covers the software layer of the environment, from security and operating systems to cloud subscriptions and application licensing.",
     featuredImage: {
       src: "/placeholders/software-licenses-large.svg",
-      alt: "Software and licenses category placeholder image",
+      alt: "Licensed business software security and cloud applications",
     },
     serviceSlugs: [
       "firewall-sales-licenses",
@@ -175,7 +175,7 @@ export const solutionCategories: SolutionCategory[] = [
       "This category covers ongoing technical support, managed operations, consultancy, audits, staffing support, and structured project delivery.",
     featuredImage: {
       src: "/placeholders/managed-advisory-large.svg",
-      alt: "Managed and advisory category placeholder image",
+      alt: "Managed IT support and advisory operations environment",
     },
     serviceSlugs: [
       "it-technical-services",
@@ -236,7 +236,7 @@ export const services: Service[] = [
     detailTitle:
       "Door access systems built around control, proof, and clean daily operation.",
     detailDescription:
-      "This delivery model turns the PDF promise into a practical access-control scope: credential strategy, centralized administration, traceable entry records, and integration with the wider security environment.",
+      "Auxano designs access-control projects around credential strategy, centralized administration, traceable entry records, and integration with the wider security environment.",
     capabilitySections: [
       {
         id: "credential-entry",
@@ -306,7 +306,7 @@ export const services: Service[] = [
         title: "Access control tied back to the wider surveillance picture.",
         lead: "The front door becomes more valuable when entry events and security visibility are planned together.",
         body: [
-          "The PDF calls out CCTV integration for a reason: access events become stronger when teams can connect a door action to the relevant video context.",
+          "Access events become stronger when teams can connect a door action to the relevant video context.",
           "Auxano plans the handoff between access control and surveillance so the security stack works as one coordinated environment rather than isolated tools.",
         ],
         points: [
@@ -353,7 +353,7 @@ export const services: Service[] = [
     detailTitle:
       "Surveillance designed for visibility, retention, and usable response.",
     detailDescription:
-      "The PDF positions CCTV as a full-service scope, not a camera-only purchase. The page now explains the operating logic behind coverage design, remote review, storage sizing, and lifecycle support.",
+      "Auxano delivers CCTV as a full service, not a camera-only purchase: coverage design, remote review, storage sizing, commissioning, and lifecycle support stay connected.",
     capabilitySections: [
       {
         id: "camera-coverage",
@@ -423,7 +423,7 @@ export const services: Service[] = [
         navLabel: "Lifecycle",
         title:
           "Site survey, installation, commissioning, and maintenance handled as one chain.",
-        lead: "The PDF makes the point clearly: one team should own the route from survey to long-term support.",
+        lead: "One accountable team should own the route from survey to long-term support.",
         body: [
           "That single delivery chain reduces design drift, missed handover details, and fragmented accountability after installation.",
           "It also gives the client a clearer path for additions, troubleshooting, and maintenance planning after go-live.",
@@ -678,7 +678,7 @@ export const services: Service[] = [
     detailTitle:
       "Structured cabling built to be testable, traceable, and supportable.",
     detailDescription:
-      "The PDF emphasizes that cabling should not be improvised. This flow turns that into a commercial standard: correct media selection, disciplined routing, certification, and handover documentation.",
+      "Structured cabling should be planned, routed, tested, certified, and documented so the physical layer stays supportable over time.",
     capabilitySections: [
       {
         id: "right-media",
@@ -729,7 +729,7 @@ export const services: Service[] = [
           "Every run tested and documented before the job is treated as complete.",
         lead: "Proof matters more than assumptions when the physical layer is meant to support serious operations.",
         body: [
-          "The PDF specifically references Fluke-certified testing. That proof closes the gap between an installed cable and a verified cable.",
+          "Fluke-certified testing closes the gap between an installed cable and a verified cable.",
           "Testing reports help commissioning teams, internal IT, and future contractors understand exactly what was delivered.",
         ],
         points: [
@@ -802,7 +802,7 @@ export const services: Service[] = [
     detailTitle:
       "Infrastructure readiness shaped around uptime, protection, and environmental control.",
     detailDescription:
-      "The PDF frames data centre work as a reliability discipline. This page now expands the four pillars behind that promise: room build-out, power continuity, cooling, and environmental monitoring.",
+      "Auxano treats data centre work as a reliability discipline built around room readiness, power continuity, cooling, and environmental monitoring.",
     capabilitySections: [
       {
         id: "server-room-buildout",
@@ -874,7 +874,7 @@ export const services: Service[] = [
           "Environmental alerts for temperature, humidity, and intrusion risks.",
         lead: "A data centre should report its own early-warning signals before a small issue becomes downtime.",
         body: [
-          "The PDF highlights temperature, humidity, and intrusion alerts. Those signals create a tighter operating loop around infrastructure health and physical risk.",
+          "Temperature, humidity, and intrusion alerts create a tighter operating loop around infrastructure health and physical risk.",
           "Monitoring extends the service from build quality into ongoing awareness.",
         ],
         points: [
@@ -921,7 +921,7 @@ export const services: Service[] = [
     detailTitle:
       "Automated gates and sliding doors built for secure, controlled movement.",
     detailDescription:
-      "The PDF frames this service as secure, smart entry that operates seamlessly. This page expands that into a practical delivery story covering motorized gates, car park barriers, sensor-triggered doors, and remote control with safety protections built in.",
+      "Auxano delivers secure, smart entry systems across motorized gates, car park barriers, sensor-triggered doors, and remote control with safety protections built in.",
     capabilitySections: [
       {
         id: "swing-sliding-gates",
@@ -1039,7 +1039,7 @@ export const services: Service[] = [
     detailTitle:
       "Original IT hardware sourced, warranted, and ready for deployment.",
     detailDescription:
-      "The PDF positions this service around genuine equipment and deployment readiness. This page breaks that down into role-matched devices, server supply, supporting accessories, and bulk procurement for organizations.",
+      "Auxano sources genuine IT equipment and prepares it for real deployment through role-matched devices, server supply, supporting accessories, and organized bulk procurement.",
     capabilitySections: [
       {
         id: "desktops-laptops-workstations",
@@ -1156,7 +1156,7 @@ export const services: Service[] = [
     detailTitle:
       "Hardware repair handled with diagnosis, transparency, and recovery in mind.",
     detailDescription:
-      "The PDF emphasizes fast, honest repairs and transparent diagnosis before work begins. This flow turns that promise into repair scopes for user devices, servers, printers, data recovery, and preventive maintenance.",
+      "Auxano handles repairs through transparent diagnosis, practical recovery planning, and clear repair scopes for user devices, servers, printers, data recovery, and preventive maintenance.",
     capabilitySections: [
       {
         id: "laptop-desktop-repair",
@@ -1279,7 +1279,7 @@ export const services: Service[] = [
     detailTitle:
       "Critical consumables supplied quickly for clean, supportable infrastructure.",
     detailDescription:
-      "The PDF describes this as the right supplies when you need them. This page expands the consumables scope into patching, rack hardware, fibre accessories, and cable-management kits for ongoing infrastructure work.",
+      "Auxano supplies the consumables that keep infrastructure work moving, including patching, rack hardware, fibre accessories, and cable-management kits for ongoing site work.",
     capabilitySections: [
       {
         id: "patch-cables",
@@ -1403,7 +1403,7 @@ export const services: Service[] = [
     detailTitle:
       "Audio visual and livestreaming delivery planned down to the last detail.",
     detailDescription:
-      "The PDF frames AV as an end-to-end event and room service: set up, manage live, and pack up while the client focuses on the audience. This page turns that into conference room AV, event production, livestreaming, and LED display capability sections.",
+      "Auxano handles AV and livestreaming as a complete room or event service: set up, live operation, pack-down, and the production details that let the audience experience run smoothly.",
     capabilitySections: [
       {
         id: "conference-room-av",
@@ -1413,7 +1413,7 @@ export const services: Service[] = [
         lead: "Meeting rooms need audio, display, and conferencing systems that work cleanly for everyday users.",
         body: [
           "Auxano designs and installs projectors, displays, PA systems, microphones, speakers, and video conferencing tools around the room size and use case.",
-          "The aim is a room that teams can use without technical friction before every meeting.",
+          "The aim is a room that teams can use quickly and confidently before every meeting.",
         ],
         points: [
           "Projectors, displays, and PA systems",
@@ -1521,7 +1521,7 @@ export const services: Service[] = [
     detailTitle:
       "Network design that gives every engineer a clear path before deployment starts.",
     detailDescription:
-      "The PDF positions network design as the starting point for fast, secure, correctly configured networking. This page expands that into site survey, diagramming, IP planning, and bill-of-materials discipline.",
+      "Network design starts with site reality: survey findings, diagrams, IP planning, and a bill of materials that guides fast, secure, correctly configured deployment.",
     capabilitySections: [
       {
         id: "network-site-survey",
@@ -1642,7 +1642,7 @@ export const services: Service[] = [
     detailTitle:
       "Network architecture planning aligned to strategy, resilience, and migration realities.",
     detailDescription:
-      "The PDF emphasizes independent advice, no vendor bias, and no sales agenda. This page expands that into audit, architecture recommendation, redundancy planning, and migration sequencing.",
+      "Auxano provides network architecture advice with independent review, practical redundancy planning, migration sequencing, and recommendations that fit the operating environment.",
     capabilitySections: [
       {
         id: "current-state-audit",
@@ -1758,7 +1758,7 @@ export const services: Service[] = [
     detailTitle:
       "Network cabling installed, tested, certified, and documented.",
     detailDescription:
-      "The PDF defines network cabling as a proof-led service: every run tested, certified, and documented. This page expands horizontal cabling, data-centre cabling, conduit/trunking, and certification reports.",
+      "Network cabling is delivered as a proof-led service: every run should be installed, tested, certified, documented, and ready for future troubleshooting.",
     capabilitySections: [
       {
         id: "horizontal-backbone-cabling",
@@ -1881,7 +1881,7 @@ export const services: Service[] = [
     detailTitle:
       "Network configurations built for performance, security, reliability, and handover clarity.",
     detailDescription:
-      "The PDF splits this service across enterprise, small business, home office, and documentation needs. This page turns those into practical configuration sections with the same sticky capability flow.",
+      "Network configuration work is shaped around the environment, from enterprise and small-business networks to home-office setups and documentation-led handover.",
     capabilitySections: [
       {
         id: "enterprise-network-config",
@@ -2000,7 +2000,7 @@ export const services: Service[] = [
     detailTitle:
       "Genuine network equipment specified around the right need, price, and deployment plan.",
     detailDescription:
-      "The PDF lists firewalls, routers, switches, wireless access points, and accessories. This page expands each supply category so buyers understand how Auxano helps spec and source the right equipment.",
+      "Auxano specifies and supplies firewalls, routers, switches, wireless access points, and accessories around the right need, budget, and deployment plan.",
     capabilitySections: [
       {
         id: "network-firewalls",
@@ -2123,7 +2123,7 @@ export const services: Service[] = [
     detailTitle:
       "Office telephone systems that reduce call cost and modernize communication.",
     detailDescription:
-      "The PDF presents IP PBX as a practical upgrade: on-premises or cloud-hosted systems, SIP trunking, IP phones, softphones, and smart business features. This page turns each item into a clear service section.",
+      "IP PBX gives organizations a practical path to modern calling through on-premises or cloud-hosted systems, SIP trunking, IP phones, softphones, and smart business features.",
     capabilitySections: [
       {
         id: "ip-pbx-deployment",
@@ -2240,7 +2240,7 @@ export const services: Service[] = [
     detailTitle:
       "Desktop and laptop procurement matched to the role, budget, and deployment plan.",
     detailDescription:
-      "The PDF frames this service as original hardware with professional setup and ongoing support. This page expands the sales scope into device selection, role fit, bulk procurement, and accessory readiness.",
+      "Desktop and laptop procurement is handled as a deployment-ready service covering device selection, role fit, bulk procurement, professional setup, and accessory readiness.",
     capabilitySections: [
       {
         id: "desktop-laptop-workstations",
@@ -2359,7 +2359,7 @@ export const services: Service[] = [
     detailTitle:
       "Computer installation and setup that makes every device ready from day one.",
     detailDescription:
-      "The PDF breaks this service into OS and software, network and email connection, security hardening, and data migration. This page expands those steps into a professional setup flow for one PC or a hundred.",
+      "Computer setup covers operating systems, business software, network and email connection, security hardening, and data migration for one device or a full fleet.",
     capabilitySections: [
       {
         id: "os-software-setup",
@@ -2483,7 +2483,7 @@ export const services: Service[] = [
     detailTitle:
       "Servers supplied, installed, diagnosed, repaired, and maintained around the workload.",
     detailDescription:
-      "The PDF breaks server work into new server supply, hardware repair, RAID configuration, and OS deployment. This page expands those into an infrastructure-ready service flow.",
+      "Server work covers new server supply, hardware repair, RAID configuration, operating-system deployment, and workload-ready installation.",
     capabilitySections: [
       {
         id: "new-server-supply",
@@ -2606,7 +2606,7 @@ export const services: Service[] = [
     detailTitle:
       "Server storage provisioned for collaboration, performance, redundancy, and growth.",
     detailDescription:
-      "The PDF defines storage as scalable and protected from day one. This page expands NAS, SAN, RAID deployment, and capacity planning into a complete storage delivery story.",
+      "Storage is provisioned for scale and protection from day one, covering NAS, SAN, RAID deployment, capacity planning, and supportable documentation.",
     capabilitySections: [
       {
         id: "nas-solutions",
@@ -2724,7 +2724,7 @@ export const services: Service[] = [
     detailTitle:
       "Printers supplied, networked, managed, and tested before handover.",
     detailDescription:
-      "The PDF breaks printer services into office printers, label and receipt printers, network setup, and print management. This page expands each item into a practical printer delivery flow.",
+      "Printer services cover office printers, label and receipt printers, network setup, print management, testing, and user-ready handover.",
     capabilitySections: [
       {
         id: "office-printer-supply",
@@ -2842,7 +2842,7 @@ export const services: Service[] = [
     detailTitle:
       "Firewall platforms licensed, configured, and managed for the environment they protect.",
     detailDescription:
-      "The PDF positions firewall licensing as the first line of defence, properly configured. This flow breaks the service into platform fit, enterprise-grade options, and renewal management so protection does not lapse.",
+      "Firewall licensing is delivered with platform fit, enterprise-grade configuration, renewal management, and practical controls so protection does not lapse.",
     capabilitySections: [
       {
         id: "firewall-performance-value",
@@ -2959,7 +2959,7 @@ export const services: Service[] = [
     detailTitle:
       "Endpoint protection licensed, deployed, and monitored across the business fleet.",
     detailDescription:
-      "The PDF emphasizes that Auxano does not just sell a key. This page expands antivirus licensing into vendor fit, central console setup, ransomware protection, and deployment across devices.",
+      "Auxano does not stop at selling an antivirus key; the service covers vendor fit, central console setup, ransomware protection, deployment, and monitoring across devices.",
     capabilitySections: [
       {
         id: "antivirus-vendor-fit",
@@ -3081,7 +3081,7 @@ export const services: Service[] = [
     detailTitle:
       "Genuine Windows licensing with compliance visibility and clean documentation.",
     detailDescription:
-      "The PDF frames Windows licensing around secure, updated, compliant systems. This page expands the service into edition selection, volume licensing, documentation, and audit clarity.",
+      "Windows licensing is planned around secure, updated, compliant systems with edition selection, volume licensing, documentation, and audit clarity.",
     capabilitySections: [
       {
         id: "windows-editions",
@@ -3204,7 +3204,7 @@ export const services: Service[] = [
     detailTitle:
       "Server operating systems licensed, installed, hardened, and aligned to their infrastructure role.",
     detailDescription:
-      "The PDF names Windows Server, Red Hat, Ubuntu Server LTS, and VMware vSphere/ESXi. This page expands each platform option into a practical deployment and licensing story.",
+      "Server operating-system licensing covers Windows Server, Red Hat, Ubuntu Server LTS, VMware vSphere/ESXi, and the deployment decisions each platform requires.",
     capabilitySections: [
       {
         id: "windows-server-platform",
@@ -3326,7 +3326,7 @@ export const services: Service[] = [
     detailTitle:
       "Database software licensed, deployed, tuned, backed up, and managed for availability.",
     detailDescription:
-      "The PDF groups database licensing around SQL Server, open-source relational databases, MongoDB, and backup/recovery configuration. This flow expands each database path into a practical delivery section.",
+      "Database software licensing and deployment covers SQL Server, open-source relational databases, MongoDB, backup planning, recovery configuration, and availability discipline.",
     capabilitySections: [
       {
         id: "microsoft-sql-server",
@@ -3442,7 +3442,7 @@ export const services: Service[] = [
     detailTitle:
       "Cloud services licensed, migrated, configured, and optimized by people who understand the platform.",
     detailDescription:
-      "The PDF breaks cloud services into Microsoft 365, Google Workspace, Azure and AWS, and subscription management. This page turns that into an operational licensing and configuration flow.",
+      "Cloud service delivery covers Microsoft 365, Google Workspace, Azure, AWS, migration support, configuration, optimization, and subscription management.",
     capabilitySections: [
       {
         id: "microsoft-365-services",
@@ -3565,7 +3565,7 @@ export const services: Service[] = [
     detailTitle:
       "Business application licenses sourced, activated, documented, and ready for teams.",
     detailDescription:
-      "The PDF lists Microsoft Office, Adobe Creative Cloud, AutoCAD and Autodesk, plus accounting, remote access, and PDF tools. This page expands each application category into a clear licensing path.",
+      "Application licensing covers Microsoft Office, Adobe Creative Cloud, AutoCAD and Autodesk, accounting tools, remote access tools, PDF applications, and specialist software with clean documentation.",
     capabilitySections: [
       {
         id: "microsoft-office-licenses",
@@ -3682,7 +3682,7 @@ export const services: Service[] = [
     detailTitle:
       "Technical support structured for quick response, clear ownership, and lower downtime.",
     detailDescription:
-      "The PDF positions IT technical services as hands-on support that can work remotely or on site. This page turns that into a practical support model across help desk, field dispatch, system administration, and break/fix intervention.",
+      "IT technical services provide hands-on support remotely or on site across help desk response, field dispatch, system administration, and break/fix intervention.",
     capabilitySections: [
       {
         id: "help-desk-support",
@@ -3799,7 +3799,7 @@ export const services: Service[] = [
     detailTitle:
       "Managed IT coverage with predictable cost, SLA response, and visible performance.",
     detailDescription:
-      "The PDF describes this scope as a complete IT department at a predictable cost. The detailed flow explains monitoring, managed security, staff outsourcing, and IT manager-as-a-service support.",
+      "Managed services give clients a practical external IT department model with monitoring, managed security, staff outsourcing, reporting, and IT manager-as-a-service support.",
     capabilitySections: [
       {
         id: "proactive-monitoring",
@@ -3922,7 +3922,7 @@ export const services: Service[] = [
     detailTitle:
       "Independent IT advice before procurement, transformation, or risk exposure becomes expensive.",
     detailDescription:
-      "The PDF breaks this service into infrastructure audits, cybersecurity audits, policy development, and vendor assessment. The page now explains each advisory lane as a decision-support engagement.",
+      "IT consultancy and audit engagements cover infrastructure review, cybersecurity assessment, policy development, vendor assessment, and decision-support recommendations.",
     capabilitySections: [
       {
         id: "infrastructure-audit",
@@ -4045,7 +4045,7 @@ export const services: Service[] = [
     detailTitle:
       "Technology projects coordinated from scope through vendor delivery and clean handover.",
     detailDescription:
-      "The PDF describes IT project management as the control layer for complex delivery. This page breaks that into planning, vendor coordination, risk management, and post-implementation review.",
+      "IT project management provides the control layer for complex delivery across planning, vendor coordination, risk management, implementation review, and operational handover.",
     capabilitySections: [
       {
         id: "planning-and-scoping",

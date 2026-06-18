@@ -20,7 +20,6 @@ const defaultKeywords = [
   "Auxano Solutions Technology Limited",
   "IT solutions Nigeria",
   "IT solutions company in Nigeria",
-  "best IT company in Nigeria",
   "IT company in Lagos",
   "managed IT support Nigeria",
   "managed IT services Lagos",

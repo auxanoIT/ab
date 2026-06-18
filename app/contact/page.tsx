@@ -80,8 +80,8 @@ export default async function ContactPage() {
         <Container className="space-y-10">
           <SectionHeading
             eyebrow="Contact Auxano"
-            title="Bring the commercial brief, technical friction, or rollout idea into one serious conversation."
-            description="The contact route is designed for teams that already know something needs attention and need a clear next step."
+            title="Talk to Auxano about the systems your site depends on."
+            description="Share the project, support issue, or operating requirement. Our team will help you clarify the scope and choose the right next step."
           />
 
           <div className="grid gap-4 md:grid-cols-3">
@@ -113,10 +113,10 @@ export default async function ContactPage() {
                 Faster routes
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em]">
-                If the need is urgent, route it directly.
+                Need a faster response?
               </h2>
               <p className="mt-4 text-sm leading-7 text-white/72">
-                Sales and support routing stay separate in the experience even if both currently land on the same live number.
+                Reach the right team directly for new projects, support requests, urgent faults, or follow-up on an existing deployment.
               </p>
               <div className="mt-8 grid gap-4">
                 <ButtonLink

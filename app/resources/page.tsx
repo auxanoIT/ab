@@ -87,10 +87,9 @@ export default async function ResourcesPage() {
             IT, ELV, CCTV, fire alarm, and managed support resources for Nigeria.
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-8 text-white/72 sm:text-lg">
-            Use this hub to explore Auxano service guides, delivery proof,
-            planning pages, and consultation paths for organizations comparing
-            IT infrastructure, physical security, fire safety, networking, and
-            managed support providers in Nigeria.
+            Explore service guides, delivery proof, planning pages, and direct
+            consultation routes for IT infrastructure, physical security, fire
+            safety, networking, and managed support projects in Nigeria.
           </p>
         </Container>
       </section>

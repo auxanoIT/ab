@@ -1,11 +1,8 @@
-import { ArrowRight, MapPin, SearchCheck } from "lucide-react";
+import { ArrowRight, ClipboardCheck, MapPin } from "lucide-react";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
-import {
-  buildServiceSeoFaqs,
-  buildServiceSeoQuestions,
-} from "@/lib/service-seo";
+import { buildServiceSeoFaqs } from "@/lib/service-seo";
 import type { Service } from "@/lib/types";
 
 type ServiceSeoAnswerBlockProps = {
@@ -14,7 +11,12 @@ type ServiceSeoAnswerBlockProps = {
 
 export function ServiceSeoAnswerBlock({ service }: ServiceSeoAnswerBlockProps) {
   const faqs = buildServiceSeoFaqs(service);
-  const searchQuestions = buildServiceSeoQuestions(service);
+  const projectPriorities = Array.from(
+    new Set([
+      ...service.highlights.slice(0, 3),
+      ...service.deliverables.slice(0, 3),
+    ]),
+  ).slice(0, 6);
 
   return (
     <section className="bg-[#f6f8fb] py-16 sm:py-24">
@@ -28,10 +30,7 @@ export function ServiceSeoAnswerBlock({ service }: ServiceSeoAnswerBlockProps) {
               {service.title} for Lagos and Nigerian business sites.
             </h2>
             <p className="mt-5 text-sm leading-7 text-[var(--color-muted)] sm:text-base">
-              Auxano supports discovery, design, deployment, documentation, and
-              support handover for organizations that need {service.title.toLowerCase()} in
-              Lagos, Abuja, Port Harcourt, and other Nigerian operating
-              locations.
+              Auxano plans, installs, tests, documents, and supports {service.title.toLowerCase()} for organizations with live operating environments in Lagos, Abuja, Port Harcourt, and other Nigerian locations.
             </p>
             <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-ink)]">
               {["Lagos", "Abuja", "Port Harcourt", "Ikeja", "Victoria Island"].map(
@@ -47,7 +46,7 @@ export function ServiceSeoAnswerBlock({ service }: ServiceSeoAnswerBlockProps) {
               )}
             </div>
             <ButtonLink href="/book-consultation" className="mt-7">
-              Request a site assessment
+              Book a consultation
               <ArrowRight className="ml-2 h-4 w-4" />
             </ButtonLink>
           </div>
@@ -55,10 +54,10 @@ export function ServiceSeoAnswerBlock({ service }: ServiceSeoAnswerBlockProps) {
           <div className="grid gap-5">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-electric)]">
-                Questions Buyers Ask
+                How We Work
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.045em] text-[var(--color-ink)] sm:text-4xl">
-                Answers for search, procurement, and AI assistants.
+                Clear scope, disciplined installation, and a handover your team can use.
               </h2>
             </div>
 
@@ -80,18 +79,18 @@ export function ServiceSeoAnswerBlock({ service }: ServiceSeoAnswerBlockProps) {
 
             <div className="rounded-[1.25rem] border border-[color:rgba(11,18,32,0.08)] bg-white p-5">
               <div className="flex items-center gap-3">
-                <SearchCheck className="h-5 w-5 text-[var(--color-electric)]" />
+                <ClipboardCheck className="h-5 w-5 text-[var(--color-electric)]" />
                 <p className="text-sm font-semibold text-[var(--color-ink)]">
-                  Search phrases this page answers
+                  What the project should leave behind
                 </p>
               </div>
               <ul className="mt-4 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-muted)]">
-                {searchQuestions.map((question) => (
+                {projectPriorities.map((priority) => (
                   <li
-                    key={question}
+                    key={priority}
                     className="rounded-full bg-[var(--color-cloud)] px-3 py-2"
                   >
-                    {question}
+                    {priority}
                   </li>
                 ))}
               </ul>

@@ -253,7 +253,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   ))
                 ) : (
                   <p className="rounded-[1.25rem] bg-[var(--color-cloud)] p-5 text-sm leading-7 text-[var(--color-muted)]">
-                    Solution steps are being prepared for this case study.
+                    Auxano begins with site context, confirms the technical scope, coordinates delivery, tests the installed systems, and hands over documentation for ongoing support.
                   </p>
                 )}
               </div>
@@ -317,7 +317,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             <div className="grid gap-3 sm:grid-cols-2">
               {(relatedServices.length
                 ? relatedServices
-                : ["site assessment", "deployment", "support handover"]
+                : ["Site assessment", "Project deployment", "Support handover"]
               ).map((service) => (
                 <div
                   key={service}
