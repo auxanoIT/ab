@@ -1,10 +1,5 @@
 import type { Service } from "@/lib/types";
 
-export type ServiceSeoFaq = {
-  question: string;
-  answer: string;
-};
-
 const coreLocations = [
   "Nigeria",
   "Lagos",
@@ -78,36 +73,6 @@ export function buildServiceSeoKeywords(service: Service) {
     ...service.industries.map((industry) => `${serviceName} for ${industry}`),
     ...service.capabilities.slice(0, 6),
     ...service.deliverables.slice(0, 5),
-  ];
-}
-
-export function buildServiceSeoFaqs(service: Service): ServiceSeoFaq[] {
-  const serviceName = service.title.toLowerCase();
-  const firstIndustries = service.industries.slice(0, 4).join(", ");
-  const primaryCapabilities = service.capabilities.slice(0, 4).join(", ");
-  const primaryDeliverables = service.deliverables.slice(0, 4).join(", ");
-
-  return [
-    {
-      question: `How does Auxano deliver ${serviceName}?`,
-      answer: `Auxano begins with the operating environment, confirms the technical scope, then handles planning, supply, installation, testing, commissioning, documentation, and support handover as one coordinated delivery process.`,
-    },
-    {
-      question: `What is included in the project scope?`,
-      answer: `Each scope is shaped around the site, risk level, users, devices, and long-term support needs. Core delivery areas include ${primaryCapabilities || service.summary}.`,
-    },
-    {
-      question: `Can Auxano support multiple Nigerian locations?`,
-      answer: `Yes. Auxano supports single-site and multi-site environments in Lagos, Abuja, Port Harcourt, and other Nigerian locations, with planning and documentation that keep deployment and future support consistent.`,
-    },
-    {
-      question: `Which environments is this service suited for?`,
-      answer: `This service is suited for ${firstIndustries || "corporate offices, healthcare, education, financial services, and multi-site operations"}, with the final design adapted to each site's uptime, security, compliance, and support requirements.`,
-    },
-    {
-      question: `What happens at handover?`,
-      answer: `Handover is treated as part of the work, not an afterthought. Typical handover items include ${primaryDeliverables || "configuration records, test results, user guidance, support notes, and warranty or renewal information"}.`,
-    },
   ];
 }
 
