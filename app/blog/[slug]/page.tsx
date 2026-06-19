@@ -2,6 +2,8 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AlertTriangle, Info, Lightbulb, Quote } from "lucide-react";
+import { PortableText, type PortableTextComponents } from "@portabletext/react";
+import type { PortableTextBlock, TypedObject } from "@portabletext/types";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
@@ -61,14 +63,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const headings = post.body
-    .filter(
-      (block): block is Extract<BlogBodyBlock, { _type: "blogHeading" }> =>
-        typeof block !== "string" && block._type === "blogHeading",
-    )
-    .map((block) => ({
-      text: block.text,
-      id: getHeadingId(block),
-    }));
+    .map(getBodyHeading)
+    .filter((heading): heading is { text: string; id: string } =>
+      Boolean(heading),
+    );
+  const bodyBlocks = normalizeBlogBody(post.body);
 
   return (
     <>
@@ -194,12 +193,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
 
               <div className="mt-10 space-y-8">
-                {post.body.map((block, index) => (
-                  <BlogBlock
-                    key={`${typeof block === "string" ? "plain-paragraph" : block._type}-${index}`}
-                    block={block}
-                  />
-                ))}
+                <PortableText value={bodyBlocks} components={blogBodyComponents} />
               </div>
 
               <div className="mt-12 flex flex-wrap gap-4 border-t border-[color:rgba(11,18,32,0.08)] pt-8">
@@ -216,144 +210,181 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   );
 }
 
-function BlogBlock({ block }: { block: BlogBodyBlock }) {
-  if (typeof block === "string") {
-    return <p className="text-base leading-8 text-[var(--color-muted)]">{block}</p>;
-  }
-
-  if (block._type === "blogPlainText") {
-    return <p className="text-base leading-8 text-[var(--color-muted)]">{block.text}</p>;
-  }
-
-  if (block._type === "blogHeading") {
-    const id = getHeadingId(block);
-    const HeadingTag = block.level === 3 ? "h3" : "h2";
-
-    return (
-      <HeadingTag id={id} className="group scroll-mt-28 text-3xl font-semibold tracking-[-0.05em] text-[var(--color-ink)]">
-        <a href={`#${id}`} className="transition hover:text-[var(--color-electric)]">
-          {block.text}
+const blogBodyComponents: PortableTextComponents = {
+  block: {
+    normal: ({ children }) => (
+      <p className="text-base leading-8 text-[var(--color-muted)]">{children}</p>
+    ),
+    h2: ({ children, value }) => (
+      <h2
+        id={getPortableHeadingId(value)}
+        className="group scroll-mt-28 text-3xl font-semibold tracking-[-0.05em] text-[var(--color-ink)]"
+      >
+        <a
+          href={`#${getPortableHeadingId(value)}`}
+          className="transition hover:text-[var(--color-electric)]"
+        >
+          {children}
         </a>
-      </HeadingTag>
-    );
-  }
-
-  if (block._type === "blogList") {
-    const ListTag = block.style === "number" ? "ol" : "ul";
-    const listClassName = [
-      "space-y-3 pl-7 text-base leading-8 text-[var(--color-muted)] marker:text-[var(--color-electric)]",
-      block.style === "number" ? "list-decimal" : "list-disc",
-    ].join(" ");
-
-    return (
-      <ListTag className={listClassName}>
-        {block.items.map((item) => (
-          <li key={item} className="pl-2">
-            {item}
-          </li>
-        ))}
-      </ListTag>
-    );
-  }
-
-  if (block._type === "blogCallout") {
-    const tone = block.tone ?? "important";
-    const config = calloutStyles[tone];
-    const Icon = config.icon;
-
-    return (
-      <aside className={`rounded-[1.25rem] border-l-4 p-5 ${config.className}`}>
-        <div className="flex items-start gap-3">
-          <Icon className="mt-1 h-5 w-5 shrink-0" />
-          <div>
-            <p className="text-base font-semibold leading-7 text-[var(--color-ink)]">
-              {block.title || config.title}
-            </p>
-            <p className="mt-2 text-base leading-8 text-[var(--color-muted)]">
-              {block.text}
-            </p>
-          </div>
-        </div>
-      </aside>
-    );
-  }
-
-  if (block._type === "blogQuote") {
-    return (
+      </h2>
+    ),
+    h3: ({ children, value }) => (
+      <h3
+        id={getPortableHeadingId(value)}
+        className="group scroll-mt-28 text-2xl font-semibold tracking-[-0.04em] text-[var(--color-ink)]"
+      >
+        <a
+          href={`#${getPortableHeadingId(value)}`}
+          className="transition hover:text-[var(--color-electric)]"
+        >
+          {children}
+        </a>
+      </h3>
+    ),
+    h4: ({ children }) => (
+      <h4 className="text-xl font-semibold tracking-[-0.03em] text-[var(--color-ink)]">
+        {children}
+      </h4>
+    ),
+    blockquote: ({ children }) => (
       <blockquote className="border-l-4 border-[var(--color-electric)] pl-6">
         <Quote className="mb-4 h-6 w-6 text-[var(--color-electric)]" />
         <p className="text-xl font-medium leading-9 text-[var(--color-ink)]">
-          {block.quote}
+          {children}
         </p>
-        {block.attribution ? (
-          <footer className="mt-4 text-sm font-semibold text-[var(--color-muted)]">
-            {block.attribution}
-          </footer>
-        ) : null}
       </blockquote>
-    );
-  }
+    ),
+  },
+  list: {
+    bullet: ({ children }) => (
+      <ul className="space-y-3 pl-7 text-base leading-8 text-[var(--color-muted)] marker:text-[var(--color-electric)]">
+        {children}
+      </ul>
+    ),
+    number: ({ children }) => (
+      <ol className="list-decimal space-y-3 pl-7 text-base leading-8 text-[var(--color-muted)] marker:text-[var(--color-electric)]">
+        {children}
+      </ol>
+    ),
+  },
+  listItem: {
+    bullet: ({ children }) => <li className="list-disc pl-2">{children}</li>,
+    number: ({ children }) => <li className="pl-2">{children}</li>,
+  },
+  marks: {
+    link: ({ children, value }) => {
+      const href =
+        typeof value?.href === "string" && value.href ? value.href : "#";
+      const isExternal = href.startsWith("http");
 
-  if (block._type === "blogTable") {
-    return (
-      <figure className="overflow-hidden rounded-[1.25rem] border border-[color:rgba(11,18,32,0.08)] bg-white">
-        {block.caption ? (
-          <figcaption className="border-b border-[color:rgba(11,18,32,0.08)] bg-[var(--color-cloud)] px-5 py-4 text-sm font-semibold text-[var(--color-ink)]">
-            {block.caption}
-          </figcaption>
-        ) : null}
-        <div className="overflow-x-auto">
-          <table className="min-w-full border-collapse text-left text-sm">
-            <thead className="bg-[var(--color-cloud)] text-[var(--color-ink)]">
-              <tr>
-                {block.columns.map((column) => (
-                  <th key={column} scope="col" className="px-5 py-4 font-semibold">
-                    {column}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-[color:rgba(11,18,32,0.08)]">
-              {block.rows.map((row, rowIndex) => (
-                <tr key={`${row.cells.join("-")}-${rowIndex}`}>
-                  {block.columns.map((column, cellIndex) => (
-                    <td
-                      key={`${column}-${rowIndex}-${cellIndex}`}
-                      className="px-5 py-4 leading-7 text-[var(--color-muted)]"
-                    >
-                      {row.cells[cellIndex] ?? ""}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </figure>
-    );
-  }
+      return (
+        <a
+          href={href}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noreferrer" : undefined}
+          className="font-semibold text-[var(--color-electric)] underline-offset-4 hover:underline"
+        >
+          {children}
+        </a>
+      );
+    },
+    code: ({ children }) => (
+      <code className="rounded-md bg-[var(--color-cloud)] px-1.5 py-0.5 text-sm text-[var(--color-ink)]">
+        {children}
+      </code>
+    ),
+  },
+  types: {
+    blogPlainText: ({ value }) => (
+      <p className="text-base leading-8 text-[var(--color-muted)]">
+        {String(value.text ?? "")}
+      </p>
+    ),
+    blogParagraph: ({ value }) => (
+      <p className="text-base leading-8 text-[var(--color-muted)]">
+        {String(value.text ?? "")}
+      </p>
+    ),
+    blogHeading: ({ value }) => {
+      const block = value as Extract<BlogBodyBlock, { _type: "blogHeading" }>;
+      const id = getHeadingId(block);
+      const HeadingTag = block.level === 3 ? "h3" : "h2";
 
-  if (block._type === "blogImageBlock") {
-    return (
-      <figure>
-        <div className="relative aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-[var(--color-cloud)]">
-          <Image
-            src={block.image.src}
-            alt={block.image.alt}
-            fill
-            sizes="(min-width: 1024px) 760px, 100vw"
-            className="object-cover"
-          />
-        </div>
-        {block.caption ? (
-          <figcaption className="mt-3 text-sm leading-6 text-[var(--color-muted)]">{block.caption}</figcaption>
-        ) : null}
-      </figure>
-    );
-  }
+      return (
+        <HeadingTag
+          id={id}
+          className="group scroll-mt-28 text-3xl font-semibold tracking-[-0.05em] text-[var(--color-ink)]"
+        >
+          <a
+            href={`#${id}`}
+            className="transition hover:text-[var(--color-electric)]"
+          >
+            {block.text}
+          </a>
+        </HeadingTag>
+      );
+    },
+    blogList: ({ value }) => {
+      const block = value as Extract<BlogBodyBlock, { _type: "blogList" }>;
+      const ListTag = block.style === "number" ? "ol" : "ul";
+      const listClassName = [
+        "space-y-3 pl-7 text-base leading-8 text-[var(--color-muted)] marker:text-[var(--color-electric)]",
+        block.style === "number" ? "list-decimal" : "list-disc",
+      ].join(" ");
 
-  return <p className="text-base leading-8 text-[var(--color-muted)]">{block.text}</p>;
-}
+      return (
+        <ListTag className={listClassName}>
+          {block.items.map((item) => (
+            <li key={item} className="pl-2">
+              {item}
+            </li>
+          ))}
+        </ListTag>
+      );
+    },
+    blogCallout: ({ value }) => <BlogCallout value={value} />,
+    blogQuote: ({ value }) => {
+      const block = value as Extract<BlogBodyBlock, { _type: "blogQuote" }>;
+
+      return (
+        <blockquote className="border-l-4 border-[var(--color-electric)] pl-6">
+          <Quote className="mb-4 h-6 w-6 text-[var(--color-electric)]" />
+          <p className="text-xl font-medium leading-9 text-[var(--color-ink)]">
+            {block.quote}
+          </p>
+          {block.attribution ? (
+            <footer className="mt-4 text-sm font-semibold text-[var(--color-muted)]">
+              {block.attribution}
+            </footer>
+          ) : null}
+        </blockquote>
+      );
+    },
+    blogTable: ({ value }) => <BlogTable value={value} />,
+    blogImageBlock: ({ value }) => {
+      const block = value as Extract<BlogBodyBlock, { _type: "blogImageBlock" }>;
+
+      return (
+        <figure>
+          <div className="relative aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-[var(--color-cloud)]">
+            <Image
+              src={block.image.src}
+              alt={block.image.alt}
+              fill
+              sizes="(min-width: 1024px) 760px, 100vw"
+              className="object-cover"
+            />
+          </div>
+          {block.caption ? (
+            <figcaption className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+              {block.caption}
+            </figcaption>
+          ) : null}
+        </figure>
+      );
+    },
+  },
+};
 
 const calloutStyles = {
   important: {
@@ -382,6 +413,75 @@ const calloutStyles = {
   },
 } as const;
 
+function BlogCallout({
+  value,
+}: {
+  value: Extract<BlogBodyBlock, { _type: "blogCallout" }>;
+}) {
+  const tone = value.tone ?? "important";
+  const config = calloutStyles[tone];
+  const Icon = config.icon;
+
+  return (
+    <aside className={`rounded-[1.25rem] border-l-4 p-5 ${config.className}`}>
+      <div className="flex items-start gap-3">
+        <Icon className="mt-1 h-5 w-5 shrink-0" />
+        <div>
+          <p className="text-base font-semibold leading-7 text-[var(--color-ink)]">
+            {value.title || config.title}
+          </p>
+          <p className="mt-2 text-base leading-8 text-[var(--color-muted)]">
+            {value.text}
+          </p>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
+function BlogTable({
+  value,
+}: {
+  value: Extract<BlogBodyBlock, { _type: "blogTable" }>;
+}) {
+  return (
+    <figure className="overflow-hidden rounded-[1.25rem] border border-[color:rgba(11,18,32,0.08)] bg-white">
+      {value.caption ? (
+        <figcaption className="border-b border-[color:rgba(11,18,32,0.08)] bg-[var(--color-cloud)] px-5 py-4 text-sm font-semibold text-[var(--color-ink)]">
+          {value.caption}
+        </figcaption>
+      ) : null}
+      <div className="overflow-x-auto">
+        <table className="min-w-full border-collapse text-left text-sm">
+          <thead className="bg-[var(--color-cloud)] text-[var(--color-ink)]">
+            <tr>
+              {value.columns.map((column) => (
+                <th key={column} scope="col" className="px-5 py-4 font-semibold">
+                  {column}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-[color:rgba(11,18,32,0.08)]">
+            {value.rows.map((row, rowIndex) => (
+              <tr key={`${row.cells.join("-")}-${rowIndex}`}>
+                {value.columns.map((column, cellIndex) => (
+                  <td
+                    key={`${column}-${rowIndex}-${cellIndex}`}
+                    className="px-5 py-4 leading-7 text-[var(--color-muted)]"
+                  >
+                    {row.cells[cellIndex] ?? ""}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </figure>
+  );
+}
+
 function PostImage({ post, priority = false }: { post: BlogPost; priority?: boolean }) {
   const image = post.coverImage ?? {
     src: "/image/service-details/network-design-diagrams.webp",
@@ -402,6 +502,74 @@ function PostImage({ post, priority = false }: { post: BlogPost; priority?: bool
 
 function getHeadingId(block: Extract<BlogBodyBlock, { _type: "blogHeading" }>) {
   return block.anchor || slugify(block.text);
+}
+
+function getBodyHeading(block: BlogBodyBlock) {
+  if (isLegacyHeading(block)) {
+    return {
+      text: block.text,
+      id: getHeadingId(block),
+    };
+  }
+
+  if (isPortableBlock(block) && (block.style === "h2" || block.style === "h3")) {
+    const text = getPortableBlockText(block);
+
+    if (!text) {
+      return null;
+    }
+
+    return {
+      text,
+      id: slugify(text),
+    };
+  }
+
+  return null;
+}
+
+function normalizeBlogBody(body: BlogBodyBlock[]): Array<TypedObject | PortableTextBlock> {
+  return body.map((block, index) =>
+    typeof block === "string"
+      ? {
+          _type: "blogPlainText",
+          _key: `plain-${index}`,
+          text: block,
+        }
+      : block,
+  ) as Array<TypedObject | PortableTextBlock>;
+}
+
+function isLegacyHeading(
+  block: BlogBodyBlock,
+): block is Extract<BlogBodyBlock, { _type: "blogHeading" }> {
+  return (
+    typeof block !== "string" &&
+    block._type === "blogHeading" &&
+    "text" in block
+  );
+}
+
+function isPortableBlock(block: BlogBodyBlock): block is PortableTextBlock {
+  return (
+    typeof block !== "string" &&
+    block._type === "block" &&
+    "children" in block &&
+    Array.isArray(block.children)
+  );
+}
+
+function getPortableHeadingId(value: PortableTextBlock) {
+  return slugify(getPortableBlockText(value));
+}
+
+function getPortableBlockText(block: PortableTextBlock) {
+  return (
+    block.children
+      ?.map((child) => ("text" in child ? child.text : ""))
+      .join("")
+      .trim() ?? ""
+  );
 }
 
 function slugify(value: string) {

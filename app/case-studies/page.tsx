@@ -34,9 +34,7 @@ export default async function CaseStudiesPage() {
       <section className="overflow-hidden bg-[var(--color-ink)] text-white">
         <Container className="grid min-h-[620px] items-center gap-12 py-16 lg:grid-cols-[0.88fr_1.12fr] lg:py-20">
           <div className="relative z-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-cyan)]">
-              Delivery Proof
-            </p>
+            
             <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-[1.04] sm:text-6xl">
               Case studies built around operational change.
             </h1>
@@ -125,16 +123,11 @@ export default async function CaseStudiesPage() {
       <section className="bg-[var(--color-cloud)] py-20 sm:py-24">
         <Container>
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-electric)]">
-              Proof Library
-            </p>
+            
             <h2 className="mt-4 text-4xl font-semibold leading-tight text-[var(--color-ink)] sm:text-5xl">
-              Browse delivery stories by environment, challenge, and result.
+              Auxano Gets It Done Right the First Time
             </h2>
-            <p className="mt-5 text-base leading-8 text-[var(--color-muted)]">
-              Each case study is structured around the business need, delivery
-              scope, commissioned systems, and measurable project outcome.
-            </p>
+            
           </div>
 
           {featured ? (

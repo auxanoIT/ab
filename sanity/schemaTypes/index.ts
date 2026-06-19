@@ -1,4 +1,368 @@
-import { defineArrayMember, defineField, defineType } from "sanity";
+import { createElement } from "react";
+import {
+  PortableTextInput,
+  defineArrayMember,
+  defineField,
+  defineType,
+  type ArrayOfObjectsInputProps,
+  type OnPasteFn,
+  type PortableTextInputProps,
+} from "sanity";
+
+const createKey = () =>
+  Math.random().toString(36).slice(2, 10) +
+  Date.now().toString(36).slice(-4);
+
+type PasteInsertBlock = {
+  _type: string;
+  _key: string;
+  [key: string]: unknown;
+};
+
+type PasteSpan = {
+  _type: "span";
+  _key: string;
+  text: string;
+  marks: string[];
+};
+
+type PasteMarkDef = {
+  _type: "link";
+  _key: string;
+  href: string;
+};
+
+const ignoredPasteElements = new Set(["SCRIPT", "STYLE", "META", "LINK"]);
+const blockPasteElements = new Set([
+  "ADDRESS",
+  "ARTICLE",
+  "ASIDE",
+  "BLOCKQUOTE",
+  "DIV",
+  "FIGURE",
+  "H1",
+  "H2",
+  "H3",
+  "H4",
+  "H5",
+  "H6",
+  "LI",
+  "OL",
+  "P",
+  "SECTION",
+  "TABLE",
+  "UL",
+]);
+
+const handleBlogBodyPaste: OnPasteFn = ({ event }) => {
+  const html = event.clipboardData?.getData("text/html");
+
+  if (!html || typeof DOMParser === "undefined") {
+    return undefined;
+  }
+
+  const doc = new DOMParser().parseFromString(html, "text/html");
+
+  if (!doc.querySelector("table")) {
+    return undefined;
+  }
+
+  const insert = Array.from(doc.body.childNodes).flatMap(nodeToPasteBlocks);
+
+  if (!insert.some((block) => block._type === "blogTable")) {
+    return undefined;
+  }
+
+  return insert.length ? { insert } : undefined;
+};
+
+function nodeToPasteBlocks(node: ChildNode): PasteInsertBlock[] {
+  if (node.nodeType === Node.TEXT_NODE) {
+    const text = normalizePastedText(node.textContent ?? "");
+    return text ? [createTextPasteBlock(text)] : [];
+  }
+
+  if (!isHtmlElement(node) || ignoredPasteElements.has(node.tagName)) {
+    return [];
+  }
+
+  if (node.tagName === "TABLE") {
+    const tableBlock = createTablePasteBlock(node as HTMLTableElement);
+    return tableBlock ? [tableBlock] : [];
+  }
+
+  if (node.tagName === "UL" || node.tagName === "OL") {
+    return listElementToPasteBlocks(node);
+  }
+
+  const headingStyle = getHeadingStyle(node.tagName);
+  if (headingStyle) {
+    const block = elementToTextPasteBlock(node, headingStyle);
+    return block ? [block] : [];
+  }
+
+  if (node.tagName === "BLOCKQUOTE") {
+    const block = elementToTextPasteBlock(node, "blockquote");
+    return block ? [block] : [];
+  }
+
+  if (canUseElementAsTextBlock(node)) {
+    const block = elementToTextPasteBlock(node, "normal");
+    return block ? [block] : [];
+  }
+
+  return Array.from(node.childNodes).flatMap(nodeToPasteBlocks);
+}
+
+function createTablePasteBlock(table: HTMLTableElement): PasteInsertBlock | null {
+  const parsedRows = Array.from(table.querySelectorAll("tr"))
+    .map((row) => {
+      const cells = Array.from(row.querySelectorAll("th,td"))
+        .map((cell) => normalizePastedText(cell.textContent ?? ""));
+
+      return {
+        cells,
+        hasHeadingCell: Boolean(row.querySelector("th")),
+      };
+    })
+    .filter((row) => row.cells.length > 0);
+
+  if (!parsedRows.length) {
+    return null;
+  }
+
+  const [firstRow, ...remainingRows] = parsedRows;
+  const columnCount = Math.max(...parsedRows.map((row) => row.cells.length));
+  const columns = firstRow.hasHeadingCell
+    ? padCells(firstRow.cells, columnCount).map(
+        (cell, index) => cell || `Column ${index + 1}`,
+      )
+    : Array.from({ length: columnCount }, (_, index) => `Column ${index + 1}`);
+  const rows = firstRow.hasHeadingCell ? remainingRows : parsedRows;
+
+  if (!columns.length || !rows.length) {
+    return null;
+  }
+
+  return {
+    _type: "blogTable",
+    _key: createKey(),
+    columns,
+    rows: rows.map((row) => ({
+      _type: "blogTableRow",
+      _key: createKey(),
+      cells: padCells(row.cells, columns.length),
+    })),
+  };
+}
+
+function listElementToPasteBlocks(element: HTMLElement): PasteInsertBlock[] {
+  const listItem = element.tagName === "OL" ? "number" : "bullet";
+
+  return Array.from(element.children).flatMap((child) => {
+    if (child.tagName !== "LI") {
+      return nodeToPasteBlocks(child);
+    }
+
+    const block = elementToTextPasteBlock(child as HTMLElement, "normal", {
+      listItem,
+      level: 1,
+    });
+    const nestedBlocks = Array.from(child.children)
+      .filter((nestedChild) => ["UL", "OL", "TABLE"].includes(nestedChild.tagName))
+      .flatMap((nestedChild) => nodeToPasteBlocks(nestedChild));
+
+    return [block, ...nestedBlocks].filter(
+      (item): item is PasteInsertBlock => Boolean(item),
+    );
+  });
+}
+
+function elementToTextPasteBlock(
+  element: HTMLElement,
+  style: "normal" | "h2" | "h3" | "h4" | "blockquote",
+  options: Record<string, unknown> = {},
+): PasteInsertBlock | null {
+  const markDefs: PasteMarkDef[] = [];
+  const children = trimSpans(
+    Array.from(element.childNodes).flatMap((child) =>
+      collectInlineSpans(child, [], markDefs),
+    ),
+  );
+
+  if (!children.length) {
+    return null;
+  }
+
+  const usedMarks = new Set(children.flatMap((child) => child.marks));
+
+  return {
+    _type: "block",
+    _key: createKey(),
+    style,
+    markDefs: markDefs.filter((markDef) => usedMarks.has(markDef._key)),
+    children,
+    ...options,
+  };
+}
+
+function createTextPasteBlock(text: string): PasteInsertBlock {
+  return {
+    _type: "block",
+    _key: createKey(),
+    style: "normal",
+    markDefs: [],
+    children: [
+      {
+        _type: "span",
+        _key: createKey(),
+        text,
+        marks: [],
+      },
+    ],
+  };
+}
+
+function collectInlineSpans(
+  node: ChildNode,
+  activeMarks: string[],
+  markDefs: PasteMarkDef[],
+): PasteSpan[] {
+  if (node.nodeType === Node.TEXT_NODE) {
+    const text = (node.textContent ?? "").replace(/\s+/g, " ");
+
+    return text.trim()
+      ? [
+          {
+            _type: "span",
+            _key: createKey(),
+            text,
+            marks: activeMarks,
+          },
+        ]
+      : [];
+  }
+
+  if (!isHtmlElement(node) || ignoredPasteElements.has(node.tagName)) {
+    return [];
+  }
+
+  if (node.tagName === "BR") {
+    return [
+      {
+        _type: "span",
+        _key: createKey(),
+        text: "\n",
+        marks: activeMarks,
+      },
+    ];
+  }
+
+  if (["TABLE", "UL", "OL"].includes(node.tagName)) {
+    return [];
+  }
+
+  const nextMarks = [...activeMarks];
+
+  if (["B", "STRONG"].includes(node.tagName)) {
+    nextMarks.push("strong");
+  }
+
+  if (["EM", "I"].includes(node.tagName)) {
+    nextMarks.push("em");
+  }
+
+  if (node.tagName === "U") {
+    nextMarks.push("underline");
+  }
+
+  if (node.tagName === "CODE") {
+    nextMarks.push("code");
+  }
+
+  if (node.tagName === "A") {
+    const href = node.getAttribute("href");
+
+    if (href) {
+      const markKey = createKey();
+      markDefs.push({
+        _type: "link",
+        _key: markKey,
+        href,
+      });
+      nextMarks.push(markKey);
+    }
+  }
+
+  return Array.from(node.childNodes).flatMap((child) =>
+    collectInlineSpans(child, Array.from(new Set(nextMarks)), markDefs),
+  );
+}
+
+function trimSpans(spans: PasteSpan[]) {
+  const trimmedSpans = spans.filter((span) => span.text.length > 0);
+
+  if (!trimmedSpans.length) {
+    return [];
+  }
+
+  trimmedSpans[0] = {
+    ...trimmedSpans[0],
+    text: trimmedSpans[0].text.trimStart(),
+  };
+  const lastIndex = trimmedSpans.length - 1;
+  trimmedSpans[lastIndex] = {
+    ...trimmedSpans[lastIndex],
+    text: trimmedSpans[lastIndex].text.trimEnd(),
+  };
+
+  return trimmedSpans.filter((span) => span.text.length > 0);
+}
+
+function canUseElementAsTextBlock(element: HTMLElement) {
+  if (["P", "DIV", "SECTION", "ARTICLE", "ASIDE", "FIGURE", "LI"].includes(element.tagName)) {
+    return !Array.from(element.children).some((child) =>
+      blockPasteElements.has(child.tagName),
+    );
+  }
+
+  return false;
+}
+
+function getHeadingStyle(tagName: string) {
+  if (tagName === "H2" || tagName === "H1") {
+    return "h2";
+  }
+
+  if (tagName === "H3") {
+    return "h3";
+  }
+
+  if (["H4", "H5", "H6"].includes(tagName)) {
+    return "h4";
+  }
+
+  return null;
+}
+
+function padCells(cells: string[], length: number) {
+  return Array.from({ length }, (_, index) => cells[index] ?? "");
+}
+
+function normalizePastedText(text: string) {
+  return text.replace(/\s+/g, " ").trim();
+}
+
+function isHtmlElement(node: ChildNode): node is HTMLElement {
+  return node.nodeType === Node.ELEMENT_NODE;
+}
+
+function BlogBodyInput(props: ArrayOfObjectsInputProps) {
+  return createElement(PortableTextInput, {
+    ...(props as unknown as PortableTextInputProps),
+    onPaste: handleBlogBodyPaste,
+  });
+}
 
 const metric = defineType({
   name: "metric",
@@ -428,13 +792,54 @@ const post = defineType({
       name: "body",
       title: "Body",
       type: "array",
+      description:
+        "Write like a document editor. Use the toolbar for headings, bullet lists, numbered lists, bold, italic, links, code, and block quotes. Pasted tables are converted into table blocks automatically.",
+      components: {
+        input: BlogBodyInput,
+      },
       of: [
-        defineArrayMember({ type: "blogPlainText" }),
-        defineArrayMember({ type: "blogHeading" }),
-        defineArrayMember({ type: "blogParagraph" }),
-        defineArrayMember({ type: "blogList" }),
+        defineArrayMember({
+          type: "block",
+          title: "Rich Text",
+          styles: [
+            { title: "Normal", value: "normal" },
+            { title: "Heading 2", value: "h2" },
+            { title: "Heading 3", value: "h3" },
+            { title: "Heading 4", value: "h4" },
+            { title: "Quote", value: "blockquote" },
+          ],
+          lists: [
+            { title: "Bullet", value: "bullet" },
+            { title: "Numbered", value: "number" },
+          ],
+          marks: {
+            decorators: [
+              { title: "Bold", value: "strong" },
+              { title: "Italic", value: "em" },
+              { title: "Underline", value: "underline" },
+              { title: "Code", value: "code" },
+            ],
+            annotations: [
+              defineArrayMember({
+                name: "link",
+                title: "Link",
+                type: "object",
+                fields: [
+                  defineField({
+                    name: "href",
+                    title: "URL",
+                    type: "url",
+                    validation: (rule) =>
+                      rule.uri({
+                        scheme: ["http", "https", "mailto", "tel"],
+                      }),
+                  }),
+                ],
+              }),
+            ],
+          },
+        }),
         defineArrayMember({ type: "blogCallout" }),
-        defineArrayMember({ type: "blogQuote" }),
         defineArrayMember({ type: "blogTable" }),
         defineArrayMember({ type: "blogImageBlock" }),
       ],

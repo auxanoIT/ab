@@ -122,28 +122,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <section className="overflow-hidden bg-[var(--color-ink)] text-white">
         <Container className="grid min-h-[640px] items-center gap-12 py-16 lg:grid-cols-[0.92fr_1.08fr] lg:py-20">
           <div className="relative z-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-cyan)]">
-              Case Study
-            </p>
-            <h1 className="mt-5 text-5xl font-semibold leading-[1.04] sm:text-6xl">
+            <h1 className="mt-5 text-5xl font-semibold leading-[1.04] sm:text-3xl">
               {caseStudy.title}
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-sm leading-8 text-white/72 sm:text-lg">
               {caseStudy.summary}
             </p>
-            <div className="mt-7 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/76">
-              {caseStudy.industry ? (
-                <span className="rounded-full border border-white/12 bg-white/8 px-4 py-3">
-                  {caseStudy.industry}
-                </span>
-              ) : null}
-              {caseStudy.location ? (
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/8 px-4 py-3">
-                  <MapPin className="h-4 w-4 text-[var(--color-cyan)]" />
-                  {caseStudy.location}
-                </span>
-              ) : null}
-            </div>
+
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink href="/book-consultation">
                 Discuss a similar project
@@ -166,23 +151,6 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.04),rgba(11,18,32,0.72))]" />
-            </div>
-            <div className="grid gap-3 border-t border-white/10 bg-[rgba(11,18,32,0.78)] p-5 backdrop-blur sm:grid-cols-3 lg:absolute lg:bottom-5 lg:left-5 lg:right-5 lg:rounded-[1.25rem] lg:border lg:bg-[rgba(11,18,32,0.74)]">
-              {(metrics.length
-                ? metrics
-                : [{ value: "3", label: "delivery stages" }]
-              )
-                .slice(0, 3)
-                .map((metric) => (
-                  <div key={metric.label}>
-                    <p className="text-2xl font-semibold text-white">
-                      {metric.value}
-                    </p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.13em] text-white/62">
-                      {metric.label}
-                    </p>
-                  </div>
-                ))}
             </div>
           </div>
         </Container>
@@ -253,7 +221,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   ))
                 ) : (
                   <p className="rounded-[1.25rem] bg-[var(--color-cloud)] p-5 text-sm leading-7 text-[var(--color-muted)]">
-                    Auxano begins with site context, confirms the technical scope, coordinates delivery, tests the installed systems, and hands over documentation for ongoing support.
+                    Auxano begins with site context, confirms the technical
+                    scope, coordinates delivery, tests the installed systems,
+                    and hands over documentation for ongoing support.
                   </p>
                 )}
               </div>

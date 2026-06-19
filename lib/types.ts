@@ -1,3 +1,5 @@
+import type { PortableTextBlock } from "@portabletext/types";
+
 export type LinkItem = {
   label: string;
   href: string;
@@ -182,6 +184,7 @@ export type BlogPost = {
 
 export type BlogBodyBlock =
   | string
+  | PortableTextBlock
   | {
       _type: "blogPlainText";
       text: string;

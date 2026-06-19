@@ -159,6 +159,11 @@ export const blogPostsQuery = groq`
     takeaways,
     body[]{
       _type == "string" => @,
+      _type == "block" => {
+        ...,
+        children[]{...},
+        markDefs[]{...}
+      },
       _type == "blogPlainText" => {
         _type,
         text
@@ -231,6 +236,11 @@ export const blogPostQuery = groq`
     takeaways,
     body[]{
       _type == "string" => @,
+      _type == "block" => {
+        ...,
+        children[]{...},
+        markDefs[]{...}
+      },
       _type == "blogPlainText" => {
         _type,
         text
