@@ -20,7 +20,7 @@ export const siteSettings: SiteSettings = {
   description:
     "End-to-end IT solutions designed, installed, and supported by experts across infrastructure, networking, hardware, software, and managed services.",
   phone: "+234 8062 218 546",
-  email: "info@auxanosolutions.net",
+  email: "ask@auxanosolutions.net",
   address:
     "26A Adeshina Street, Off Oluwole Phillips, Obafemi Awolowo Way, Ikeja",
   city: "Lagos",
@@ -604,7 +604,6 @@ export const footerColumns: FooterColumn[] = [
     title: "Contact",
     links: [
       { label: "Book Consultation", href: "/book-consultation" },
-      { label: "Privacy Policy", href: "/privacy" },
     ],
   },
 ];

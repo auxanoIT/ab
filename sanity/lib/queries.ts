@@ -173,6 +173,30 @@ export const blogPostsQuery = groq`
         _type,
         text
       },
+      _type == "blogList" => {
+        _type,
+        style,
+        items
+      },
+      _type == "blogCallout" => {
+        _type,
+        tone,
+        title,
+        text
+      },
+      _type == "blogQuote" => {
+        _type,
+        quote,
+        attribution
+      },
+      _type == "blogTable" => {
+        _type,
+        caption,
+        columns,
+        rows[]{
+          cells
+        }
+      },
       _type == "blogImageBlock" => {
         _type,
         caption,
@@ -220,6 +244,30 @@ export const blogPostQuery = groq`
       _type == "blogParagraph" => {
         _type,
         text
+      },
+      _type == "blogList" => {
+        _type,
+        style,
+        items
+      },
+      _type == "blogCallout" => {
+        _type,
+        tone,
+        title,
+        text
+      },
+      _type == "blogQuote" => {
+        _type,
+        quote,
+        attribution
+      },
+      _type == "blogTable" => {
+        _type,
+        caption,
+        columns,
+        rows[]{
+          cells
+        }
       },
       _type == "blogImageBlock" => {
         _type,

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { AlertTriangle, Info, Lightbulb, Quote } from "lucide-react";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
@@ -237,6 +238,101 @@ function BlogBlock({ block }: { block: BlogBodyBlock }) {
     );
   }
 
+  if (block._type === "blogList") {
+    const ListTag = block.style === "number" ? "ol" : "ul";
+    const listClassName = [
+      "space-y-3 pl-7 text-base leading-8 text-[var(--color-muted)] marker:text-[var(--color-electric)]",
+      block.style === "number" ? "list-decimal" : "list-disc",
+    ].join(" ");
+
+    return (
+      <ListTag className={listClassName}>
+        {block.items.map((item) => (
+          <li key={item} className="pl-2">
+            {item}
+          </li>
+        ))}
+      </ListTag>
+    );
+  }
+
+  if (block._type === "blogCallout") {
+    const tone = block.tone ?? "important";
+    const config = calloutStyles[tone];
+    const Icon = config.icon;
+
+    return (
+      <aside className={`rounded-[1.25rem] border-l-4 p-5 ${config.className}`}>
+        <div className="flex items-start gap-3">
+          <Icon className="mt-1 h-5 w-5 shrink-0" />
+          <div>
+            <p className="text-base font-semibold leading-7 text-[var(--color-ink)]">
+              {block.title || config.title}
+            </p>
+            <p className="mt-2 text-base leading-8 text-[var(--color-muted)]">
+              {block.text}
+            </p>
+          </div>
+        </div>
+      </aside>
+    );
+  }
+
+  if (block._type === "blogQuote") {
+    return (
+      <blockquote className="border-l-4 border-[var(--color-electric)] pl-6">
+        <Quote className="mb-4 h-6 w-6 text-[var(--color-electric)]" />
+        <p className="text-xl font-medium leading-9 text-[var(--color-ink)]">
+          {block.quote}
+        </p>
+        {block.attribution ? (
+          <footer className="mt-4 text-sm font-semibold text-[var(--color-muted)]">
+            {block.attribution}
+          </footer>
+        ) : null}
+      </blockquote>
+    );
+  }
+
+  if (block._type === "blogTable") {
+    return (
+      <figure className="overflow-hidden rounded-[1.25rem] border border-[color:rgba(11,18,32,0.08)] bg-white">
+        {block.caption ? (
+          <figcaption className="border-b border-[color:rgba(11,18,32,0.08)] bg-[var(--color-cloud)] px-5 py-4 text-sm font-semibold text-[var(--color-ink)]">
+            {block.caption}
+          </figcaption>
+        ) : null}
+        <div className="overflow-x-auto">
+          <table className="min-w-full border-collapse text-left text-sm">
+            <thead className="bg-[var(--color-cloud)] text-[var(--color-ink)]">
+              <tr>
+                {block.columns.map((column) => (
+                  <th key={column} scope="col" className="px-5 py-4 font-semibold">
+                    {column}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[color:rgba(11,18,32,0.08)]">
+              {block.rows.map((row, rowIndex) => (
+                <tr key={`${row.cells.join("-")}-${rowIndex}`}>
+                  {block.columns.map((column, cellIndex) => (
+                    <td
+                      key={`${column}-${rowIndex}-${cellIndex}`}
+                      className="px-5 py-4 leading-7 text-[var(--color-muted)]"
+                    >
+                      {row.cells[cellIndex] ?? ""}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </figure>
+    );
+  }
+
   if (block._type === "blogImageBlock") {
     return (
       <figure>
@@ -258,6 +354,33 @@ function BlogBlock({ block }: { block: BlogBodyBlock }) {
 
   return <p className="text-base leading-8 text-[var(--color-muted)]">{block.text}</p>;
 }
+
+const calloutStyles = {
+  important: {
+    title: "Important",
+    icon: AlertTriangle,
+    className:
+      "border-amber-400 bg-amber-50 text-amber-700",
+  },
+  warning: {
+    title: "Warning",
+    icon: AlertTriangle,
+    className:
+      "border-red-400 bg-red-50 text-red-700",
+  },
+  note: {
+    title: "Note",
+    icon: Info,
+    className:
+      "border-blue-400 bg-blue-50 text-blue-700",
+  },
+  tip: {
+    title: "Tip",
+    icon: Lightbulb,
+    className:
+      "border-emerald-400 bg-emerald-50 text-emerald-700",
+  },
+} as const;
 
 function PostImage({ post, priority = false }: { post: BlogPost; priority?: boolean }) {
   const image = post.coverImage ?? {

@@ -197,6 +197,30 @@ export type BlogBodyBlock =
       text: string;
     }
   | {
+      _type: "blogList";
+      style?: "bullet" | "number";
+      items: string[];
+    }
+  | {
+      _type: "blogCallout";
+      tone?: "important" | "warning" | "note" | "tip";
+      title?: string;
+      text: string;
+    }
+  | {
+      _type: "blogQuote";
+      quote: string;
+      attribution?: string;
+    }
+  | {
+      _type: "blogTable";
+      caption?: string;
+      columns: string[];
+      rows: Array<{
+        cells: string[];
+      }>;
+    }
+  | {
       _type: "blogImageBlock";
       image: ServiceNavMedia;
       caption?: string;

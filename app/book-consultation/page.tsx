@@ -137,12 +137,8 @@ export default function BookConsultationPage() {
                 </div>
                 <div>
                   <h2 className="text-lg font-semibold text-[var(--color-ink)]">
-                    Start with the outcome you need.
+                    The strongest IT teams start with a conversation.
                   </h2>
-                  <p className="mt-2 max-w-xl text-sm leading-7 text-[var(--color-ink)]">
-                    Share the site, challenge, or business goal. Auxano will
-                    translate it into a practical technical scope.
-                  </p>
                 </div>
               </div>
             </div>

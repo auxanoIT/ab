@@ -155,7 +155,7 @@ const offices = [
     address:
       "26, Adeshina Street, Off Oluwole Philips, Obafemi Awolowo Way, Ikeja, Lagos.",
     phone: "08034247062",
-    email: "info@auxanosolutions.net",
+    email: "ask@auxanosolutions.net",
   },
   {
     title: "Abuja Office",

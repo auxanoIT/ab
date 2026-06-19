@@ -141,6 +141,184 @@ const blogImageBlock = defineType({
   },
 });
 
+const blogList = defineType({
+  name: "blogList",
+  title: "List",
+  type: "object",
+  fields: [
+    defineField({
+      name: "style",
+      title: "List Style",
+      type: "string",
+      options: {
+        list: [
+          { title: "Bullet list", value: "bullet" },
+          { title: "Numbered list", value: "number" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "bullet",
+    }),
+    defineField({
+      name: "items",
+      title: "List Items",
+      type: "array",
+      of: [defineArrayMember({ type: "string" })],
+      validation: (rule) => rule.required().min(1),
+    }),
+  ],
+  preview: {
+    select: {
+      style: "style",
+      firstItem: "items.0",
+    },
+    prepare: ({ style, firstItem }) => ({
+      title: firstItem || "List",
+      subtitle: style === "number" ? "Numbered list" : "Bullet list",
+    }),
+  },
+});
+
+const blogCallout = defineType({
+  name: "blogCallout",
+  title: "Callout / Important Note",
+  type: "object",
+  fields: [
+    defineField({
+      name: "tone",
+      title: "Tone",
+      type: "string",
+      options: {
+        list: [
+          { title: "Important", value: "important" },
+          { title: "Warning", value: "warning" },
+          { title: "Note", value: "note" },
+          { title: "Tip", value: "tip" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "important",
+    }),
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      description: "Example: Important, Note, Compliance reminder",
+    }),
+    defineField({
+      name: "text",
+      title: "Text",
+      type: "text",
+      rows: 4,
+      validation: (rule) => rule.required(),
+    }),
+  ],
+  preview: {
+    select: {
+      title: "title",
+      text: "text",
+      tone: "tone",
+    },
+    prepare: ({ title, text, tone }) => ({
+      title: title || text || "Callout",
+      subtitle: `Callout: ${tone || "important"}`,
+    }),
+  },
+});
+
+const blogQuote = defineType({
+  name: "blogQuote",
+  title: "Quote",
+  type: "object",
+  fields: [
+    defineField({
+      name: "quote",
+      title: "Quote",
+      type: "text",
+      rows: 4,
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "attribution",
+      title: "Attribution",
+      type: "string",
+      description: "Optional source, person, or standard.",
+    }),
+  ],
+  preview: {
+    select: {
+      title: "quote",
+      subtitle: "attribution",
+    },
+    prepare: ({ title, subtitle }) => ({
+      title: title || "Quote",
+      subtitle: subtitle || "Quote block",
+    }),
+  },
+});
+
+const blogTableRow = defineType({
+  name: "blogTableRow",
+  title: "Table Row",
+  type: "object",
+  fields: [
+    defineField({
+      name: "cells",
+      title: "Cells",
+      type: "array",
+      of: [defineArrayMember({ type: "string" })],
+      validation: (rule) => rule.required().min(1),
+    }),
+  ],
+  preview: {
+    select: {
+      cells: "cells",
+    },
+    prepare: ({ cells }) => ({
+      title: Array.isArray(cells) ? cells.join(" | ") : "Table row",
+      subtitle: "Table row",
+    }),
+  },
+});
+
+const blogTable = defineType({
+  name: "blogTable",
+  title: "Table",
+  type: "object",
+  fields: [
+    defineField({
+      name: "caption",
+      title: "Caption",
+      type: "string",
+      description: "Optional short explanation shown above the table.",
+    }),
+    defineField({
+      name: "columns",
+      title: "Column Headings",
+      type: "array",
+      of: [defineArrayMember({ type: "string" })],
+      validation: (rule) => rule.required().min(1),
+    }),
+    defineField({
+      name: "rows",
+      title: "Rows",
+      type: "array",
+      of: [defineArrayMember({ type: "blogTableRow" })],
+      validation: (rule) => rule.required().min(1),
+    }),
+  ],
+  preview: {
+    select: {
+      title: "caption",
+      columns: "columns",
+    },
+    prepare: ({ title, columns }) => ({
+      title: title || "Table",
+      subtitle: Array.isArray(columns) ? columns.join(" | ") : "Table",
+    }),
+  },
+});
+
 const caseStudy = defineType({
   name: "caseStudy",
   title: "Case Studies",
@@ -254,6 +432,10 @@ const post = defineType({
         defineArrayMember({ type: "blogPlainText" }),
         defineArrayMember({ type: "blogHeading" }),
         defineArrayMember({ type: "blogParagraph" }),
+        defineArrayMember({ type: "blogList" }),
+        defineArrayMember({ type: "blogCallout" }),
+        defineArrayMember({ type: "blogQuote" }),
+        defineArrayMember({ type: "blogTable" }),
         defineArrayMember({ type: "blogImageBlock" }),
       ],
     }),
@@ -360,6 +542,11 @@ export const schemaTypes = [
   blogParagraph,
   blogPlainText,
   blogImageBlock,
+  blogList,
+  blogCallout,
+  blogQuote,
+  blogTableRow,
+  blogTable,
   caseStudy,
   post,
   testimonial,

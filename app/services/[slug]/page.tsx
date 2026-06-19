@@ -14,12 +14,14 @@ import {
 
 import { PartnerLogoMarquee } from "@/components/sections/partner-logo-marquee";
 import { ServiceCapabilityFlow } from "@/components/sections/service-capability-flow";
+import { ServiceSeoAnswerBlock } from "@/components/sections/service-seo-answer-block";
 import { Container } from "@/components/ui/container";
 import { JsonLd } from "@/components/ui/json-ld";
 import { getServiceBySlug, getServiceSlugs } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
 import {
   buildServiceSeoDescription,
+  buildServiceSeoFaqs,
   buildServiceSeoKeywords,
   buildServiceSeoTitle,
 } from "@/lib/service-seo";
@@ -207,6 +209,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const capabilitySections =
     service.capabilitySections ??
     buildFallbackSections(service, heroImage.src, heroImage.alt);
+  const serviceFaqs = buildServiceSeoFaqs(service);
   const serviceUrl = absoluteUrl(`/services/${service.slug}`);
   const organizationId = `${absoluteUrl("/")}#organization`;
 
@@ -256,6 +259,18 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   "Pricing is scoped after a site assessment, bill of materials, implementation plan, or support requirement review.",
               },
             },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: serviceFaqs.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
           },
           {
             "@context": "https://schema.org",
@@ -319,6 +334,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       <ServiceCapabilityFlow service={service} sections={capabilitySections} />
+      <ServiceSeoAnswerBlock service={service} />
       <PartnerLogoMarquee />
     </>
   );

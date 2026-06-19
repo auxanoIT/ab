@@ -391,7 +391,7 @@ Once live, monitor these to measure ROI:
 
 ### Contact Information Highlighted:
 - Phone: +234 8062 218 546
-- Email: info@auxanosolutions.net
+- Email: ask@auxanosolutions.net
 - WhatsApp (Sales): +2348062218546
 - WhatsApp (Support): +2348062218546
 - HubSpot Booking: meetings.hubspot.com/auxano-solutions
