@@ -12,6 +12,17 @@ type SiteFooterProps = {
 };
 
 export function SiteFooter({ columns, settings }: SiteFooterProps) {
+  const visibleColumns = columns
+    .map((column) => ({
+      ...column,
+      links: column.links.filter(
+        (link) =>
+          link.href !== "/privacy" &&
+          link.label.toLowerCase() !== "privacy policy",
+      ),
+    }))
+    .filter((column) => column.links.length > 0);
+
   return (
     <footer className="border-t border-white/6 bg-[var(--color-ink)] text-white">
       <Container className="grid gap-12 py-16 lg:grid-cols-[1.3fr_2fr]">
@@ -52,7 +63,7 @@ export function SiteFooter({ columns, settings }: SiteFooterProps) {
         </div>
 
         <div className="grid gap-10 sm:grid-cols-3">
-          {columns.map((column) => (
+          {visibleColumns.map((column) => (
             <div key={column.title}>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/56">
                 {column.title}

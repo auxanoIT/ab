@@ -62,12 +62,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  const headings = post.body
+  const postBody = Array.isArray(post.body) ? post.body : [];
+  const takeaways = Array.isArray(post.takeaways)
+    ? post.takeaways.filter(Boolean)
+    : [];
+  const headings = postBody
     .map(getBodyHeading)
     .filter((heading): heading is { text: string; id: string } =>
       Boolean(heading),
     );
-  const bodyBlocks = normalizeBlogBody(post.body);
+  const bodyBlocks = normalizeBlogBody(postBody);
 
   return (
     <>
@@ -178,21 +182,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </aside>
 
             <div className="min-w-0">
-              <div className="rounded-[2rem] border border-[color:rgba(11,18,32,0.08)] bg-[var(--color-cloud)] p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-electric)]">
-                  Key takeaways
-                </p>
-                <ul className="mt-4 space-y-3 text-sm leading-7 text-[var(--color-ink)]">
-                  {post.takeaways.map((takeaway) => (
-                    <li key={takeaway} className="flex gap-3">
-                      <span className="mt-[0.55rem] h-1.5 w-1.5 rounded-full bg-[var(--color-cyan)]" />
-                      <span>{takeaway}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {takeaways.length ? (
+                <div className="rounded-[2rem] border border-[color:rgba(11,18,32,0.08)] bg-[var(--color-cloud)] p-7">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-electric)]">
+                    Key takeaways
+                  </p>
+                  <ul className="mt-4 space-y-3 text-sm leading-7 text-[var(--color-ink)]">
+                    {takeaways.map((takeaway) => (
+                      <li key={takeaway} className="flex gap-3">
+                        <span className="mt-[0.55rem] h-1.5 w-1.5 rounded-full bg-[var(--color-cyan)]" />
+                        <span>{takeaway}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
 
-              <div className="mt-10 space-y-8">
+              <div className={takeaways.length ? "mt-10 space-y-8" : "space-y-8"}>
                 <PortableText value={bodyBlocks} components={blogBodyComponents} />
               </div>
 

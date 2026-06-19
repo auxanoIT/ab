@@ -156,8 +156,8 @@ export const blogPostsQuery = groq`
         "alt": coverImage.alt
       }
     ),
-    takeaways,
-    body[]{
+    "takeaways": coalesce(takeaways, []),
+    "body": coalesce(body[]{
       _type == "string" => @,
       _type == "block" => {
         ...,
@@ -221,7 +221,7 @@ export const blogPostsQuery = groq`
           "alt": image.alt
         }
       }
-    },
+    }, []),
     "slug": slug.current
   }
 `;
@@ -244,8 +244,8 @@ export const blogPostQuery = groq`
         "alt": coverImage.alt
       }
     ),
-    takeaways,
-    body[]{
+    "takeaways": coalesce(takeaways, []),
+    "body": coalesce(body[]{
       _type == "string" => @,
       _type == "block" => {
         ...,
@@ -309,7 +309,7 @@ export const blogPostQuery = groq`
           "alt": image.alt
         }
       }
-    },
+    }, []),
     "slug": slug.current
   }
 `;
