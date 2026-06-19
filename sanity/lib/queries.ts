@@ -209,7 +209,9 @@ export const blogPostsQuery = groq`
         "image": select(
           defined(asset) => {
             "src": asset->url,
-            "alt": coalesce(alt, caption, "Blog image")
+            "alt": coalesce(alt, caption, "Blog image"),
+            "width": asset->metadata.dimensions.width,
+            "height": asset->metadata.dimensions.height
           }
         )
       },
@@ -218,7 +220,9 @@ export const blogPostsQuery = groq`
         caption,
         "image": {
           "src": image.asset->url,
-          "alt": image.alt
+          "alt": image.alt,
+          "width": image.asset->metadata.dimensions.width,
+          "height": image.asset->metadata.dimensions.height
         }
       }
     }, []),
@@ -297,7 +301,9 @@ export const blogPostQuery = groq`
         "image": select(
           defined(asset) => {
             "src": asset->url,
-            "alt": coalesce(alt, caption, "Blog image")
+            "alt": coalesce(alt, caption, "Blog image"),
+            "width": asset->metadata.dimensions.width,
+            "height": asset->metadata.dimensions.height
           }
         )
       },
@@ -306,7 +312,9 @@ export const blogPostQuery = groq`
         caption,
         "image": {
           "src": image.asset->url,
-          "alt": image.alt
+          "alt": image.alt,
+          "width": image.asset->metadata.dimensions.width,
+          "height": image.asset->metadata.dimensions.height
         }
       }
     }, []),

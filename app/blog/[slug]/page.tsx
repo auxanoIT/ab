@@ -132,10 +132,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <header className="bg-[var(--color-cloud)] py-16 sm:py-20">
           <Container className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-electric)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ED6B37]">
                 {post.category}
               </p>
-              <h1 className="mt-6 text-balance text-5xl font-semibold tracking-[-0.06em] text-[var(--color-ink)] sm:text-6xl">
+              <h1 className="mt-6 text-balance text-4xl font-semibold tracking-[-0.06em] text-[var(--color-ink)] sm:text-5xl">
                 {post.title}
               </h1>
               <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-[var(--color-muted)]">
@@ -149,7 +149,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   </>
                 ) : null}
               </div>
-              <p className="mt-8 text-lg leading-8 text-[var(--color-muted)]">{post.excerpt}</p>
+              <p className="mt-8 text-lg leading-8 text-[var(--color-muted)]">
+                {post.excerpt}
+              </p>
             </div>
 
             <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-white bg-white shadow-[0_24px_70px_rgba(11,18,32,0.08)]">
@@ -163,7 +165,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <aside className="lg:sticky lg:top-28 lg:self-start">
               {headings.length ? (
                 <nav className="rounded-[1.5rem] border border-[color:rgba(11,18,32,0.08)] bg-white p-5 shadow-[0_16px_40px_rgba(11,18,32,0.05)]">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-electric)]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ED6B37]">
                     In this article
                   </p>
                   <div className="mt-4 grid gap-2">
@@ -198,12 +200,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </div>
               ) : null}
 
-              <div className={takeaways.length ? "mt-10 space-y-8" : "space-y-8"}>
-                <PortableText value={bodyBlocks} components={blogBodyComponents} />
+              <div
+                className={takeaways.length ? "mt-10 space-y-8" : "space-y-8"}
+              >
+                <PortableText
+                  value={bodyBlocks}
+                  components={blogBodyComponents}
+                />
               </div>
 
               <div className="mt-12 flex flex-wrap gap-4 border-t border-[color:rgba(11,18,32,0.08)] pt-8">
-                <ButtonLink href="/book-consultation">Book Consultation</ButtonLink>
+                <ButtonLink href="/book-consultation">
+                  Book Consultation
+                </ButtonLink>
                 <ButtonLink href="/services" variant="secondary">
                   Explore services
                 </ButtonLink>
@@ -219,7 +228,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 const blogBodyComponents: PortableTextComponents = {
   block: {
     normal: ({ children }) => (
-      <p className="text-base leading-8 text-[var(--color-muted)]">{children}</p>
+      <p className="text-base leading-8 text-[var(--color-muted)]">
+        {children}
+      </p>
     ),
     h2: ({ children, value }) => (
       <h2
@@ -382,26 +393,22 @@ const calloutStyles = {
   important: {
     title: "Important",
     icon: AlertTriangle,
-    className:
-      "border-amber-400 bg-amber-50 text-amber-700",
+    className: "border-amber-400 bg-amber-50 text-amber-700",
   },
   warning: {
     title: "Warning",
     icon: AlertTriangle,
-    className:
-      "border-red-400 bg-red-50 text-red-700",
+    className: "border-red-400 bg-red-50 text-red-700",
   },
   note: {
     title: "Note",
     icon: Info,
-    className:
-      "border-blue-400 bg-blue-50 text-blue-700",
+    className: "border-blue-400 bg-blue-50 text-blue-700",
   },
   tip: {
     title: "Tip",
     icon: Lightbulb,
-    className:
-      "border-emerald-400 bg-emerald-50 text-emerald-700",
+    className: "border-emerald-400 bg-emerald-50 text-emerald-700",
   },
 } as const;
 
@@ -448,7 +455,11 @@ function BlogTable({
           <thead className="bg-[var(--color-cloud)] text-[var(--color-ink)]">
             <tr>
               {value.columns.map((column) => (
-                <th key={column} scope="col" className="px-5 py-4 font-semibold">
+                <th
+                  key={column}
+                  scope="col"
+                  className="px-5 py-4 font-semibold"
+                >
                   {column}
                 </th>
               ))}
@@ -485,17 +496,19 @@ function BlogImage({
     return null;
   }
 
+  const width = value.image.width ?? 1200;
+  const height = value.image.height ?? 675;
+
   return (
     <figure>
-      <div className="relative aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-[var(--color-cloud)]">
-        <Image
-          src={value.image.src}
-          alt={value.image.alt}
-          fill
-          sizes="(min-width: 1024px) 760px, 100vw"
-          className="object-cover"
-        />
-      </div>
+      <Image
+        src={value.image.src}
+        alt={value.image.alt}
+        width={width}
+        height={height}
+        sizes="(min-width: 1024px) 760px, 100vw"
+        className="mx-auto h-auto max-w-full rounded-[1.5rem] bg-[var(--color-cloud)]"
+      />
       {value.caption ? (
         <figcaption className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
           {value.caption}
@@ -505,7 +518,13 @@ function BlogImage({
   );
 }
 
-function PostImage({ post, priority = false }: { post: BlogPost; priority?: boolean }) {
+function PostImage({
+  post,
+  priority = false,
+}: {
+  post: BlogPost;
+  priority?: boolean;
+}) {
   const image = post.coverImage ?? {
     src: "/image/service-details/network-design-diagrams.webp",
     alt: post.title,
@@ -535,7 +554,10 @@ function getBodyHeading(block: BlogBodyBlock) {
     };
   }
 
-  if (isPortableBlock(block) && (block.style === "h2" || block.style === "h3")) {
+  if (
+    isPortableBlock(block) &&
+    (block.style === "h2" || block.style === "h3")
+  ) {
     const text = getPortableBlockText(block);
 
     if (!text) {
@@ -551,7 +573,9 @@ function getBodyHeading(block: BlogBodyBlock) {
   return null;
 }
 
-function normalizeBlogBody(body: BlogBodyBlock[]): Array<TypedObject | PortableTextBlock> {
+function normalizeBlogBody(
+  body: BlogBodyBlock[],
+): Array<TypedObject | PortableTextBlock> {
   return body.map((block, index) =>
     typeof block === "string"
       ? {

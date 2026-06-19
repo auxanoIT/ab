@@ -10,7 +10,10 @@ type CaseStudyCardProps = {
   featured?: boolean;
 };
 
-export function CaseStudyCard({ caseStudy, featured = false }: CaseStudyCardProps) {
+export function CaseStudyCard({
+  caseStudy,
+  featured = false,
+}: CaseStudyCardProps) {
   const media = getCaseStudyMedia(caseStudy);
 
   return (
@@ -21,13 +24,16 @@ export function CaseStudyCard({ caseStudy, featured = false }: CaseStudyCardProp
           alt={media.alt}
           fill
           quality={56}
-          sizes={featured ? "(min-width: 1280px) 42vw, 100vw" : "(min-width: 1280px) 30vw, (min-width: 768px) 50vw, 100vw"}
+          sizes={
+            featured
+              ? "(min-width: 1280px) 42vw, 100vw"
+              : "(min-width: 1280px) 30vw, (min-width: 768px) 50vw, 100vw"
+          }
           className="object-cover transition duration-500 group-hover:scale-105"
         />
       </div>
       <div className="flex h-full flex-col p-6">
-        
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-electric)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ED6B37]">
           {caseStudy.client || "Client outcome"}
         </p>
         <h2 className="mt-3 text-2xl font-semibold leading-tight text-[var(--color-ink)]">

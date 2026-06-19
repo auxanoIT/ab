@@ -58,6 +58,8 @@ export type ServiceCategory =
 export type ServiceNavMedia = {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
 };
 
 export type ServiceCapabilitySection = {
@@ -66,7 +68,6 @@ export type ServiceCapabilitySection = {
   title: string;
   lead: string;
   body: string[];
-  points: string[];
   image: ServiceNavMedia;
 };
 

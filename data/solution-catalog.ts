@@ -247,12 +247,6 @@ export const services: Service[] = [
           "Auxano aligns reader choice, lock type, traffic volume, and entry policy before devices are installed. That keeps the door experience fast for approved users while preserving stricter control for sensitive spaces.",
           "The outcome is not just hardware on the wall. It is a credential model that matches the way people actually move through the building.",
         ],
-        points: [
-          "Fingerprint, facial, and proximity-card options",
-          "Reader placement matched to entry flow",
-          "Role-based credential strategy",
-          "Site-specific access policy planning",
-        ],
         image: {
           src: "/image/service-details/door-access-credentials.webp",
           alt: "Professional access control reader and credential verification at a modern office entrance",
@@ -267,12 +261,6 @@ export const services: Service[] = [
         body: [
           "Access rights can be issued, changed, or revoked from a unified dashboard, which matters when employees move roles, vendors finish work, or temporary passes must expire on time.",
           "That central view also helps the business keep the door layer aligned with HR changes, operational roles, and site policies.",
-        ],
-        points: [
-          "Single dashboard for permission management",
-          "Faster revocation for exited or changed users",
-          "Cleaner temporary and visitor access rules",
-          "Reduced dependency on manual coordination",
         ],
         image: {
           src: "/image/service-details/door-access-dashboard.webp",
@@ -289,12 +277,6 @@ export const services: Service[] = [
           "Door events should support incident review, compliance questions, and basic operational accountability without requiring teams to reconstruct events from memory.",
           "Auxano scopes logs, schedules, and operator expectations so the audit trail is not simply enabled, but usable.",
         ],
-        points: [
-          "Automatic user and event logs",
-          "Clear movement records for investigation",
-          "Better support for compliance reviews",
-          "Practical handover for operators",
-        ],
         image: {
           src: "/image/service-details/door-access-audit.webp",
           alt: "Access control event log review on a workstation in a secure operations room",
@@ -308,12 +290,6 @@ export const services: Service[] = [
         body: [
           "Access events become stronger when teams can connect a door action to the relevant video context.",
           "Auxano plans the handoff between access control and surveillance so the security stack works as one coordinated environment rather than isolated tools.",
-        ],
-        points: [
-          "CCTV-aware deployment planning",
-          "Better context around entry events",
-          "Sharper post-incident review",
-          "Staff handover on the complete workflow",
         ],
         image: {
           src: "/image/service-details/door-access-integration.webp",
@@ -365,12 +341,6 @@ export const services: Service[] = [
           "Auxano starts with line of sight, activity zones, entrances, blind spots, and review expectations. That keeps the solution focused on evidence quality and operational awareness.",
           "The aim is camera placement that protects what matters without wasting budget on poor angles or duplicated coverage.",
         ],
-        points: [
-          "Indoor, outdoor, PTZ, and day-night coverage",
-          "Risk-led placement and camera selection",
-          "Sharper protection of entrances and blind spots",
-          "Cleaner alignment with site operations",
-        ],
         image: {
           src: "/image/service-details/cctv-camera-coverage.webp",
           alt: "Modern CCTV camera network covering a commercial building entrance and perimeter",
@@ -385,12 +355,6 @@ export const services: Service[] = [
         body: [
           "The viewing experience is configured around practical use: secure remote access, intuitive playback, and the ability to check both current activity and prior events quickly.",
           "That makes surveillance more useful for everyday operations and incident response alike.",
-        ],
-        points: [
-          "Live and recorded footage access",
-          "Usable playback across common devices",
-          "Faster incident verification",
-          "Remote oversight for distributed teams",
         ],
         image: {
           src: "/image/service-details/cctv-remote-viewing.webp",
@@ -407,12 +371,6 @@ export const services: Service[] = [
           "Auxano aligns NVR or DVR capacity with camera count, resolution, frame needs, and the number of days footage must remain available.",
           "That keeps storage expectations realistic and protects against discovering too late that the evidence window is shorter than required.",
         ],
-        points: [
-          "NVR and DVR sizing",
-          "Retention planning by camera load",
-          "Capacity aligned with review requirements",
-          "Reduced storage guesswork",
-        ],
         image: {
           src: "/image/service-details/cctv-storage-retention.webp",
           alt: "Security recording hardware and storage dashboard representing CCTV footage retention planning",
@@ -427,12 +385,6 @@ export const services: Service[] = [
         body: [
           "That single delivery chain reduces design drift, missed handover details, and fragmented accountability after installation.",
           "It also gives the client a clearer path for additions, troubleshooting, and maintenance planning after go-live.",
-        ],
-        points: [
-          "Survey-backed deployment plan",
-          "Installation and commissioning in one scope",
-          "Maintenance direction after launch",
-          "Stronger ownership across the project",
         ],
         image: {
           src: "/image/service-details/cctv-survey-support.webp",
@@ -494,12 +446,6 @@ export const services: Service[] = [
         body: [
           "Protect Lives, Assets, and Operations with Industry-Leading Fire Alarm & Safety Systems. With over 15 years of experience in fire safety and protection solutions across Nigeria, Auxano Solutions designs, supplies, installs, tests, commissions, and maintains advanced fire alarm and fire detection systems for commercial, residential, and industrial facilities. We help businesses, schools, hospitals, hotels, warehouses, factories, and corporate organizations achieve early fire detection, rapid emergency response, regulatory compliance, and maximum life safety protection.",
         ],
-        points: [
-          "Addressable and conventional systems",
-          "Smoke, heat, and multi-sensor detectors",
-          "Control panels and centralized monitoring",
-          "Audible and visual notification devices",
-        ],
         image: {
           src: "/image/service-details/fire-alarm-system-design.jpg",
           alt: "Fire alarm devices planned for a commercial building safety system",
@@ -514,12 +460,6 @@ export const services: Service[] = [
           "Auxano handles device mounting, cabling coordination, panel setup, zone logic, and commissioning checks so the installed system matches the agreed design.",
           "Commissioning closes the gap between equipment being present and the safety system being ready for use.",
         ],
-        points: [
-          "Clean device installation and wiring coordination",
-          "Control panel setup and centralized monitoring readiness",
-          "Zone and alert logic verification",
-          "Commissioning checks before handover",
-        ],
         image: {
           src: "/image/service-details/fire-alarm-installation-commissioning.jpg",
           alt: "Fire alarm control panel and safety devices commissioned for a facility",
@@ -532,12 +472,6 @@ export const services: Service[] = [
         lead: "Routine maintenance is critical to ensure performance, reliability, and compliance with safety regulations.",
         body: [
           "Keep Your Fire Alarm System Reliable, Compliant, and Ready. Auxano Solutions provides professional fire alarm inspection, testing, maintenance, and repair services in Nigeria, North Africa and East Africa to ensure your fire protection system operates at peak performance. Our preventive maintenance programs include routine inspections, fault diagnosis, system upgrades, emergency support, and compliance checks, helping businesses reduce downtime, maintain safety standards, and protect lives and property.",
-        ],
-        points: [
-          "Scheduled inspections and testing",
-          "Fault diagnostics and repairs",
-          "Preventive maintenance programs",
-          "Emergency support and system upgrades",
         ],
         image: {
           src: "/image/service-details/fire-alarm-testing-maintenance.jpg",
@@ -552,12 +486,6 @@ export const services: Service[] = [
         body: [
           "Seamless Fire Alarm System Integration for Smarter Building Safety. We integrate fire alarm systems with fire suppression systems, access control systems, and Building Management Systems (BMS) to create a unified safety and security infrastructure. Our integrated solutions improve emergency response, enhance operational efficiency, and provide centralized monitoring for commercial, industrial, and high-risk facilities across Nigeria, North Africa and East Africa",
         ],
-        points: [
-          "Fire suppression system integration",
-          "Access control system integration",
-          "Building management system integration",
-          "Coordinated emergency response workflows",
-        ],
         image: {
           src: "/image/service-details/fire-alarm-installation-commissioning.jpg",
           alt: "Integrated fire alarm control panel connected to wider building safety systems",
@@ -570,12 +498,6 @@ export const services: Service[] = [
         lead: "Modern fire alarm systems provide timely detection and notification to save lives and minimize damage.",
         body: [
           "Early Detection Saves Lives and Protects Investments. A professionally installed fire alarm system provides early fire detection, instant occupant notification, faster evacuation, and reduced property damage. Whether for offices, factories, hospitals, schools, hotels, or residential developments, modern fire alarm systems help organizations improve safety, minimize risk, and meet fire safety compliance requirements.",
-        ],
-        points: [
-          "Early-stage fire detection",
-          "Instant occupant alerts",
-          "Faster evacuation support",
-          "Reduced property damage and regulatory risk",
         ],
         image: {
           src: "/image/service-details/fire-alarm-hero-call-point.webp",
@@ -592,12 +514,6 @@ export const services: Service[] = [
           "Fire Alarm Systems Built to International Safety Standards. Auxano Solutions designs, installs, and maintains fire alarm systems in accordance with recognized standards such as NFPA 72 (National Fire Alarm and Signaling Code) and BS 5839. Our commitment to industry best practices ensures reliable fire detection, system performance, and compliance for commercial and industrial facilities.",
           "Meeting Nigerian Fire Safety Regulations with Confidence. We help organizations comply with Federal Fire Service (FFS) regulations, State Fire Service requirements, and the National Building Code (NBC) through professionally designed and maintained fire alarm systems. Our compliance-focused approach helps businesses meet regulatory obligations while improving workplace safety and asset protection.",
         ],
-        points: [
-          "NFPA 72 guidance for design, installation, commissioning, and maintenance",
-          "BS 5839-aligned detection and fire alarm system practices",
-          "Federal and State Fire Service compliance support",
-          "National Building Code readiness",
-        ],
         image: {
           src: "/image/service-details/fire-alarm-compliance-standards.jpg",
           alt: "Fire alarm compliance documentation and installed safety system readiness",
@@ -611,12 +527,6 @@ export const services: Service[] = [
         body: [
           "Specialized Fire Protection Solutions Across Multiple Industries. Auxano Solutions delivers fire alarm installation and maintenance services in Nigeria, North Africa and East Africa for commercial buildings, industrial facilities, oil and gas installations, hospitals, schools, universities, hotels, residential estates, and corporate organizations. Each solution is customized to address the unique risks and operational requirements of the industry we serve.",
         ],
-        points: [
-          "Commercial buildings and industrial facilities",
-          "Oil & Gas installations",
-          "Hospitals, healthcare, schools, and universities",
-          "Hotels and residential complexes",
-        ],
         image: {
           src: "/image/service-details/fire-alarm-system-design.jpg",
           alt: "Fire alarm planning for different commercial and institutional building types",
@@ -629,12 +539,6 @@ export const services: Service[] = [
         lead: "Auxano Solutions combines engineering experience, compliance awareness, and fast support for fire safety projects.",
         body: [
           "Trusted Fire Safety Experts Delivering Reliable Protection. With over 15 years of experience, certified engineers, and a proven project delivery record, Auxano Solutions provides tailored fire alarm and fire protection solutions that meet both local and international standards. Clients choose us for our technical expertise, responsive support, quality workmanship, and commitment to protecting lives, property, and business operations.",
-        ],
-        points: [
-          "Certified and experienced fire safety engineers",
-          "Compliance with global and local standards",
-          "Tailored fire protection solutions",
-          "Reliable support and fast response",
         ],
         image: {
           src: "/image/service-details/fire-alarm-testing-maintenance.jpg",
@@ -690,12 +594,6 @@ export const services: Service[] = [
           "Auxano selects copper or fibre based on endpoint demand, backbone needs, equipment layout, and future expandability rather than habit.",
           "That keeps the network foundation ready for both current traffic and the upgrades that arrive after occupancy or expansion.",
         ],
-        points: [
-          "Cat6, Cat6A, and fibre deployment",
-          "Data and voice readiness",
-          "Distance and bandwidth considered early",
-          "Cleaner growth path for the site",
-        ],
         image: {
           src: "/image/service-details/lan-media-selection.webp",
           alt: "Structured Cat6A and fibre cabling prepared for installation in a business facility",
@@ -710,12 +608,6 @@ export const services: Service[] = [
         body: [
           "Route discipline, cabinet order, labeling, and physical neatness reduce fault-finding time and create a more professional technical environment.",
           "This is where long-term supportability is either won or lost.",
-        ],
-        points: [
-          "Neat containment and trunking",
-          "Readable labels and patching discipline",
-          "Reduced troubleshooting friction",
-          "More professional rack and room presentation",
         ],
         image: {
           src: "/image/service-details/lan-cable-management.webp",
@@ -732,12 +624,6 @@ export const services: Service[] = [
           "Fluke-certified testing closes the gap between an installed cable and a verified cable.",
           "Testing reports help commissioning teams, internal IT, and future contractors understand exactly what was delivered.",
         ],
-        points: [
-          "Fluke-certified testing where required",
-          "Evidence-backed pass and fail review",
-          "Fewer hidden deployment risks",
-          "Stronger handover confidence",
-        ],
         image: {
           src: "/image/lanfirst.jpeg",
           alt: "Engineers inspecting a structured LAN cabling rack before handover",
@@ -752,12 +638,6 @@ export const services: Service[] = [
         body: [
           "As-built drawings, endpoint references, and handover notes help future expansion, fault response, and audit readiness.",
           "That turns the installation into a maintainable asset rather than a hidden dependency only the original installer understands.",
-        ],
-        points: [
-          "As-built drawings",
-          "Clear handover records",
-          "Better support for future changes",
-          "More disciplined ownership after completion",
         ],
         image: {
           src: "/image/lansecond.jpeg",
@@ -814,12 +694,6 @@ export const services: Service[] = [
           "Auxano aligns rack layout, working clearance, power routes, cooling considerations, and controlled access before deployment gets crowded or difficult to maintain.",
           "That produces a cleaner technical environment and lowers the risk of costly rework later.",
         ],
-        points: [
-          "Rack and equipment layout",
-          "Physical security readiness",
-          "Maintainable service clearances",
-          "Stronger foundation for uptime planning",
-        ],
         image: {
           src: "/image/service-details/data-centre-buildout.webp",
           alt: "Professional server room build-out with racks, power, and security planning",
@@ -834,12 +708,6 @@ export const services: Service[] = [
         body: [
           "The power strategy accounts for UPS coverage, surge protection, and operational continuity around the equipment that cannot be allowed to drop without consequence.",
           "That helps clients make better resilience decisions before the infrastructure becomes business-critical.",
-        ],
-        points: [
-          "UPS planning",
-          "Surge and outage protection",
-          "Priority equipment mapping",
-          "Cleaner resilience decisions",
         ],
         image: {
           src: "/image/service-details/data-centre-power.webp",
@@ -856,12 +724,6 @@ export const services: Service[] = [
           "Auxano plans thermal control around the room footprint, equipment density, airflow, and the expected operational profile of the space.",
           "That avoids the pattern of installing equipment first and discovering environmental limits after the fact.",
         ],
-        points: [
-          "Precision cooling considerations",
-          "Airflow awareness around rack layout",
-          "Reduced heat-related risk",
-          "Better long-term equipment protection",
-        ],
         image: {
           src: "/image/service-details/data-centre-cooling.webp",
           alt: "Cooling infrastructure maintaining a professional server room environment",
@@ -876,12 +738,6 @@ export const services: Service[] = [
         body: [
           "Temperature, humidity, and intrusion alerts create a tighter operating loop around infrastructure health and physical risk.",
           "Monitoring extends the service from build quality into ongoing awareness.",
-        ],
-        points: [
-          "Temperature and humidity awareness",
-          "Intrusion alerting",
-          "Faster escalation when conditions drift",
-          "More complete uptime governance",
         ],
         image: {
           src: "/image/service-details/data-centre-monitoring.webp",
@@ -933,12 +789,6 @@ export const services: Service[] = [
           "Auxano designs motorized gate systems around the actual site flow: vehicle approach, pedestrian movement, security posture, available power, and manual override requirements.",
           "That keeps the installation practical for daily use while still protecting the entrance as a controlled access point.",
         ],
-        points: [
-          "Swing and sliding gate automation",
-          "Vehicle and pedestrian entry planning",
-          "Access-control-ready operation",
-          "Manual override included in the scope",
-        ],
         image: {
           src: "/image/service-details/automated-gates-swing-sliding.webp",
           alt: "Motorized sliding gate controlling vehicle and pedestrian entry at a modern facility",
@@ -953,12 +803,6 @@ export const services: Service[] = [
         body: [
           "Boom barriers help facilities separate approved vehicle movement from open access, especially where guards, reception teams, tenants, or visitors share the same entrance.",
           "Auxano plans barrier placement, activation method, and traffic behavior so the gate line remains efficient rather than becoming a bottleneck.",
-        ],
-        points: [
-          "Fast-action car park barriers",
-          "Vehicle lane control",
-          "Card, remote, or operator activation",
-          "Traffic-aware placement and setup",
         ],
         image: {
           src: "/image/service-details/automated-gates-boom-barrier.webp",
@@ -975,12 +819,6 @@ export const services: Service[] = [
           "For offices, healthcare areas, reception zones, and shared facilities, sensor-triggered doors can reduce friction and improve movement where hands-free entry is expected.",
           "The scope considers door size, sensor placement, user volume, safety response, and integration with the surrounding access policy.",
         ],
-        points: [
-          "Sensor-triggered door operation",
-          "Office and facility entry support",
-          "Safety-aware opening and closing logic",
-          "Cleaner experience for high-traffic entrances",
-        ],
         image: {
           src: "/image/service-details/automated-gates-sliding-doors.webp",
           alt: "Sensor-triggered automated sliding glass doors at a professional office entrance",
@@ -994,12 +832,6 @@ export const services: Service[] = [
         body: [
           "Auxano can configure entry operation around phones, remotes, cards, or operator controls depending on the site and the people who need access.",
           "Anti-crush sensors, power backup, and override planning are treated as part of the delivery standard, not optional afterthoughts.",
-        ],
-        points: [
-          "Phone, app, remote, or card operation",
-          "Anti-crush sensor planning",
-          "Power backup included",
-          "Operator handover and safety testing",
         ],
         image: {
           src: "/image/service-details/automated-gates-remote-control.webp",
@@ -1050,12 +882,6 @@ export const services: Service[] = [
           "Auxano helps clients choose across HP, Dell, Lenovo, Apple, and other suitable device tiers without treating every user as if they have the same computing needs.",
           "That keeps procurement practical: finance, administration, design, field, and executive users can each receive hardware that fits the job.",
         ],
-        points: [
-          "Desktop, laptop, and workstation supply",
-          "Role-based specification guidance",
-          "Business and user workload alignment",
-          "Deployment-ready procurement planning",
-        ],
         image: {
           src: "/image/service-details/it-hardware-devices.webp",
           alt: "Business desktops laptops and workstations prepared for professional deployment",
@@ -1070,12 +896,6 @@ export const services: Service[] = [
         body: [
           "Auxano supplies server hardware from recognized business vendors and helps align tower, rack, or workload-specific choices with the operational role the server must perform.",
           "The result is not just a purchase order. It is a better-informed infrastructure decision.",
-        ],
-        points: [
-          "Server supply and sizing support",
-          "Vendor and model fit guidance",
-          "Infrastructure readiness review",
-          "Warranty-aware fulfillment",
         ],
         image: {
           src: "/image/service-details/it-hardware-servers.webp",
@@ -1092,12 +912,6 @@ export const services: Service[] = [
           "Auxano can bundle supporting items with the main hardware order so teams do not lose time chasing missing adapters, displays, storage, backup power, or workspace accessories.",
           "This is especially useful when a team is opening a new office, onboarding users, or refreshing a fleet.",
         ],
-        points: [
-          "Monitors, UPS, storage, and peripherals",
-          "Accessory bundles by user role",
-          "Reduced procurement gaps",
-          "Cleaner day-one readiness",
-        ],
         image: {
           src: "/image/service-details/it-hardware-accessories.webp",
           alt: "Professional IT peripherals monitors UPS units and accessories organized for deployment",
@@ -1111,12 +925,6 @@ export const services: Service[] = [
         body: [
           "For schools, offices, healthcare teams, retail groups, and growing businesses, Auxano can coordinate bulk procurement with asset tagging and organized handover.",
           "Every product is sourced through authorized channels so warranty and authenticity stay clear.",
-        ],
-        points: [
-          "Asset-tagged delivery",
-          "Bulk procurement coordination",
-          "Authorized distributor sourcing",
-          "Genuine warranty on supplied products",
         ],
         image: {
           src: "/image/service-details/it-hardware-bulk-procurement.webp",
@@ -1168,12 +976,6 @@ export const services: Service[] = [
           "Auxano isolates the fault, explains the repair path, and confirms likely parts or service requirements before work proceeds.",
           "That keeps the process clearer for business users who need uptime, cost control, and honest expectations.",
         ],
-        points: [
-          "Screen, keyboard, and component repair",
-          "Motherboard and power fault diagnosis",
-          "Repair estimate before work begins",
-          "Clear device handover after service",
-        ],
         image: {
           src: "/image/service-details/repair-laptops-desktops.webp",
           alt: "Technician repairing a business laptop and desktop hardware components on a clean workbench",
@@ -1189,12 +991,6 @@ export const services: Service[] = [
           "Auxano supports diagnostics and part replacement for servers and printers, helping teams resolve hardware faults without unnecessary replacement when repair is practical.",
           "The approach is designed to restore service while documenting what failed and what should be watched next.",
         ],
-        points: [
-          "Server hardware diagnostics",
-          "Printer fault isolation",
-          "Part replacement planning",
-          "Service restoration notes",
-        ],
         image: {
           src: "/image/service-details/repair-servers-printers.webp",
           alt: "Engineer diagnosing server and printer hardware issues in a business support environment",
@@ -1208,12 +1004,6 @@ export const services: Service[] = [
         body: [
           "Auxano helps assess failed drives and storage incidents, then recommends the safest practical path for retrieving critical data where recovery is possible.",
           "This service is especially important when business files, accounts, project records, or operational data are trapped on failed hardware.",
-        ],
-        points: [
-          "Failed drive assessment",
-          "Recovery-first handling guidance",
-          "Business-critical data focus",
-          "Clear recommendation before next action",
         ],
         image: {
           src: "/image/service-details/repair-data-recovery.webp",
@@ -1229,12 +1019,6 @@ export const services: Service[] = [
         body: [
           "Auxano can schedule cleaning, checks, component review, firmware or system observations, and practical maintenance recommendations for devices and shared equipment.",
           "The goal is to reduce repeat faults and give the client better visibility into hardware condition.",
-        ],
-        points: [
-          "Scheduled servicing",
-          "Condition and fault trend review",
-          "Reduced unexpected downtime",
-          "Transparent diagnosis with no hidden charges",
         ],
         image: {
           src: "/image/service-details/repair-preventive-maintenance.webp",
@@ -1291,12 +1075,6 @@ export const services: Service[] = [
           "Auxano supplies patch cables across copper and fibre requirements, helping data rooms, offices, and support teams avoid low-quality or mismatched connectivity supplies.",
           "This is useful for new racks, cleanup projects, urgent replacements, and recurring operational demand.",
         ],
-        points: [
-          "Cat5e, Cat6, Cat6A, and fibre options",
-          "Multiple cable lengths",
-          "Deployment and replacement stock",
-          "Cleaner compatibility planning",
-        ],
         image: {
           src: "/image/service-details/consumables-patch-cables.webp",
           alt: "Organized copper and fibre patch cables prepared for data centre connectivity work",
@@ -1311,12 +1089,6 @@ export const services: Service[] = [
         body: [
           "Auxano supplies cage nuts, blanking panels, shelf brackets, rails, and other cabinet accessories needed for practical rack organization.",
           "Having the right rack hardware available reduces improvisation and keeps installations more professional.",
-        ],
-        points: [
-          "Cage nuts and mounting hardware",
-          "Blanking panels and shelf brackets",
-          "Rails and rack accessories",
-          "Cleaner cabinet organization",
         ],
         image: {
           src: "/image/service-details/consumables-rack-hardware.webp",
@@ -1333,12 +1105,6 @@ export const services: Service[] = [
           "Auxano helps source SFP modules, transceivers, and related fibre accessories so network and data-centre teams can complete connectivity work with fewer compatibility surprises.",
           "The supply conversation can include the equipment already in place and the performance target for the link.",
         ],
-        points: [
-          "SFP modules and transceivers",
-          "Fibre connectivity accessories",
-          "Compatibility-aware sourcing",
-          "Support for expansion and replacement",
-        ],
         image: {
           src: "/image/service-details/consumables-sfp-transceivers.webp",
           alt: "SFP transceiver modules and fibre connectivity accessories arranged for network installation",
@@ -1353,12 +1119,6 @@ export const services: Service[] = [
         body: [
           "Auxano supplies ties, labels, cable-management tools, thermal paste, cleaning tools, and supporting items for teams maintaining racks and technical rooms.",
           "Fast supply and volume pricing support recurring infrastructure needs rather than one-off emergency buying.",
-        ],
-        points: [
-          "Ties, labels, and cable-management supplies",
-          "Thermal paste and cleaning tools",
-          "Fast supply for operational teams",
-          "Volume pricing for ongoing demand",
         ],
         image: {
           src: "/image/service-details/consumables-cable-management.webp",
@@ -1415,12 +1175,6 @@ export const services: Service[] = [
           "Auxano designs and installs projectors, displays, PA systems, microphones, speakers, and video conferencing tools around the room size and use case.",
           "The aim is a room that teams can use quickly and confidently before every meeting.",
         ],
-        points: [
-          "Projectors, displays, and PA systems",
-          "Video conferencing setup",
-          "Room-size-aware AV planning",
-          "User-ready handover",
-        ],
         image: {
           src: "/image/service-details/av-conference-room.webp",
           alt: "Modern conference room with professional display audio and video conferencing setup",
@@ -1434,12 +1188,6 @@ export const services: Service[] = [
         body: [
           "Auxano can plan and run event audio, displays, staging support, microphones, playback, and live technical operation for corporate, educational, and public moments.",
           "The team handles setup and live management so organizers can focus on the audience and program.",
-        ],
-        points: [
-          "Conference and launch AV support",
-          "PA, display, and playback coordination",
-          "Live technical operation",
-          "Setup and pack-up included",
         ],
         image: {
           src: "/image/service-details/av-event-production.webp",
@@ -1456,12 +1204,6 @@ export const services: Service[] = [
           "Auxano supports multi-camera streaming to YouTube, Facebook, Zoom, and other event platforms, with the operating crew and technical preparation needed for a smooth broadcast.",
           "This helps events reach remote audiences without reducing the experience to a single static phone camera.",
         ],
-        points: [
-          "Multi-camera livestreaming",
-          "YouTube, Facebook, Zoom, and platform support",
-          "Audio and video switching",
-          "Live crew operation",
-        ],
         image: {
           src: "/image/service-details/av-livestreaming.webp",
           alt: "Professional multi-camera livestreaming control setup for a business event",
@@ -1476,12 +1218,6 @@ export const services: Service[] = [
         body: [
           "Auxano can support LED video wall planning for temporary events and permanent facilities where standard displays are not enough.",
           "The scope can include screen sizing, placement, source management, setup, live operation, and pack-down where required.",
-        ],
-        points: [
-          "LED video wall support",
-          "Event and permanent display planning",
-          "High-impact visual presentation",
-          "Setup, live management, and pack-up",
         ],
         image: {
           src: "/image/service-details/av-led-video-wall.webp",
@@ -1532,12 +1268,6 @@ export const services: Service[] = [
           "Auxano reviews the physical environment before equipment is specified, including rooms, routes, power, endpoint locations, wireless behavior, and expansion expectations.",
           "That early survey reduces assumptions and gives the design a stronger foundation for installation, configuration, and future support.",
         ],
-        points: [
-          "Physical space and route assessment",
-          "User and device requirement review",
-          "Wireless and wired coverage inputs",
-          "Expansion and support considerations",
-        ],
         image: {
           src: "/image/service-details/network-design-site-survey.webp",
           alt: "Network engineer performing a site survey inside a modern office environment",
@@ -1551,12 +1281,6 @@ export const services: Service[] = [
         body: [
           "Auxano produces diagrams that separate how the network is structured logically from how it is physically deployed across rooms, racks, and pathways.",
           "This becomes permanent IT documentation instead of knowledge trapped with the first installer.",
-        ],
-        points: [
-          "Logical topology diagrams",
-          "Physical layout documentation",
-          "Engineer-ready handover material",
-          "Clearer support and troubleshooting",
         ],
         image: {
           src: "/image/service-details/network-design-diagrams.webp",
@@ -1573,12 +1297,6 @@ export const services: Service[] = [
           "Auxano defines addressing, segmentation, DHCP scopes, DNS needs, and service layout so the network can be configured cleanly from the beginning.",
           "That structure is especially important when the environment includes multiple departments, guest access, servers, phones, CCTV, or wireless networks.",
         ],
-        points: [
-          "Subnet and address planning",
-          "DHCP scope structure",
-          "DNS and service layout",
-          "Segmentation-ready design",
-        ],
         image: {
           src: "/image/service-details/network-design-ip-planning.webp",
           alt: "Structured IP address planning and network addressing review on a workstation",
@@ -1592,12 +1310,6 @@ export const services: Service[] = [
         body: [
           "Auxano defines equipment categories, quantities, specifications, and deployment dependencies so purchasing is tied to the actual design.",
           "This helps clients compare budgets properly and prevents underbuying or buying the wrong class of hardware.",
-        ],
-        points: [
-          "Equipment quantities and specifications",
-          "Brand and model guidance where needed",
-          "Procurement-ready schedule",
-          "Budget and deployment alignment",
         ],
         image: {
           src: "/image/service-details/network-design-bom.webp",
@@ -1653,12 +1365,6 @@ export const services: Service[] = [
           "Auxano reviews the current network against business requirements, support pressure, security exposure, and performance expectations.",
           "The goal is to document real gaps before recommending a target architecture or migration path.",
         ],
-        points: [
-          "Current topology and device review",
-          "Performance and capacity assessment",
-          "Risk and support-gap identification",
-          "Documented findings before recommendations",
-        ],
         image: {
           src: "/image/service-details/network-architecture-audit.webp",
           alt: "Network architect auditing current network state with dashboards and rack documentation",
@@ -1674,12 +1380,6 @@ export const services: Service[] = [
           "Auxano weighs LAN, WAN, SD-WAN, cloud, and hybrid options against operational fit, resilience, cost, and supportability.",
           "The recommendation explains the tradeoffs so leadership and technical teams can make a practical decision.",
         ],
-        points: [
-          "LAN, WAN, SD-WAN, cloud, and hybrid review",
-          "Business-fit recommendation",
-          "Tradeoff and dependency explanation",
-          "Vendor-neutral decision support",
-        ],
         image: {
           src: "/image/service-details/network-architecture-recommendation.webp",
           alt: "Network architecture recommendation workshop reviewing LAN WAN cloud and hybrid options",
@@ -1694,12 +1394,6 @@ export const services: Service[] = [
           "Auxano identifies where resilience is needed: links, power, core switching, firewalls, wireless coverage, service paths, and branch connectivity.",
           "The plan is shaped around business impact so redundancy is added where it actually protects operations.",
         ],
-        points: [
-          "Single-point-of-failure review",
-          "Link and core resilience planning",
-          "Business-impact prioritization",
-          "Continuity-aware architecture",
-        ],
         image: {
           src: "/image/service-details/network-architecture-redundancy.webp",
           alt: "Resilient network architecture diagram with redundant links and core infrastructure planning",
@@ -1713,12 +1407,6 @@ export const services: Service[] = [
         body: [
           "Auxano breaks migration into practical phases, dependencies, testing points, rollback thinking, and communication needs.",
           "That roadmap helps the business modernize without turning every improvement into an operational interruption.",
-        ],
-        points: [
-          "Phased migration sequencing",
-          "Dependency and testing plan",
-          "Rollback and continuity thinking",
-          "Reduced disruption during change",
         ],
         image: {
           src: "/image/service-details/network-architecture-roadmap.webp",
@@ -1770,12 +1458,6 @@ export const services: Service[] = [
           "Auxano plans cable routes, media type, outlet locations, patching, and backbone needs around the environment and equipment strategy.",
           "That keeps the physical layer ready for voice, data, wireless, surveillance, and other connected systems.",
         ],
-        points: [
-          "Cat6 and Cat6A copper cabling",
-          "Fibre optic backbone support",
-          "Outlet and route planning",
-          "Voice and data readiness",
-        ],
         image: {
           src: "/image/service-details/network-cabling-backbone.webp",
           alt: "Horizontal and backbone network cabling installation in a commercial building",
@@ -1790,12 +1472,6 @@ export const services: Service[] = [
         body: [
           "Auxano organizes patching, rack runs, cabinet layout, and colour discipline so changes remain understandable after handover.",
           "This improves troubleshooting, reduces accidental disconnects, and creates a more professional data room.",
-        ],
-        points: [
-          "Managed rack cabling",
-          "Colour-coded cable organization",
-          "Patch-panel and cabinet discipline",
-          "Cleaner support after handover",
         ],
         image: {
           src: "/image/service-details/network-cabling-rack.webp",
@@ -1812,12 +1488,6 @@ export const services: Service[] = [
           "Auxano routes cables through appropriate containment, reducing exposure, damage risk, and visual clutter across workspaces and technical areas.",
           "Pathway planning also makes future additions cleaner because the route strategy is already defined.",
         ],
-        points: [
-          "Conduit and trunking installation",
-          "Protected cable routing",
-          "Cleaner office and facility finish",
-          "Future expansion readiness",
-        ],
         image: {
           src: "/image/service-details/network-cabling-trunking.webp",
           alt: "Protected network cable routing through conduit and trunking in a modern facility",
@@ -1831,12 +1501,6 @@ export const services: Service[] = [
         body: [
           "Auxano tests cable runs and provides certification evidence where required, supporting TIA-568 and ISO 11801 compliant delivery.",
           "As-built drawings and reports help future engineers understand what was installed and verified.",
-        ],
-        points: [
-          "Cable certification testing",
-          "Printed or digital test results",
-          "TIA-568 and ISO 11801 alignment",
-          "As-built documentation on completion",
         ],
         image: {
           src: "/image/service-details/network-cabling-certification.webp",
@@ -1893,12 +1557,6 @@ export const services: Service[] = [
           "Auxano configures enterprise-grade network behavior around users, departments, applications, voice, wireless, servers, and security boundaries.",
           "The work can include VLANs, QoS, 802.1X, routing protocols, and hardening controls depending on the environment.",
         ],
-        points: [
-          "VLAN and segmentation setup",
-          "QoS for voice and priority traffic",
-          "802.1X and access hardening",
-          "Routing protocol configuration",
-        ],
         image: {
           src: "/image/service-details/network-config-enterprise.webp",
           alt: "Enterprise network configuration dashboard with switches routing and secure segmentation",
@@ -1913,12 +1571,6 @@ export const services: Service[] = [
         body: [
           "Auxano configures firewall rules, secure wireless, guest access, VPN access, and shared devices so teams can work reliably without exposing the network unnecessarily.",
           "The setup is practical for offices, retail locations, clinics, schools, and professional service teams.",
-        ],
-        points: [
-          "Firewall rule setup",
-          "Guest WiFi and secure wireless",
-          "VPN access configuration",
-          "Printer and shared device integration",
         ],
         image: {
           src: "/image/service-details/network-config-small-business.webp",
@@ -1935,12 +1587,6 @@ export const services: Service[] = [
           "Auxano improves WiFi placement, device behavior, router settings, access controls, and reliability for home-office and executive home environments.",
           "This helps users work with better video calls, stronger coverage, and clearer device control.",
         ],
-        points: [
-          "Home and home-office WiFi tuning",
-          "Device management setup",
-          "Coverage and performance optimization",
-          "Hybrid work reliability",
-        ],
         image: {
           src: "/image/service-details/network-config-home-office.webp",
           alt: "Reliable home office WiFi configuration with router laptop and managed devices",
@@ -1955,12 +1601,6 @@ export const services: Service[] = [
         body: [
           "Auxano records key configuration decisions, backs up device configs, and hands over support notes so future changes can be made with context.",
           "This closes the gap between a working network and a network that can be owned properly by the client.",
-        ],
-        points: [
-          "Configuration backup",
-          "Handover documentation",
-          "Support notes and key settings",
-          "Reduced dependency on memory",
         ],
         image: {
           src: "/image/service-details/network-config-documentation.webp",
@@ -2011,12 +1651,6 @@ export const services: Service[] = [
           "Auxano helps clients choose firewall platforms and licensing needs based on actual operating requirements rather than buying a device that is too weak or unnecessarily complex.",
           "The goal is genuine hardware, correct sizing, and a clearer security path.",
         ],
-        points: [
-          "Firewall sizing and recommendation",
-          "Security-edge procurement support",
-          "License and feature awareness",
-          "Budget-aligned sourcing",
-        ],
         image: {
           src: "/image/service-details/network-equipment-firewalls.webp",
           alt: "Enterprise firewall appliances prepared for secure network deployment",
@@ -2031,12 +1665,6 @@ export const services: Service[] = [
         body: [
           "Auxano sources switching and routing equipment across common business tiers, helping clients choose what fits the design and budget.",
           "The recommendation can account for PoE needs, uplinks, VLANs, stacking, branch connectivity, and long-term support.",
-        ],
-        points: [
-          "Router and switch procurement",
-          "Port, PoE, and uplink planning",
-          "Business-tier model guidance",
-          "Growth-aware hardware selection",
         ],
         image: {
           src: "/image/service-details/network-equipment-switches-routers.webp",
@@ -2053,12 +1681,6 @@ export const services: Service[] = [
           "Auxano helps specify wireless access points for offices, schools, retail spaces, warehouses, and other environments where coverage and stability matter.",
           "The supply conversation considers placement, controller model, guest access, capacity, and future expansion.",
         ],
-        points: [
-          "Wireless access point sourcing",
-          "Coverage and density guidance",
-          "Managed WiFi planning",
-          "Guest and business access needs",
-        ],
         image: {
           src: "/image/service-details/network-equipment-access-points.webp",
           alt: "Wireless access points prepared for managed business WiFi deployment",
@@ -2073,12 +1695,6 @@ export const services: Service[] = [
         body: [
           "Auxano supplies the supporting parts needed for network projects, including patch cables, SFP modules, media converters, and related connectivity accessories.",
           "When clients are not sure what to buy, Auxano can spec the right equipment and accessories for the budget and design.",
-        ],
-        points: [
-          "Patch cables and connectivity accessories",
-          "SFP modules and media converters",
-          "Spec support when requirements are unclear",
-          "Reduced procurement mismatch",
         ],
         image: {
           src: "/image/service-details/network-equipment-accessories.webp",
@@ -2135,12 +1751,6 @@ export const services: Service[] = [
           "Auxano deploys IP PBX platforms around the organization's call flow, sites, users, extensions, and management requirements.",
           "The solution can support on-premises or cloud-hosted models depending on reliability, budget, and operating preference.",
         ],
-        points: [
-          "On-premises or cloud-hosted PBX",
-          "Extension and user planning",
-          "Call-flow-aware deployment",
-          "Migration from legacy telephony",
-        ],
         image: {
           src: "/image/service-details/ip-pbx-deployment.webp",
           alt: "Modern IP PBX telephone system deployment in a business communications room",
@@ -2154,12 +1764,6 @@ export const services: Service[] = [
         body: [
           "Auxano configures SIP connectivity, provider details, routing behavior, failover thinking, and call quality considerations.",
           "For many businesses, the move to IP telephony can reduce phone bills while improving flexibility.",
-        ],
-        points: [
-          "SIP trunk setup",
-          "Local and international call routing",
-          "Call quality and provider coordination",
-          "Cost-saving telephony path",
         ],
         image: {
           src: "/image/service-details/ip-pbx-sip-trunking.webp",
@@ -2176,12 +1780,6 @@ export const services: Service[] = [
           "Auxano rolls out desk phones, mobile softphones, and PC calling apps so teams can work across offices, remote locations, and hybrid schedules.",
           "This expands communication without forcing every user into the same hardware pattern.",
         ],
-        points: [
-          "Desk phone rollout",
-          "Mobile and PC softphones",
-          "Anywhere-working support",
-          "User training and handover",
-        ],
         image: {
           src: "/image/service-details/ip-pbx-phones-softphones.webp",
           alt: "Business IP phones and softphone apps prepared for office and mobile communication",
@@ -2196,12 +1794,6 @@ export const services: Service[] = [
         body: [
           "Auxano configures smart business features around how the organization receives calls, routes departments, manages missed calls, and reviews conversations where required.",
           "These features help teams improve responsiveness and create a more professional caller experience.",
-        ],
-        points: [
-          "Auto-attendant and call queues",
-          "Voicemail-to-email setup",
-          "Call recording where required",
-          "Better customer call handling",
         ],
         image: {
           src: "/image/service-details/ip-pbx-smart-features.webp",
@@ -2252,12 +1844,6 @@ export const services: Service[] = [
           "Auxano helps clients source business-ready desktops, laptops, and workstations from recognized hardware ecosystems, with attention to performance, warranty, durability, and role fit.",
           "That makes the purchase easier to defend commercially and easier to support technically after delivery.",
         ],
-        points: [
-          "Desktop, laptop, and workstation supply",
-          "Business-grade device options",
-          "Performance matched to real workloads",
-          "Warranty-aware procurement",
-        ],
         image: {
           src: "/image/service-details/hardware-desktop-laptop-devices.webp",
           alt: "Business desktops laptops and workstations prepared for professional deployment",
@@ -2272,12 +1858,6 @@ export const services: Service[] = [
         body: [
           "Auxano compares user role, application load, mobility, screen needs, storage, memory, and support expectations before recommending a hardware tier.",
           "This keeps procurement controlled without underspecifying the people whose work depends on performance.",
-        ],
-        points: [
-          "Role-based specification guidance",
-          "Budget and workload balancing",
-          "User group planning",
-          "Reduced overspend and underspecification",
         ],
         image: {
           src: "/image/service-details/hardware-role-fit.webp",
@@ -2294,12 +1874,6 @@ export const services: Service[] = [
           "Auxano can coordinate bulk device supply for growing teams, schools, offices, clinics, and multi-user environments, including asset tagging and delivery organization.",
           "This helps internal teams know what was supplied, where it goes, and how it should be supported.",
         ],
-        points: [
-          "Bulk procurement coordination",
-          "Asset-tagged delivery",
-          "Organized handover",
-          "Deployment-ready device batches",
-        ],
         image: {
           src: "/image/service-details/hardware-bulk-procurement.webp",
           alt: "Asset-tagged laptops and business hardware prepared for bulk deployment",
@@ -2314,12 +1888,6 @@ export const services: Service[] = [
         body: [
           "Auxano can bundle displays, docking stations, UPS units, storage, keyboards, mice, bags, and related accessories around each role.",
           "That reduces day-one gaps and prevents teams from losing time chasing small but essential items after delivery.",
-        ],
-        points: [
-          "Monitors and docking stations",
-          "Bags, peripherals, and storage",
-          "Accessory bundles by role",
-          "Cleaner day-one readiness",
         ],
         image: {
           src: "/image/service-details/hardware-accessories.webp",
@@ -2371,12 +1939,6 @@ export const services: Service[] = [
           "Auxano handles operating system setup, productivity apps, antivirus, browser and business application readiness, and basic device configuration.",
           "The setup is applied consistently whether the scope is one device or a larger deployment batch.",
         ],
-        points: [
-          "Operating system setup",
-          "Office and business app installation",
-          "Antivirus deployment",
-          "Consistent setup standard across devices",
-        ],
         image: {
           src: "/image/service-details/computer-setup-os-software.webp",
           alt: "Technician configuring operating system and business software on new office computers",
@@ -2391,12 +1953,6 @@ export const services: Service[] = [
         body: [
           "Auxano connects devices to wired or wireless networks, business email, printers, shared drives, and common collaboration tools.",
           "This reduces first-day support issues and helps users start work without repeated manual fixes.",
-        ],
-        points: [
-          "Network and WiFi connection",
-          "Email profile setup",
-          "Printer and shared drive access",
-          "Collaboration tool readiness",
         ],
         image: {
           src: "/image/service-details/computer-setup-network-email.webp",
@@ -2413,12 +1969,6 @@ export const services: Service[] = [
           "Auxano enables security baselines such as firewall settings, update configuration, antivirus readiness, local account hygiene, and unnecessary service review.",
           "This gives each new endpoint a stronger starting posture before it enters daily use.",
         ],
-        points: [
-          "Firewall and update configuration",
-          "Endpoint protection readiness",
-          "Unnecessary service review",
-          "Practical security baseline",
-        ],
         image: {
           src: "/image/service-details/computer-setup-security-hardening.webp",
           alt: "Endpoint security hardening dashboard for newly configured business computers",
@@ -2433,12 +1983,6 @@ export const services: Service[] = [
         body: [
           "Auxano supports data migration from old devices to new ones, including business files, selected settings, mail profiles, and practical user handover checks.",
           "This is especially useful during refresh projects where productivity loss is as important as the device purchase itself.",
-        ],
-        points: [
-          "File and profile migration",
-          "Email and selected settings transfer",
-          "Old-to-new device transition",
-          "User handover checks",
         ],
         image: {
           src: "/image/service-details/computer-setup-data-migration.webp",
@@ -2494,12 +2038,6 @@ export const services: Service[] = [
           "Auxano helps clients choose server hardware around the role it must play: file services, applications, virtualization, databases, backup, or branch operations.",
           "The goal is a server platform that is supportable from the beginning rather than oversized, undersized, or poorly matched.",
         ],
-        points: [
-          "Tower, rack, and blade server options",
-          "Workload-based sizing",
-          "Growth and resilience considerations",
-          "Installation-ready specification",
-        ],
         image: {
           src: "/image/service-details/server-new-supply.webp",
           alt: "Enterprise server hardware prepared for workload-based installation",
@@ -2514,12 +2052,6 @@ export const services: Service[] = [
         body: [
           "Auxano diagnoses server hardware faults and supports part replacement across memory, storage, controllers, power, and cooling components.",
           "The service is built around transparent diagnosis and practical restoration, not blind replacement.",
-        ],
-        points: [
-          "Server diagnostics",
-          "RAM, drive, PSU, and cooling replacement",
-          "RAID controller fault support",
-          "Repair notes and restoration guidance",
         ],
         image: {
           src: "/image/service-details/server-hardware-repair.webp",
@@ -2536,12 +2068,6 @@ export const services: Service[] = [
           "Auxano configures RAID based on workload, capacity, performance, and recovery needs, then documents the selected protection model.",
           "This gives the client a clearer view of how storage failure risk is being reduced.",
         ],
-        points: [
-          "RAID 1, 5, 6, and 10 planning",
-          "Performance and protection tradeoffs",
-          "Storage resilience configuration",
-          "Recovery-aware documentation",
-        ],
         image: {
           src: "/image/service-details/server-raid-configuration.webp",
           alt: "Server RAID configuration with storage drives and redundancy planning dashboard",
@@ -2556,12 +2082,6 @@ export const services: Service[] = [
         body: [
           "Auxano deploys server operating systems and virtualization platforms with baseline hardening, service configuration, and handover notes.",
           "That includes the practical work needed to prepare the server for business services rather than leaving it as bare hardware.",
-        ],
-        points: [
-          "Windows Server and Linux deployment",
-          "VMware ESXi readiness",
-          "Baseline hardening",
-          "Role-aligned service setup",
         ],
         image: {
           src: "/image/service-details/server-os-deployment.webp",
@@ -2617,12 +2137,6 @@ export const services: Service[] = [
           "Auxano provisions NAS platforms around file access, user permissions, backup expectations, storage pools, and collaboration needs.",
           "This is suitable for offices, creative teams, healthcare environments, and businesses that need centralized file storage without unnecessary complexity.",
         ],
-        points: [
-          "NAS platform provisioning",
-          "File sharing and collaboration",
-          "Backup-aware storage setup",
-          "User and permission planning",
-        ],
         image: {
           src: "/image/service-details/storage-nas-solutions.webp",
           alt: "NAS storage appliance provisioned for business file sharing and backup",
@@ -2637,12 +2151,6 @@ export const services: Service[] = [
         body: [
           "Auxano helps design and deploy SAN storage where virtualization, databases, and shared high-performance workloads require stronger storage architecture.",
           "The scope considers connectivity, redundancy, workload profile, and the infrastructure that will consume the storage.",
-        ],
-        points: [
-          "SAN storage planning",
-          "Virtualization and database support",
-          "High-performance shared storage",
-          "Host and connectivity alignment",
         ],
         image: {
           src: "/image/service-details/storage-san-solutions.webp",
@@ -2659,12 +2167,6 @@ export const services: Service[] = [
           "Auxano configures RAID and recovery procedures around the storage platform and the business impact of data loss or downtime.",
           "Testing and documentation help confirm that protection is practical, not just theoretical.",
         ],
-        points: [
-          "Redundant storage configuration",
-          "Recovery procedure planning",
-          "RAID testing and documentation",
-          "Reduced storage failure risk",
-        ],
         image: {
           src: "/image/service-details/storage-raid-deployment.webp",
           alt: "RAID storage deployment with redundant drive bays and recovery procedure review",
@@ -2679,12 +2181,6 @@ export const services: Service[] = [
         body: [
           "Auxano estimates current use, growth rate, retention needs, backup requirements, and workload behavior before recommending capacity.",
           "That helps the client avoid emergency expansion and protects the storage investment for longer.",
-        ],
-        points: [
-          "Storage growth forecasting",
-          "Retention and backup considerations",
-          "Capacity headroom planning",
-          "Expansion-ready recommendation",
         ],
         image: {
           src: "/image/service-details/storage-capacity-planning.webp",
@@ -2736,12 +2232,6 @@ export const services: Service[] = [
           "Auxano supplies and installs office printers for teams that need dependable printing, scanning, copying, and shared use across departments.",
           "The recommendation considers workload and operating cost instead of treating every printer as interchangeable.",
         ],
-        points: [
-          "Laser, inkjet, and multifunction options",
-          "Office workload matching",
-          "Scanning and copying readiness",
-          "Installed and tested before handover",
-        ],
         image: {
           src: "/image/service-details/printer-office-supply.webp",
           alt: "Modern office multifunction printer installed and ready for business use",
@@ -2757,12 +2247,6 @@ export const services: Service[] = [
           "Auxano supports label and receipt printer deployment for logistics, warehousing, point-of-sale, inventory, and operational workflows.",
           "The scope can include device selection, connection, driver setup, testing, and user handover.",
         ],
-        points: [
-          "Thermal and barcode printer support",
-          "Receipt printer setup",
-          "Retail and warehouse workflows",
-          "Driver and media testing",
-        ],
         image: {
           src: "/image/service-details/printer-label-receipt.webp",
           alt: "Label barcode and receipt printers set up for retail and warehouse operations",
@@ -2776,12 +2260,6 @@ export const services: Service[] = [
         body: [
           "Auxano configures printer access across wired, wireless, Windows, Mac, and mobile environments, with testing before handover.",
           "This reduces repeated support calls and makes shared printing more predictable.",
-        ],
-        points: [
-          "Network printer setup",
-          "Windows, Mac, and mobile support",
-          "Shared print access",
-          "Connectivity and print testing",
         ],
         image: {
           src: "/image/service-details/printer-network-setup.webp",
@@ -2797,12 +2275,6 @@ export const services: Service[] = [
         body: [
           "Auxano can help structure print management so organizations understand device usage, reduce waste, and support the right printer policy.",
           "This matters for offices, schools, healthcare environments, and any business where printing cost or accountability is a recurring concern.",
-        ],
-        points: [
-          "Print usage visibility",
-          "Cost-reduction planning",
-          "User and policy control",
-          "Organization-wide print oversight",
         ],
         image: {
           src: "/image/service-details/printer-print-management.webp",
@@ -2854,12 +2326,6 @@ export const services: Service[] = [
           "Auxano helps clients choose firewall hardware and licenses around the actual environment instead of leaving the device at default assumptions.",
           "The result is a security edge that is sized, licensed, and ready to be configured for the business.",
         ],
-        points: [
-          "Firewall sizing and platform fit",
-          "Performance and value review",
-          "License feature alignment",
-          "Environment-specific recommendation",
-        ],
         image: {
           src: "/image/service-details/software-firewall-performance.webp",
           alt: "Enterprise firewall appliance and security dashboard prepared for business network protection",
@@ -2873,12 +2339,6 @@ export const services: Service[] = [
         body: [
           "Auxano can align firewall licensing with endpoint security needs, monitoring expectations, and user behavior so perimeter and device protection work together.",
           "This supports stronger threat response than isolated tools managed in separate silos.",
-        ],
-        points: [
-          "Firewall and endpoint alignment",
-          "Central security visibility",
-          "Threat response context",
-          "Protection beyond default setup",
         ],
         image: {
           src: "/image/service-details/software-firewall-endpoint-sync.webp",
@@ -2894,12 +2354,6 @@ export const services: Service[] = [
           "Auxano scopes firewall needs for complex sites, multi-branch networks, regulated teams, and environments with heavier security requirements.",
           "The service can support advanced firewall platforms where the network requires deeper controls and stronger governance.",
         ],
-        points: [
-          "Complex environment support",
-          "Policy and segmentation planning",
-          "Enterprise security control fit",
-          "Governance-aware deployment",
-        ],
         image: {
           src: "/image/service-details/software-firewall-enterprise.webp",
           alt: "Enterprise firewall architecture protecting a complex multi-site business network",
@@ -2914,12 +2368,6 @@ export const services: Service[] = [
         body: [
           "Auxano tracks renewal needs, expiry timing, license coverage, and upgrade windows so the client can plan before protection is interrupted.",
           "That keeps the firewall useful as an active security control, not a forgotten appliance.",
-        ],
-        points: [
-          "Expiry tracking",
-          "Renewal planning",
-          "Coverage continuity",
-          "Upgrade and license guidance",
         ],
         image: {
           src: "/image/service-details/software-firewall-renewals.webp",
@@ -2971,12 +2419,6 @@ export const services: Service[] = [
           "Auxano compares endpoint protection options against budget, management needs, risk exposure, and the support model expected after deployment.",
           "The recommendation is practical: the goal is a solution the client can afford, manage, and trust.",
         ],
-        points: [
-          "Budget and risk-profile review",
-          "Endpoint estate assessment",
-          "Vendor-fit recommendation",
-          "License coverage planning",
-        ],
         image: {
           src: "/image/service-details/software-antivirus-vendor-fit.webp",
           alt: "Endpoint security product comparison and antivirus license planning workspace",
@@ -2992,12 +2434,6 @@ export const services: Service[] = [
           "Auxano configures central management so administrators can see protected devices, coverage gaps, alerts, and policy status.",
           "This helps the business move beyond one-by-one installation into fleet-level control.",
         ],
-        points: [
-          "Central console setup",
-          "Device coverage visibility",
-          "Policy and alert monitoring",
-          "Fleet-level endpoint management",
-        ],
         image: {
           src: "/image/service-details/software-antivirus-console.webp",
           alt: "Central antivirus management console monitoring protected business devices",
@@ -3012,12 +2448,6 @@ export const services: Service[] = [
           "Auxano helps configure endpoint protection around ransomware risk, user behavior, update discipline, and the response path when suspicious activity appears.",
           "This gives businesses a stronger practical defence against one of the most disruptive endpoint threats.",
         ],
-        points: [
-          "Ransomware protection coverage",
-          "Suspicious activity monitoring",
-          "User and device risk awareness",
-          "Endpoint response readiness",
-        ],
         image: {
           src: "/image/service-details/software-antivirus-ransomware.webp",
           alt: "Ransomware protection dashboard showing protected endpoints and threat alerts",
@@ -3031,12 +2461,6 @@ export const services: Service[] = [
         body: [
           "Auxano deploys antivirus software across business devices, confirms coverage, and provides practical guidance for ongoing monitoring and renewal.",
           "That closes the gap between procurement and actual protection.",
-        ],
-        points: [
-          "Installation across user devices",
-          "Coverage verification",
-          "Baseline policy configuration",
-          "Renewal and support guidance",
         ],
         image: {
           src: "/image/service-details/software-antivirus-deployment.webp",
@@ -3093,12 +2517,6 @@ export const services: Service[] = [
           "Auxano helps clients choose Windows licensing options for individual users, teams, and business environments that need genuine, supportable operating systems.",
           "This keeps devices properly activated and easier to manage.",
         ],
-        points: [
-          "Windows Home, Pro, and Business guidance",
-          "Role-based edition selection",
-          "Genuine license sourcing",
-          "Secure and update-ready devices",
-        ],
         image: {
           src: "/image/service-details/software-windows-editions.webp",
           alt: "Genuine Windows operating system license planning for business devices",
@@ -3112,12 +2530,6 @@ export const services: Service[] = [
         body: [
           "Auxano supports volume licensing conversations where organizations need cost-effective, documented, and centrally understandable license coverage.",
           "This is useful for refresh projects, new offices, schools, and growing businesses.",
-        ],
-        points: [
-          "Volume licensing guidance",
-          "Multi-device cost efficiency",
-          "Organization-level license planning",
-          "Procurement support for device fleets",
         ],
         image: {
           src: "/image/service-details/software-windows-volume.webp",
@@ -3134,12 +2546,6 @@ export const services: Service[] = [
           "Auxano helps preserve license documentation and procurement records so the client has a cleaner compliance position.",
           "That documentation is part of the value of buying properly, not a side detail.",
         ],
-        points: [
-          "License record support",
-          "Organization-ready documentation",
-          "Proof of genuine software",
-          "Cleaner compliance posture",
-        ],
         image: {
           src: "/image/service-details/software-windows-compliance.webp",
           alt: "Operating system license compliance documentation reviewed on a business workstation",
@@ -3154,12 +2560,6 @@ export const services: Service[] = [
         body: [
           "Auxano can help review existing operating system license coverage, document device status, and recommend remediation where gaps exist.",
           "This gives decision-makers a clearer view of what is compliant, what is missing, and what should be cleaned up.",
-        ],
-        points: [
-          "OS license estate review",
-          "Coverage gap identification",
-          "Audit-ready visibility",
-          "Remediation recommendation",
         ],
         image: {
           src: "/image/service-details/software-windows-audit.webp",
@@ -3216,12 +2616,6 @@ export const services: Service[] = [
           "Auxano supports Windows Server licensing, installation, and configuration around directory services, remote desktop services, virtualization, and shared file needs.",
           "The deployment can include AD, DNS, DHCP, Group Policy, and baseline hardening where required.",
         ],
-        points: [
-          "Windows Server licensing",
-          "AD, DNS, DHCP, and Group Policy",
-          "RDS, Hyper-V, and file services",
-          "Installation and hardening included",
-        ],
         image: {
           src: "/image/service-details/software-server-windows.webp",
           alt: "Windows Server platform deployment dashboard in a business server room",
@@ -3235,12 +2629,6 @@ export const services: Service[] = [
         body: [
           "Auxano helps clients license and deploy Red Hat Enterprise Linux where critical workloads require a commercially supported Linux platform.",
           "The scope can include installation, baseline hardening, service readiness, and handover documentation.",
-        ],
-        points: [
-          "Commercial Linux licensing",
-          "Critical workload support",
-          "Secure installation",
-          "Operational handover notes",
         ],
         image: {
           src: "/image/service-details/software-server-redhat.webp",
@@ -3257,12 +2645,6 @@ export const services: Service[] = [
           "Auxano deploys Ubuntu Server LTS for web, database, application, and open-source infrastructure needs, with the baseline setup required for production readiness.",
           "The service helps avoid informal server builds that become hard to patch or support later.",
         ],
-        points: [
-          "Ubuntu Server LTS deployment",
-          "Web and database workload readiness",
-          "Open-source environment support",
-          "Patch and hardening guidance",
-        ],
         image: {
           src: "/image/service-details/software-server-ubuntu.webp",
           alt: "Ubuntu server deployment workstation connected to business server infrastructure",
@@ -3276,12 +2658,6 @@ export const services: Service[] = [
         body: [
           "Auxano supports VMware licensing and deployment for organizations consolidating services, improving resilience, or modernizing server infrastructure.",
           "The work can include host readiness, storage awareness, network planning, and handover of the virtualized platform.",
-        ],
-        points: [
-          "VMware vSphere and ESXi support",
-          "Infrastructure virtualization",
-          "Host and storage readiness",
-          "Hardware cost optimization",
         ],
         image: {
           src: "/image/service-details/software-server-vmware.webp",
@@ -3337,12 +2713,6 @@ export const services: Service[] = [
           "Auxano supports SQL Server licensing conversations and deployment planning for standard and enterprise application workloads.",
           "The goal is a database environment that is supportable, performant, and aligned to the application it serves.",
         ],
-        points: [
-          "SQL Server licensing support",
-          "Business application readiness",
-          "Standard and enterprise workload planning",
-          "Performance-aware deployment",
-        ],
         image: {
           src: "/image/service-details/software-database-sql.webp",
           alt: "SQL Server database platform dashboard for business application workloads",
@@ -3358,12 +2728,6 @@ export const services: Service[] = [
           "Auxano deploys relational database platforms around application requirements, user load, storage needs, and operational support expectations.",
           "This helps clients use open-source databases without treating them as unmanaged technical shortcuts.",
         ],
-        points: [
-          "MySQL, MariaDB, and PostgreSQL support",
-          "Application-aligned deployment",
-          "Performance and storage planning",
-          "Operational support guidance",
-        ],
         image: {
           src: "/image/service-details/software-database-relational.webp",
           alt: "Open-source relational database architecture dashboard and server environment",
@@ -3378,12 +2742,6 @@ export const services: Service[] = [
           "Auxano supports NoSQL database deployment where the application workload calls for flexible schema design, high-volume data, or modern development patterns.",
           "The scope can include configuration, access planning, backup awareness, and support notes.",
         ],
-        points: [
-          "MongoDB and NoSQL workload support",
-          "Modern application alignment",
-          "Access and configuration planning",
-          "Backup-aware deployment",
-        ],
         image: {
           src: "/image/service-details/software-database-mongodb.webp",
           alt: "NoSQL database dashboard for modern application workloads",
@@ -3397,12 +2755,6 @@ export const services: Service[] = [
         body: [
           "Auxano configures backup schedules, retention expectations, restore procedures, and recovery checks around the criticality of the database.",
           "This protects availability and reduces panic when data loss, corruption, or server failure occurs.",
-        ],
-        points: [
-          "Automated backup configuration",
-          "Retention and restore planning",
-          "Tested recovery procedures",
-          "Availability-focused management",
         ],
         image: {
           src: "/image/service-details/software-database-backup.webp",
@@ -3454,12 +2806,6 @@ export const services: Service[] = [
           "Auxano supports Microsoft 365 licensing, tenant setup, user provisioning, email configuration, Teams readiness, SharePoint structure, and OneDrive adoption.",
           "The service can include migration and practical configuration so the subscription becomes a working environment.",
         ],
-        points: [
-          "Microsoft 365 licensing",
-          "Email, Teams, SharePoint, and OneDrive setup",
-          "Tenant and user provisioning",
-          "Migration and configuration support",
-        ],
         image: {
           src: "/image/service-details/software-cloud-microsoft-365.webp",
           alt: "Microsoft 365 cloud workspace dashboard with email collaboration and document storage",
@@ -3473,12 +2819,6 @@ export const services: Service[] = [
         body: [
           "Auxano helps clients license and configure Google Workspace for communication, collaboration, cloud storage, meetings, and team administration.",
           "This gives organizations a cleaner path from subscription purchase to working cloud environment.",
-        ],
-        points: [
-          "Google Workspace licensing",
-          "Gmail, Drive, Docs, Meet, and Calendar setup",
-          "User and admin configuration",
-          "Collaboration-ready deployment",
         ],
         image: {
           src: "/image/service-details/software-cloud-google-workspace.webp",
@@ -3495,12 +2835,6 @@ export const services: Service[] = [
           "Auxano supports Azure and AWS licensing and platform conversations around infrastructure, hosting, identity, storage, networking, and application needs.",
           "The work can include environment configuration, migration planning, and operational guidance.",
         ],
-        points: [
-          "Azure and AWS platform support",
-          "Cloud infrastructure planning",
-          "Security and cost-awareness",
-          "Migration and environment setup",
-        ],
         image: {
           src: "/image/service-details/software-cloud-azure-aws.webp",
           alt: "Cloud infrastructure dashboard for Azure and AWS platform services",
@@ -3515,12 +2849,6 @@ export const services: Service[] = [
         body: [
           "Auxano tracks subscriptions, renewal dates, user allocation, and optimization opportunities so the client avoids waste and service interruption.",
           "That keeps the cloud environment commercially controlled as well as technically configured.",
-        ],
-        points: [
-          "Renewal tracking",
-          "License allocation review",
-          "Spend optimization",
-          "No waste and no lapses",
         ],
         image: {
           src: "/image/service-details/software-cloud-subscriptions.webp",
@@ -3576,12 +2904,6 @@ export const services: Service[] = [
           "Auxano sources Office licenses and helps clients choose between perpetual and subscription models based on business requirements.",
           "The goal is genuine, activated software with cleaner procurement records.",
         ],
-        points: [
-          "Office perpetual and subscription options",
-          "Productivity software licensing",
-          "Activation and documentation support",
-          "Business-fit recommendation",
-        ],
         image: {
           src: "/image/service-details/software-app-office.webp",
           alt: "Office productivity application licensing dashboard on a business laptop",
@@ -3597,12 +2919,6 @@ export const services: Service[] = [
           "Auxano supports creative software licensing for design, video editing, marketing production, and content teams that need reliable access to professional tools.",
           "The service helps align licenses with roles and renewal expectations.",
         ],
-        points: [
-          "Creative suite license sourcing",
-          "Design and video workflow support",
-          "Role-based licensing",
-          "Renewal visibility",
-        ],
         image: {
           src: "/image/service-details/software-app-adobe.webp",
           alt: "Creative design workstation with licensed design and video application tools",
@@ -3616,12 +2932,6 @@ export const services: Service[] = [
         body: [
           "Auxano sources CAD and engineering application licenses for teams that need specialist software for design, architecture, drawing, and technical production.",
           "The recommendation can account for user roles, subscription needs, and procurement timing.",
-        ],
-        points: [
-          "CAD and Autodesk license sourcing",
-          "Architecture and engineering workflows",
-          "Specialist software procurement",
-          "User-role alignment",
         ],
         image: {
           src: "/image/service-details/software-app-autodesk.webp",
@@ -3637,12 +2947,6 @@ export const services: Service[] = [
         body: [
           "Auxano can source accounting software, remote access tools, PDF applications, and other specialist licenses when a team needs legitimate, documented software.",
           "If a license is not listed, the team can still ask; the service is designed to support broad software sourcing.",
-        ],
-        points: [
-          "Accounting software licenses",
-          "Remote access and PDF tools",
-          "Specialist software sourcing",
-          "Procurement documentation",
         ],
         image: {
           src: "/image/service-details/software-app-business-tools.webp",
@@ -3694,12 +2998,6 @@ export const services: Service[] = [
           "Auxano handles first-line triage and second-line escalation so issues are categorized, prioritized, and resolved without leaving users to chase multiple vendors.",
           "The support path covers common endpoint problems, software faults, email issues, network symptoms, and user access concerns.",
         ],
-        points: [
-          "First and second-line support",
-          "Hardware and software issue triage",
-          "Network fault escalation",
-          "Clear issue notes and follow-up",
-        ],
         image: {
           src: "/image/service-details/managed-technical-help-desk.webp",
           alt: "IT help desk engineer resolving support tickets from a professional support workstation",
@@ -3713,12 +3011,6 @@ export const services: Service[] = [
         body: [
           "When remote diagnosis reaches its limit, Auxano can dispatch on-site engineers to inspect hardware, cabling, access, power, network points, and user workstations directly.",
           "That field presence helps reduce delays when the issue is physical, location-specific, or tied to multiple systems in the environment.",
-        ],
-        points: [
-          "On-site engineer support",
-          "Physical fault inspection",
-          "Workstation and network checks",
-          "Faster resolution for site-bound issues",
         ],
         image: {
           src: "/image/service-details/managed-technical-onsite-engineer.webp",
@@ -3735,12 +3027,6 @@ export const services: Service[] = [
           "Auxano supports user account administration, Active Directory tasks, email configuration, server care, and routine operational changes that keep teams productive.",
           "The goal is disciplined administration, not casual changes that later become access, security, or support problems.",
         ],
-        points: [
-          "User account administration",
-          "Active Directory support",
-          "Email and mailbox changes",
-          "Server care and operational checks",
-        ],
         image: {
           src: "/image/service-details/managed-services-monitoring.webp",
           alt: "IT operations team monitoring server and account administration dashboards",
@@ -3754,12 +3040,6 @@ export const services: Service[] = [
         body: [
           "Auxano can handle break/fix work for urgent or isolated technical problems, then leave behind practical notes and recommendations for preventing repeat incidents.",
           "This gives clients access to professional support even when the need is occasional, project-based, or incident-driven.",
-        ],
-        points: [
-          "Ad-hoc technical intervention",
-          "No long-term commitment required",
-          "Resolution notes after support",
-          "Practical prevention recommendations",
         ],
         image: {
           src: "/image/service-details/managed-technical-onsite-engineer.webp",
@@ -3811,12 +3091,6 @@ export const services: Service[] = [
           "Auxano monitors key network, server, and availability signals so alerts can be reviewed before downtime becomes widespread.",
           "This gives the client a more proactive operating posture and a clearer view of recurring issues across the environment.",
         ],
-        points: [
-          "24/7 network monitoring",
-          "Server health visibility",
-          "Alert review before outages",
-          "Recurring issue tracking",
-        ],
         image: {
           src: "/image/service-details/managed-services-monitoring.webp",
           alt: "Network operations team monitoring server and network health dashboards",
@@ -3832,12 +3106,6 @@ export const services: Service[] = [
           "Auxano supports firewall management, patch update oversight, and threat monitoring so the protective layer remains active and reviewed.",
           "The service helps clients maintain security hygiene without depending only on internal availability or informal checks.",
         ],
-        points: [
-          "Firewall management support",
-          "Patch update oversight",
-          "Threat monitoring",
-          "Security hygiene reporting",
-        ],
         image: {
           src: "/image/service-details/managed-services-security.webp",
           alt: "Security operations analysts reviewing firewall and patch monitoring dashboards",
@@ -3851,12 +3119,6 @@ export const services: Service[] = [
         body: [
           "Auxano can provide outsourced IT staff who operate at the client's location while remaining backed by the wider technical team.",
           "That model gives the business day-to-day support presence, clearer accountability, and access to broader expertise when escalation is required.",
-        ],
-        points: [
-          "Dedicated engineer placement",
-          "On-site client support",
-          "Backed by wider specialist expertise",
-          "Contract-based staffing flexibility",
         ],
         image: {
           src: "/image/service-details/managed-services-staff-outsourcing.webp",
@@ -3872,12 +3134,6 @@ export const services: Service[] = [
         body: [
           "Auxano can provide IT leadership coverage for prioritization, reporting, vendor alignment, risk review, and technology planning.",
           "This gives decision-makers a senior point of view while keeping the commercial model predictable.",
-        ],
-        points: [
-          "Senior IT leadership coverage",
-          "Monthly performance reporting",
-          "Vendor and risk review",
-          "SLA-backed response cadence",
         ],
         image: {
           src: "/image/service-details/managed-consultancy-audit.webp",
@@ -3934,12 +3190,6 @@ export const services: Service[] = [
           "Auxano reviews the state of hardware, network architecture, cabling, server rooms, and support dependencies to identify risks and gaps.",
           "The output helps leadership understand what is working, what is fragile, and what should be addressed first.",
         ],
-        points: [
-          "Hardware and network review",
-          "Cabling and site readiness checks",
-          "Risk and gap identification",
-          "Prioritized remediation guidance",
-        ],
         image: {
           src: "/image/service-details/managed-consultancy-audit.webp",
           alt: "IT consultant reviewing infrastructure audit diagrams and risk findings with a client team",
@@ -3954,12 +3204,6 @@ export const services: Service[] = [
         body: [
           "Auxano reviews firewall posture, endpoint patch levels, access controls, admin practices, and user behavior risks that can expose the business.",
           "The findings help the client move from assumptions to practical security actions.",
-        ],
-        points: [
-          "Firewall rule review",
-          "Patch level assessment",
-          "Access control checks",
-          "Staff practice risk review",
         ],
         image: {
           src: "/image/service-details/managed-services-security.webp",
@@ -3976,12 +3220,6 @@ export const services: Service[] = [
           "Auxano helps define policies for acceptable use, password management, data handling, device behavior, and operational responsibility.",
           "The aim is practical governance that users and managers can actually follow, not a document that sits unused.",
         ],
-        points: [
-          "Acceptable-use policy support",
-          "Password management guidance",
-          "Data handling rules",
-          "Practical governance documentation",
-        ],
         image: {
           src: "/image/service-details/managed-consultancy-policy-vendor.webp",
           alt: "Technology advisor developing IT policy and governance documents with stakeholders",
@@ -3995,12 +3233,6 @@ export const services: Service[] = [
         body: [
           "Auxano can review vendor proposals, technical claims, bill of materials, support terms, and delivery assumptions on the client's behalf.",
           "This helps decision-makers compare options with a more independent technical view before committing budget.",
-        ],
-        points: [
-          "Proposal and BOM review",
-          "Technical claim validation",
-          "Operating-fit comparison",
-          "Independent recommendation",
         ],
         image: {
           src: "/image/service-details/managed-consultancy-policy-vendor.webp",
@@ -4056,12 +3288,6 @@ export const services: Service[] = [
           "Auxano defines the delivery scope, milestones, dependencies, roles, and resource requirements so everyone is working from the same project baseline.",
           "That planning discipline reduces ambiguity and keeps procurement, engineering, and client stakeholders aligned.",
         ],
-        points: [
-          "Clear project scope",
-          "Timeline and milestone planning",
-          "Resource requirement mapping",
-          "Decision and approval structure",
-        ],
         image: {
           src: "/image/service-details/managed-project-management.webp",
           alt: "IT project manager leading a technology project planning session with timelines and system diagrams",
@@ -4075,12 +3301,6 @@ export const services: Service[] = [
         body: [
           "Auxano coordinates vendors, engineers, stakeholders, timelines, and dependencies so equipment, configuration, installation, and handover activities line up.",
           "This gives the client one control point for progress, issues, and accountability.",
-        ],
-        points: [
-          "Multi-vendor coordination",
-          "Dependency tracking",
-          "Progress and issue cadence",
-          "Single delivery control point",
         ],
         image: {
           src: "/image/service-details/managed-project-management.webp",
@@ -4096,12 +3316,6 @@ export const services: Service[] = [
           "Auxano tracks assumptions, access constraints, supply issues, technical dependencies, and stakeholder blockers that can delay delivery.",
           "Risks are made visible early, then managed through decisions, mitigations, and clear ownership.",
         ],
-        points: [
-          "Risk register and ownership",
-          "Dependency and blocker review",
-          "Early escalation control",
-          "Mitigation planning",
-        ],
         image: {
           src: "/image/service-details/managed-consultancy-audit.webp",
           alt: "IT project leaders reviewing risk findings and mitigation priorities with stakeholders",
@@ -4115,12 +3329,6 @@ export const services: Service[] = [
         body: [
           "Auxano reviews delivered work against scope, confirms outstanding items, organizes operational notes, and supports a clean transition to the people who will own the environment.",
           "That final review protects the value of the project after the vendors leave site.",
-        ],
-        points: [
-          "Post-implementation review",
-          "Outstanding item tracking",
-          "Operational handover notes",
-          "Supportable closeout",
         ],
         image: {
           src: "/image/service-details/managed-technical-onsite-engineer.webp",

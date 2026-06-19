@@ -160,7 +160,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         <Container className="grid gap-12 lg:grid-cols-[0.76fr_1.24fr]">
           <aside className="lg:sticky lg:top-24 lg:self-start">
             <div className="rounded-[1.5rem] border border-[color:rgba(11,18,32,0.08)] bg-[var(--color-cloud)] p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-electric)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ED6B37]">
                 Project Snapshot
               </p>
               <dl className="mt-6 grid gap-5">
@@ -186,7 +186,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
           <div className="grid gap-14">
             <section>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-electric)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ED6B37]">
                 Challenge
               </p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight text-[var(--color-ink)]">
@@ -198,7 +198,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </section>
 
             <section>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-electric)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ED6B37]">
                 Auxano Response
               </p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight text-[var(--color-ink)]">
@@ -273,7 +273,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-electric)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ED6B37]">
                 Related Capabilities
               </p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight text-[var(--color-ink)]">
@@ -306,7 +306,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             <div className="mt-16">
               <div className="flex flex-wrap items-end justify-between gap-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-electric)]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ED6B37]">
                     More Proof
                   </p>
                   <h2 className="mt-4 text-4xl font-semibold leading-tight text-[var(--color-ink)]">
@@ -331,7 +331,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <section className="bg-white py-20 sm:py-24">
         <Container className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-electric)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ED6B37]">
               Next Step
             </p>
             <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight text-[var(--color-ink)]">

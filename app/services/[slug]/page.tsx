@@ -106,7 +106,6 @@ function buildFallbackSections(
       title: `How ${service.title.toLowerCase()} is scoped.`,
       lead: service.summary,
       body: [service.description],
-      points: service.capabilities,
       image: {
         src: image,
         alt: imageAlt,
@@ -120,7 +119,6 @@ function buildFallbackSections(
       body: [
         "Auxano documents the technical outcome in a way that helps internal teams, external vendors, and future support work from the same operating picture.",
       ],
-      points: service.deliverables,
       image: {
         src: image,
         alt: imageAlt,
@@ -134,7 +132,6 @@ function buildFallbackSections(
       body: [
         "The strongest results come when the service is matched to the environment, the operational pressure behind it, and the accountability expected after deployment.",
       ],
-      points: service.highlights,
       image: {
         src: image,
         alt: imageAlt,

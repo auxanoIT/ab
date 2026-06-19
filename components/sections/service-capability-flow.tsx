@@ -150,20 +150,6 @@ export function ServiceCapabilityFlow({
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
-                  {section.points.length > 0 ? (
-                    <ul className="mt-5 grid gap-3 text-sm font-semibold leading-6 text-[var(--color-ink)] sm:grid-cols-2">
-                      {section.points.map((point) => (
-                        <li key={point} className="flex gap-3">
-                          <span
-                            aria-hidden="true"
-                            className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#355C9A]"
-                          />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-
                   <ButtonLink href="/book-consultation" className="mt-7">
                     Make an enquiry
                     <ArrowRight className="ml-2 h-4 w-4" />
