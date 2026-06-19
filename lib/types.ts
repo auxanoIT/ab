@@ -224,6 +224,11 @@ export type BlogBodyBlock =
       }>;
     }
   | {
+      _type: "image";
+      image?: ServiceNavMedia;
+      caption?: string;
+    }
+  | {
       _type: "blogImageBlock";
       image: ServiceNavMedia;
       caption?: string;

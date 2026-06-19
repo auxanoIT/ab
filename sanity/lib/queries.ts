@@ -202,6 +202,17 @@ export const blogPostsQuery = groq`
           cells
         }
       },
+      _type == "image" => {
+        _type,
+        _key,
+        caption,
+        "image": select(
+          defined(asset) => {
+            "src": asset->url,
+            "alt": coalesce(alt, caption, "Blog image")
+          }
+        )
+      },
       _type == "blogImageBlock" => {
         _type,
         caption,
@@ -278,6 +289,17 @@ export const blogPostQuery = groq`
         rows[]{
           cells
         }
+      },
+      _type == "image" => {
+        _type,
+        _key,
+        caption,
+        "image": select(
+          defined(asset) => {
+            "src": asset->url,
+            "alt": coalesce(alt, caption, "Blog image")
+          }
+        )
       },
       _type == "blogImageBlock" => {
         _type,

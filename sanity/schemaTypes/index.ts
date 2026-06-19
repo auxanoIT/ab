@@ -793,7 +793,7 @@ const post = defineType({
       title: "Body",
       type: "array",
       description:
-        "Write like a document editor. Use the toolbar for headings, bullet lists, numbered lists, bold, italic, links, code, and block quotes. Pasted tables are converted into table blocks automatically.",
+        "Write like a document editor. Use the toolbar for headings, lists, bold, italic, links, code, and block quotes. Drag or paste images directly into the body. Pasted tables are converted into table blocks automatically.",
       components: {
         input: BlogBodyInput,
       },
@@ -838,6 +838,25 @@ const post = defineType({
               }),
             ],
           },
+        }),
+        defineArrayMember({
+          type: "image",
+          title: "Image",
+          options: { hotspot: true },
+          fields: [
+            defineField({
+              name: "alt",
+              title: "Alt Text",
+              type: "string",
+              description:
+                "Recommended for accessibility and search engines. Use a short description of the image.",
+            }),
+            defineField({
+              name: "caption",
+              title: "Caption",
+              type: "string",
+            }),
+          ],
         }),
         defineArrayMember({ type: "blogCallout" }),
         defineArrayMember({ type: "blogTable" }),

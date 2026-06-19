@@ -361,28 +361,14 @@ const blogBodyComponents: PortableTextComponents = {
       );
     },
     blogTable: ({ value }) => <BlogTable value={value} />,
-    blogImageBlock: ({ value }) => {
-      const block = value as Extract<BlogBodyBlock, { _type: "blogImageBlock" }>;
-
-      return (
-        <figure>
-          <div className="relative aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-[var(--color-cloud)]">
-            <Image
-              src={block.image.src}
-              alt={block.image.alt}
-              fill
-              sizes="(min-width: 1024px) 760px, 100vw"
-              className="object-cover"
-            />
-          </div>
-          {block.caption ? (
-            <figcaption className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
-              {block.caption}
-            </figcaption>
-          ) : null}
-        </figure>
-      );
-    },
+    image: ({ value }) => (
+      <BlogImage value={value as Extract<BlogBodyBlock, { _type: "image" }>} />
+    ),
+    blogImageBlock: ({ value }) => (
+      <BlogImage
+        value={value as Extract<BlogBodyBlock, { _type: "blogImageBlock" }>}
+      />
+    ),
   },
 };
 
@@ -478,6 +464,37 @@ function BlogTable({
           </tbody>
         </table>
       </div>
+    </figure>
+  );
+}
+
+function BlogImage({
+  value,
+}: {
+  value:
+    | Extract<BlogBodyBlock, { _type: "image" }>
+    | Extract<BlogBodyBlock, { _type: "blogImageBlock" }>;
+}) {
+  if (!value.image?.src) {
+    return null;
+  }
+
+  return (
+    <figure>
+      <div className="relative aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-[var(--color-cloud)]">
+        <Image
+          src={value.image.src}
+          alt={value.image.alt}
+          fill
+          sizes="(min-width: 1024px) 760px, 100vw"
+          className="object-cover"
+        />
+      </div>
+      {value.caption ? (
+        <figcaption className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+          {value.caption}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }
