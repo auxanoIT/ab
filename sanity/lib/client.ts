@@ -44,7 +44,7 @@ export async function sanityFetch<T>({
   return client.fetch<T>(query, params ?? {}, {
     next: {
       tags,
-      revalidate: preview ? 0 : 120,
+      revalidate: preview ? 0 : false,
     },
   });
 }

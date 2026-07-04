@@ -22,7 +22,7 @@ export const metadata = buildMetadata({
   ],
 });
 
-export const revalidate = 120;
+export const revalidate = false;
 
 export default async function CaseStudiesPage() {
   const caseStudies = await getCaseStudies();

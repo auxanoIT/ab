@@ -19,7 +19,7 @@ type CaseStudyPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export const revalidate = 120;
+export const revalidate = false;
 
 export async function generateStaticParams() {
   const slugs = await getCaseStudySlugs();

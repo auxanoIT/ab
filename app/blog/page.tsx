@@ -17,7 +17,7 @@ export const metadata = buildMetadata({
   path: "/blog",
 });
 
-export const revalidate = 120;
+export const revalidate = false;
 
 export default async function BlogPage() {
   const posts = await getBlogPosts();

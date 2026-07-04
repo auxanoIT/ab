@@ -6,7 +6,7 @@ import { getCaseStudies, getFaqs, getMarketingPage, getServices, getTestimonials
 import { buildMetadata } from "@/lib/seo";
 import { absoluteUrl } from "@/lib/utils";
 
-export const revalidate = 120;
+export const revalidate = false;
 
 export const metadata = buildMetadata({
   title: "IT Solutions Company in Nigeria for CCTV, Fire Alarm, and Networks",

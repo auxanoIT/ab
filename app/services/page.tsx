@@ -25,7 +25,7 @@ export const metadata = buildMetadata({
   ],
 });
 
-export const revalidate = 120;
+export const revalidate = false;
 
 const categoryNarratives: Record<
   ServiceCategory,

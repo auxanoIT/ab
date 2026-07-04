@@ -26,7 +26,7 @@ export const metadata = buildMetadata({
   path: "/careers",
 });
 
-export const revalidate = 120;
+export const revalidate = false;
 
 const heroStats = [
   {

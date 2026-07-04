@@ -37,7 +37,7 @@ type ServicePageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export const revalidate = 120;
+export const revalidate = false;
 
 const categoryStyles: Record<
   ServiceCategory,

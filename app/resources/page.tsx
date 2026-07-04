@@ -29,7 +29,7 @@ export const metadata = buildMetadata({
   ],
 });
 
-export const revalidate = 120;
+export const revalidate = false;
 
 export default async function ResourcesPage() {
   const groups = await getResourceGroups();

@@ -24,7 +24,7 @@ type IndustryPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export const revalidate = 120;
+export const revalidate = false;
 
 function getMappedServices(serviceSlugs: string[], services: Service[]) {
   return serviceSlugs
