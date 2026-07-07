@@ -13,7 +13,14 @@ export async function POST(request: Request) {
   const parsed = leadSchema.safeParse(payload);
 
   if (!parsed.success) {
-    return NextResponse.json({ error: "Invalid form submission." }, { status: 400 });
+    const emailIssue = parsed.error.issues.find(
+      (issue) => issue.path[0] === "email",
+    );
+
+    return NextResponse.json(
+      { error: emailIssue?.message ?? "Invalid form submission." },
+      { status: 400 },
+    );
   }
 
   const isHuman = await verifyTurnstile(parsed.data.turnstileToken);

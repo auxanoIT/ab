@@ -4,6 +4,10 @@ import { useState, useTransition } from "react";
 import { CalendarDays } from "lucide-react";
 
 import { TurnstileField } from "@/components/forms/turnstile-field";
+import {
+  getEmailValidationMessage,
+  normalizeEmail,
+} from "@/lib/email-validation";
 import { cn, getBrowserCookie } from "@/lib/utils";
 
 type LeadFormProps = {
@@ -38,6 +42,7 @@ export function LeadForm({
 }: LeadFormProps) {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileResetKey, setTurnstileResetKey] = useState(0);
   const [isPending, startTransition] = useTransition();
@@ -45,6 +50,16 @@ export function LeadForm({
   async function handleSubmit(formData: FormData) {
     setStatus("idle");
     setMessage("");
+
+    const email = normalizeEmail(formData.get("email"));
+    const nextEmailError = getEmailValidationMessage(email);
+
+    if (nextEmailError) {
+      setEmailError(nextEmailError);
+      setStatus("error");
+      setMessage(nextEmailError);
+      return;
+    }
 
     if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken) {
       setStatus("error");
@@ -55,7 +70,7 @@ export function LeadForm({
     const payload = {
       name: formData.get("name"),
       company: formData.get("company"),
-      email: formData.get("email"),
+      email,
       phone: formData.get("phone"),
       serviceInterest: formData.get("serviceInterest"),
       message: formData.get("message"),
@@ -146,9 +161,34 @@ export function LeadForm({
             name="email"
             type="email"
             required
+            inputMode="email"
+            autoComplete="email"
+            aria-invalid={Boolean(emailError)}
+            aria-describedby={emailError ? "lead-form-email-error" : undefined}
             placeholder="Enter your email address"
-            className="h-12 rounded-2xl border border-[color:rgba(11,18,32,0.1)] bg-[var(--color-cloud)] px-4 outline-none transition focus:border-[var(--color-electric)]"
+            onBlur={(event) =>
+              setEmailError(getEmailValidationMessage(event.target.value))
+            }
+            onChange={(event) => {
+              if (emailError) {
+                setEmailError(getEmailValidationMessage(event.target.value));
+              }
+            }}
+            className={cn(
+              "h-12 rounded-2xl border bg-[var(--color-cloud)] px-4 outline-none transition focus:border-[var(--color-electric)]",
+              emailError
+                ? "border-red-500 focus:border-red-500"
+                : "border-[color:rgba(11,18,32,0.1)]",
+            )}
           />
+          {emailError ? (
+            <span
+              id="lead-form-email-error"
+              className="text-xs font-medium text-red-600"
+            >
+              {emailError}
+            </span>
+          ) : null}
         </label>
         <label className="grid gap-2 text-sm font-medium text-[var(--color-ink)]">
           Phone

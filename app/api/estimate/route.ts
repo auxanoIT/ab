@@ -16,7 +16,14 @@ export async function POST(request: Request) {
   const parsed = estimateSchema.safeParse(payload);
 
   if (!parsed.success) {
-    return NextResponse.json({ error: "Invalid estimate request." }, { status: 400 });
+    const emailIssue = parsed.error.issues.find(
+      (issue) => issue.path[0] === "email",
+    );
+
+    return NextResponse.json(
+      { error: emailIssue?.message ?? "Invalid estimate request." },
+      { status: 400 },
+    );
   }
 
   const isHuman = await verifyTurnstile(parsed.data.turnstileToken);

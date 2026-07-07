@@ -1,9 +1,18 @@
 import { z } from "zod";
 
+import { isValidEmail, normalizeEmail } from "@/lib/email-validation";
+
+const emailSchema = z
+  .string()
+  .transform(normalizeEmail)
+  .refine(isValidEmail, {
+    message: "Please enter a valid email address.",
+  });
+
 export const leadSchema = z.object({
   name: z.string().min(2),
   company: z.string().min(2),
-  email: z.string().email(),
+  email: emailSchema,
   phone: z.string().min(6),
   serviceInterest: z.string().min(2),
   message: z.string().min(10),
@@ -15,7 +24,7 @@ export const leadSchema = z.object({
 export const estimateSchema = z.object({
   name: z.string().min(2),
   company: z.string().min(2),
-  email: z.string().email(),
+  email: emailSchema,
   phone: z.string().min(6),
   companySize: z.string().min(1),
   locationBand: z.string().min(1),
