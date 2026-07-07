@@ -3,6 +3,18 @@ type HubSpotField = {
   value: string;
 };
 
+type HubSpotLegalConsentOptions = {
+  consent: {
+    consentToProcess: boolean;
+    text: string;
+    communications: Array<{
+      value: boolean;
+      subscriptionTypeId: number;
+      text: string;
+    }>;
+  };
+};
+
 type HubSpotSubmitOptions = {
   formId?: string;
   fields: HubSpotField[];
@@ -10,6 +22,7 @@ type HubSpotSubmitOptions = {
   pageName: string;
   hutk?: string;
   ipAddress?: string;
+  legalConsentOptions?: HubSpotLegalConsentOptions;
 };
 
 export async function verifyTurnstile(token?: string) {
@@ -45,6 +58,7 @@ export async function submitToHubSpot({
   pageName,
   hutk,
   ipAddress,
+  legalConsentOptions,
 }: HubSpotSubmitOptions) {
   const portalId = process.env.HUBSPOT_PORTAL_ID;
   const finalFormId = formId ?? process.env.HUBSPOT_FORM_ID;
@@ -68,11 +82,35 @@ export async function submitToHubSpot({
           pageUri,
           pageName,
         },
+        ...(legalConsentOptions ? { legalConsentOptions } : {}),
       }),
     },
   );
 
   return response.ok;
+}
+
+export function buildHubSpotConsentOptions() {
+  const configuredSubscriptionTypeId = Number(
+    process.env.HUBSPOT_SUBSCRIPTION_TYPE_ID ?? "999",
+  );
+  const subscriptionTypeId = Number.isFinite(configuredSubscriptionTypeId)
+    ? configuredSubscriptionTypeId
+    : 999;
+
+  return {
+    consent: {
+      consentToProcess: true,
+      text: "I agree that Auxano Solutions may store and process my personal data to respond to my request.",
+      communications: [
+        {
+          value: true,
+          subscriptionTypeId,
+          text: "I agree to receive email communication from Auxano Solutions about my request.",
+        },
+      ],
+    },
+  };
 }
 
 export function getRequestIpAddress(request: Request) {

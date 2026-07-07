@@ -43,6 +43,7 @@ export function LeadForm({
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [consentError, setConsentError] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileResetKey, setTurnstileResetKey] = useState(0);
   const [isPending, startTransition] = useTransition();
@@ -61,6 +62,18 @@ export function LeadForm({
       return;
     }
 
+    const marketingConsent = formData.get("marketingConsent") === "on";
+
+    if (!marketingConsent) {
+      const nextConsentError =
+        "Please agree to receive email communication before submitting.";
+
+      setConsentError(nextConsentError);
+      setStatus("error");
+      setMessage(nextConsentError);
+      return;
+    }
+
     if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken) {
       setStatus("error");
       setMessage("Please complete the verification check.");
@@ -74,6 +87,7 @@ export function LeadForm({
       phone: formData.get("phone"),
       serviceInterest: formData.get("serviceInterest"),
       message: formData.get("message"),
+      marketingConsent,
       context,
       turnstileToken,
       hubspotTrackingCookie: getBrowserCookie("hubspotutk"),
@@ -223,6 +237,43 @@ export function LeadForm({
             className="rounded-[1.5rem] border border-[color:rgba(11,18,32,0.1)] bg-[var(--color-cloud)] px-4 py-4 outline-none transition focus:border-[var(--color-electric)]"
           />
         </label>
+        <label
+          className={cn(
+            "flex gap-3 rounded-[1.25rem] border bg-[var(--color-cloud)] p-4 text-sm leading-6 text-[var(--color-muted)] md:col-span-2",
+            consentError
+              ? "border-red-500"
+              : "border-[color:rgba(11,18,32,0.1)]",
+          )}
+        >
+          <input
+            name="marketingConsent"
+            type="checkbox"
+            required
+            aria-invalid={Boolean(consentError)}
+            aria-describedby={
+              consentError ? "lead-form-consent-error" : undefined
+            }
+            onChange={(event) => {
+              if (event.target.checked) {
+                setConsentError("");
+              }
+            }}
+            className="mt-1 h-4 w-4 shrink-0 rounded border-[color:rgba(11,18,32,0.18)] accent-[var(--color-electric)]"
+          />
+          <span>
+            I agree to receive email communication from Auxano Solutions about
+            my request and allow Auxano Solutions to store and process my
+            personal data to respond to this submission.
+          </span>
+        </label>
+        {consentError ? (
+          <p
+            id="lead-form-consent-error"
+            className="-mt-2 text-xs font-medium text-red-600 md:col-span-2"
+          >
+            {consentError}
+          </p>
+        ) : null}
         <div className="md:col-span-2 flex flex-wrap items-center gap-3">
           <TurnstileField
             onVerify={setTurnstileToken}

@@ -9,6 +9,15 @@ const emailSchema = z
     message: "Please enter a valid email address.",
   });
 
+const marketingConsentSchema = z
+  .preprocess(
+    (value) => value === true || value === "true" || value === "on",
+    z.boolean(),
+  )
+  .refine((value) => value, {
+    message: "Please agree to receive email communication before submitting.",
+  });
+
 export const leadSchema = z.object({
   name: z.string().min(2),
   company: z.string().min(2),
@@ -16,6 +25,7 @@ export const leadSchema = z.object({
   phone: z.string().min(6),
   serviceInterest: z.string().min(2),
   message: z.string().min(10),
+  marketingConsent: marketingConsentSchema,
   context: z.enum(["contact", "consultation"]),
   turnstileToken: z.string().optional(),
   hubspotTrackingCookie: z.string().optional(),

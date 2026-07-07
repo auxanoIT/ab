@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import {
+  buildHubSpotConsentOptions,
   getRequestIpAddress,
   sendFallbackEmail,
   submitToHubSpot,
@@ -13,12 +14,13 @@ export async function POST(request: Request) {
   const parsed = leadSchema.safeParse(payload);
 
   if (!parsed.success) {
-    const emailIssue = parsed.error.issues.find(
-      (issue) => issue.path[0] === "email",
+    const fieldIssue = parsed.error.issues.find(
+      (issue) =>
+        issue.path[0] === "email" || issue.path[0] === "marketingConsent",
     );
 
     return NextResponse.json(
-      { error: emailIssue?.message ?? "Invalid form submission." },
+      { error: fieldIssue?.message ?? "Invalid form submission." },
       { status: 400 },
     );
   }
@@ -43,6 +45,7 @@ export async function POST(request: Request) {
     pageName: parsed.data.context === "consultation" ? "Book Consultation" : "Contact",
     hutk: parsed.data.hubspotTrackingCookie,
     ipAddress: getRequestIpAddress(request),
+    legalConsentOptions: buildHubSpotConsentOptions(),
   });
 
   if (!hubSpotSuccess) {
