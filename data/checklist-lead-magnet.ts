@@ -41,18 +41,6 @@ export const checklistCategories: ChecklistCategory[] = [
         id: "network-segmentation",
         text: "LAN/WAN access is segmented so critical systems are separated from general user traffic.",
       },
-      {
-        id: "network-monitoring",
-        text: "Network performance is monitored with alerts for outages, congestion, and abnormal activity.",
-      },
-      {
-        id: "network-ipam",
-        text: "IP addressing, VLANs, device names, and network diagrams are documented and kept current.",
-      },
-      {
-        id: "network-bandwidth",
-        text: "Network bandwidth and internal performance are tested regularly against business demand.",
-      },
     ],
   },
   {
@@ -70,18 +58,6 @@ export const checklistCategories: ChecklistCategory[] = [
       {
         id: "internet-failover",
         text: "Automatic failover is configured so operations continue when the primary link fails.",
-      },
-      {
-        id: "internet-uptime",
-        text: "Internet uptime is tracked, reviewed, and measured against a monthly availability target.",
-      },
-      {
-        id: "internet-qos",
-        text: "Business-critical apps such as cloud tools, VoIP, CCTV, and ERP traffic are prioritized.",
-      },
-      {
-        id: "internet-filtering",
-        text: "Internet usage is monitored and filtered to reduce unsafe access and unauthorized use.",
       },
     ],
   },
@@ -101,18 +77,6 @@ export const checklistCategories: ChecklistCategory[] = [
         id: "server-utilization",
         text: "Server CPU, memory, storage, and services are monitored within safe thresholds.",
       },
-      {
-        id: "server-room-control",
-        text: "Physical servers are kept in secured, cooled, and access-controlled spaces.",
-      },
-      {
-        id: "server-warranty",
-        text: "Server hardware is under active warranty, support, or a maintenance plan.",
-      },
-      {
-        id: "server-snapshots",
-        text: "VM snapshots or equivalent recovery points are created and managed for rapid recovery.",
-      },
     ],
   },
   {
@@ -128,20 +92,8 @@ export const checklistCategories: ChecklistCategory[] = [
         text: "All endpoints have active antivirus, EDR, or endpoint security protection.",
       },
       {
-        id: "security-awareness",
-        text: "Staff have received cybersecurity awareness training within the last 12 months.",
-      },
-      {
         id: "security-mfa",
         text: "Multi-factor authentication is enforced for email, admin, finance, cloud, and critical systems.",
-      },
-      {
-        id: "security-policy",
-        text: "A written cybersecurity policy exists and has been communicated to employees.",
-      },
-      {
-        id: "security-testing",
-        text: "Vulnerability scanning, penetration testing, or a security review has been completed within the last year.",
       },
     ],
   },
@@ -161,18 +113,6 @@ export const checklistCategories: ChecklistCategory[] = [
         id: "backup-restore-testing",
         text: "Backup restoration is tested at least quarterly, not only assumed to be working.",
       },
-      {
-        id: "backup-rto",
-        text: "Recovery Time Objective is documented and achievable for critical systems.",
-      },
-      {
-        id: "backup-encryption",
-        text: "Cloud or offsite backups are encrypted and stored in a secure location.",
-      },
-      {
-        id: "backup-log-review",
-        text: "Backup completion logs are reviewed weekly and failed jobs are resolved quickly.",
-      },
     ],
   },
   {
@@ -190,18 +130,6 @@ export const checklistCategories: ChecklistCategory[] = [
       {
         id: "fire-detector-testing",
         text: "Smoke detectors, heat detectors, call points, and sounders are physically tested at scheduled intervals.",
-      },
-      {
-        id: "fire-maintenance",
-        text: "The fire alarm panel and connected devices are covered by a maintenance plan with a qualified provider.",
-      },
-      {
-        id: "fire-evacuation-awareness",
-        text: "Staff know alarm zones, evacuation routes, assembly points, and escalation procedures.",
-      },
-      {
-        id: "fire-monitoring",
-        text: "Fire alarm signals are monitored by a security desk, facility team, or external response point.",
       },
     ],
   },
@@ -221,18 +149,6 @@ export const checklistCategories: ChecklistCategory[] = [
         id: "security-footage-retention",
         text: "CCTV footage is retained for a defined period, retrieved easily, and stored securely.",
       },
-      {
-        id: "security-access-control",
-        text: "Sensitive areas use controlled entry such as electronic locks, cards, PINs, biometrics, or managed keys.",
-      },
-      {
-        id: "security-access-logs",
-        text: "Access logs are reviewed and former staff credentials are revoked immediately.",
-      },
-      {
-        id: "security-camera-uptime",
-        text: "Offline cameras, degraded views, faulty readers, and failed locks are detected and fixed quickly.",
-      },
     ],
   },
   {
@@ -250,18 +166,6 @@ export const checklistCategories: ChecklistCategory[] = [
       {
         id: "power-battery-testing",
         text: "UPS batteries are tested and replaced on a documented schedule.",
-      },
-      {
-        id: "power-generator-capacity",
-        text: "Generator capacity can support critical technology systems during grid outages.",
-      },
-      {
-        id: "power-ats",
-        text: "Automatic or documented transfer procedures exist for switchover between mains, inverter, and generator.",
-      },
-      {
-        id: "power-surge-protection",
-        text: "Surge protection is installed for servers, network equipment, CCTV, fire alarm panels, and key devices.",
       },
     ],
   },
@@ -281,18 +185,6 @@ export const checklistCategories: ChecklistCategory[] = [
         id: "software-renewal-register",
         text: "License renewals are tracked in a central register with expiry alerts.",
       },
-      {
-        id: "software-unauthorized-blocking",
-        text: "Unauthorized or unlicensed software is blocked, removed, or formally approved before use.",
-      },
-      {
-        id: "software-user-counts",
-        text: "Microsoft 365, Google Workspace, and similar licenses match active users and real business roles.",
-      },
-      {
-        id: "software-security-active",
-        text: "Antivirus, firewall, endpoint, and security subscriptions are active and not expired.",
-      },
     ],
   },
   {
@@ -310,18 +202,6 @@ export const checklistCategories: ChecklistCategory[] = [
       {
         id: "dr-drills",
         text: "Disaster recovery drills are conducted and documented at least once per year.",
-      },
-      {
-        id: "dr-rpo-rto",
-        text: "RPO and RTO are defined, approved, and understood by management for critical systems.",
-      },
-      {
-        id: "dr-recovery-environment",
-        text: "An offsite, cloud-based, or alternate recovery environment is maintained and tested.",
-      },
-      {
-        id: "dr-role-clarity",
-        text: "Key staff know their responsibilities during outage, breach, fire, facility disruption, or disaster events.",
       },
     ],
   },

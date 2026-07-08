@@ -451,7 +451,8 @@ export function TechnologySecurityChecklist() {
                               isActive ? "text-white/80" : "text-[var(--color-muted)]",
                             )}
                           >
-                            {formatChecklistScore(categoryScore.score)}/5
+                            {formatChecklistScore(categoryScore.score)}/
+                            {categoryScore.maxScore}
                           </span>
                         </button>
                       );
@@ -621,7 +622,7 @@ function ChecklistCategoryPanel({
           </div>
         </div>
         <div className="rounded-full bg-[var(--color-cloud)] px-4 py-2 text-sm font-semibold text-[var(--color-ink)]">
-          {answeredInCategory}/5 answered
+          {answeredInCategory}/{category.questions.length} answered
         </div>
       </div>
 

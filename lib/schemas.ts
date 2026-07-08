@@ -54,8 +54,8 @@ export const checklistLeadSchema = z.object({
   email: emailSchema,
   phone: z.string().optional(),
   marketingConsent: marketingConsentSchema,
-  score: z.number().min(0).max(50),
-  maxScore: z.literal(50),
+  score: z.number().min(0).max(20),
+  maxScore: z.literal(20),
   scorePercent: z.number().min(0).max(100),
   scoreBandId: z.enum(["excellent", "good", "needs-attention", "high-risk"]),
   scoreBandLabel: z.string().min(2),
@@ -64,8 +64,8 @@ export const checklistLeadSchema = z.object({
       z.object({
         categoryId: z.string().min(2),
         category: z.string().min(2),
-        score: z.number().min(0).max(5),
-        maxScore: z.literal(5),
+        score: z.number().min(0).max(2),
+        maxScore: z.literal(2),
       }),
     )
     .length(10),

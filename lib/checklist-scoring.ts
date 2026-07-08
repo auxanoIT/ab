@@ -64,7 +64,9 @@ export function getChecklistBand(score: number): {
   description: string;
   recommendation: string;
 } {
-  if (score >= 45) {
+  const scorePercent = getChecklistScorePercent(score);
+
+  if (scorePercent >= 90) {
     return {
       id: "excellent",
       label: "Excellent",
@@ -75,7 +77,7 @@ export function getChecklistBand(score: number): {
     };
   }
 
-  if (score >= 35) {
+  if (scorePercent >= 70) {
     return {
       id: "good",
       label: "Good",
@@ -86,7 +88,7 @@ export function getChecklistBand(score: number): {
     };
   }
 
-  if (score >= 25) {
+  if (scorePercent >= 50) {
     return {
       id: "needs-attention",
       label: "Needs Attention",
