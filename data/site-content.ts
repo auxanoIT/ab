@@ -36,6 +36,11 @@ export const navigation: NavItem[] = [
   { label: "Solutions", href: "/services", kind: "solutions" },
   { label: "Industries", href: "/industries", kind: "industries" },
   { label: "Case Studies", href: "/case-studies", kind: "link" },
+  {
+    label: "IT Health Check",
+    href: "/technology-security-checklist",
+    kind: "link",
+  },
   { label: "Blog", href: "/blog", kind: "link" },
   { label: "About", href: "/about", kind: "link" },
 ];

@@ -36,6 +36,11 @@ const staticRoutes: SitemapEntryInput[] = [
     priority: 0.82,
   },
   {
+    path: "/technology-security-checklist",
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
     path: "/contact",
     changeFrequency: "monthly",
     priority: 0.78,

@@ -9,6 +9,7 @@ import "@fontsource/poppins/800.css";
 import "./globals.css";
 
 import { CookieConsentManager } from "@/components/layout/cookie-consent-manager";
+import { ChecklistLeadMagnetPopup } from "@/components/layout/checklist-lead-magnet-popup";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/ui/json-ld";
@@ -245,6 +246,7 @@ export default async function RootLayout({
         </div>
         <JsonLd data={buildSiteJsonLd(siteSettings, services)} />
         <CookieConsentManager />
+        <ChecklistLeadMagnetPopup />
       </body>
     </html>
   );

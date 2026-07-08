@@ -47,3 +47,27 @@ export const estimateSchema = z.object({
   turnstileToken: z.string().optional(),
   hubspotTrackingCookie: z.string().optional(),
 });
+
+export const checklistLeadSchema = z.object({
+  name: z.string().min(2),
+  company: z.string().min(2),
+  email: emailSchema,
+  phone: z.string().optional(),
+  marketingConsent: marketingConsentSchema,
+  score: z.number().min(0).max(50),
+  maxScore: z.literal(50),
+  scorePercent: z.number().min(0).max(100),
+  scoreBandId: z.enum(["excellent", "good", "needs-attention", "high-risk"]),
+  scoreBandLabel: z.string().min(2),
+  categoryScores: z
+    .array(
+      z.object({
+        categoryId: z.string().min(2),
+        category: z.string().min(2),
+        score: z.number().min(0).max(5),
+        maxScore: z.literal(5),
+      }),
+    )
+    .length(10),
+  hubspotTrackingCookie: z.string().optional(),
+});
