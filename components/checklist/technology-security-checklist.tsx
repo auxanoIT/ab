@@ -279,10 +279,8 @@ export function TechnologySecurityChecklist() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.26),rgba(11,18,32,0.76))]" />
 
         <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] max-w-5xl flex-col items-center justify-center px-5 py-20 text-center sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-cyan)]">
-            Free 2026 assessment
-          </p>
-          <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight sm:text-6xl lg:text-7xl">
+         
+          <h1 className="mt-5 text-balance text-2xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
             2026 Business Technology & Security Checklist
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-white/82 sm:text-xl">
