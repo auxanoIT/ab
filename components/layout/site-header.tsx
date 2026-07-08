@@ -56,7 +56,7 @@ export function SiteHeader({
 
   return (
     <header className="sticky top-0 z-50 border-b border-[color:rgba(11,18,32,0.08)] bg-[color:rgba(247,250,255,0.88)] backdrop-blur-xl">
-      <Container className="flex h-20 items-center justify-between gap-6">
+      <Container className="flex h-20 items-center justify-between gap-4 2xl:gap-6">
         <Link
           href="/"
           aria-label="Auxano Solutions home"
@@ -72,9 +72,9 @@ export function SiteHeader({
           />
         </Link>
 
-        <div className="hidden flex-1 justify-center lg:flex">
+        <div className="hidden flex-1 justify-center xl:flex">
           <NavigationMenu delayDuration={80} skipDelayDuration={140}>
-            <NavigationMenuList>
+            <NavigationMenuList className="gap-0.5 2xl:gap-1">
               {navigation.map((item) => {
                 const active =
                   item.kind === "solutions"
@@ -136,16 +136,16 @@ export function SiteHeader({
           </NavigationMenu>
         </div>
 
-        <div className="hidden items-center gap-3 lg:flex text-white">
+        <div className="hidden items-center gap-3 text-white xl:flex">
           <ButtonLink
             href="/book-consultation"
-            className="bg-[linear-gradient(135deg,#355C9A_100%,#4E73B8_50%,#6C8FD6_100%)] text-white"
+            className="whitespace-nowrap bg-[linear-gradient(135deg,#355C9A_100%,#4E73B8_50%,#6C8FD6_100%)] text-white"
           >
             Book Consultation
           </ButtonLink>
         </div>
 
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <MobileNavigationSheet
             open={open}
             setOpen={setOpen}

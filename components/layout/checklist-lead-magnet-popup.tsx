@@ -88,7 +88,7 @@ export function ChecklistLeadMagnetPopup() {
   }
 
   return (
-    <div className="fixed inset-x-4 bottom-4 z-[70] mx-auto max-w-xl sm:bottom-6 sm:right-6 sm:left-auto sm:mx-0">
+    <div className="fixed inset-x-4 bottom-4 z-[70] mx-auto max-w-xl sm:bottom-6 sm:left-6 sm:right-auto sm:mx-0">
       <div
         role="dialog"
         aria-labelledby="checklist-lead-magnet-title"
@@ -117,9 +117,9 @@ export function ChecklistLeadMagnetPopup() {
               <Link
                 href="/technology-security-checklist"
                 onClick={closePopup}
-                className="inline-flex h-11 items-center justify-center rounded-full bg-white px-4 text-sm font-semibold text-[var(--color-ink)] transition hover:-translate-y-0.5"
+                className="inline-flex h-11 items-center justify-center whitespace-nowrap rounded-full bg-white px-4 text-sm font-semibold text-[#0b1220] transition hover:-translate-y-0.5"
               >
-                Start free checklist
+                Start checklist
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <button

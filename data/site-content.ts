@@ -37,7 +37,7 @@ export const navigation: NavItem[] = [
   { label: "Industries", href: "/industries", kind: "industries" },
   { label: "Case Studies", href: "/case-studies", kind: "link" },
   {
-    label: "IT Health Check",
+    label: "Health Check",
     href: "/technology-security-checklist",
     kind: "link",
   },

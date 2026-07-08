@@ -426,9 +426,9 @@ export function TechnologySecurityChecklist() {
         </div>
       </section>
 
-      <section ref={quizRef} className="py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          {gateOpen ? (
+      {gateOpen ? (
+        <section ref={quizRef} className="py-14 sm:py-20">
+          <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-[18rem_minmax(0,1fr)]">
               <aside className="lg:sticky lg:top-28 lg:self-start">
                 <div className="rounded-2xl border border-[color:rgba(11,18,32,0.08)] bg-white p-5 shadow-[0_18px_50px_rgba(11,18,32,0.06)]">
@@ -566,20 +566,9 @@ export function TechnologySecurityChecklist() {
                 </div>
               </div>
             </div>
-          ) : (
-            <div className="rounded-2xl border border-dashed border-[color:rgba(11,18,32,0.16)] bg-white p-8 text-center">
-              <ShieldCheck className="mx-auto h-10 w-10 text-[var(--color-electric)]" />
-              <h2 className="mt-4 text-2xl font-semibold text-[var(--color-ink)]">
-                Enter your details above to unlock the checklist.
-              </h2>
-              <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-[var(--color-muted)]">
-                This protects the lead magnet and keeps the scoring experience
-                focused on business users who want a real result.
-              </p>
-            </div>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }
