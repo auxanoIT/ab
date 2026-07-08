@@ -4,9 +4,9 @@ import { buildMetadata } from "@/lib/seo";
 import { absoluteUrl } from "@/lib/utils";
 
 export const metadata = buildMetadata({
-  title: "2026 Business Technology & Security Readiness Checklist",
+  title: "2026 Business Technology & Security Checklist",
   description:
-    "Take Auxano's free 50-point business technology and security readiness checklist for Nigerian companies. Score network health, cybersecurity, backup, fire alarm, CCTV, access control, power, software licensing, and disaster recovery.",
+    "Take Auxano's free business technology and security checklist for Nigerian companies. Identify risks across IT infrastructure, cybersecurity, physical security, fire safety, power, licensing, and disaster recovery.",
   path: "/technology-security-checklist",
   keywords: [
     "business technology checklist Nigeria",
@@ -27,9 +27,9 @@ export default function TechnologySecurityChecklistPage() {
           {
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            name: "2026 Business Technology & Security Readiness Checklist",
+            name: "2026 Business Technology & Security Checklist",
             description:
-              "A 50-point readiness assessment for Nigerian companies covering IT infrastructure, cybersecurity, physical security, fire safety, power, licensing, and disaster recovery.",
+              "A readiness assessment for Nigerian companies covering IT infrastructure, cybersecurity, physical security, fire safety, power, licensing, and disaster recovery.",
             url: absoluteUrl("/technology-security-checklist"),
             applicationCategory: "BusinessApplication",
             operatingSystem: "Web",

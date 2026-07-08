@@ -88,44 +88,45 @@ export function ChecklistLeadMagnetPopup() {
   }
 
   return (
-    <div className="fixed inset-x-4 bottom-4 z-[70] mx-auto max-w-xl sm:bottom-6 sm:left-6 sm:right-auto sm:mx-0">
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-[rgba(11,18,32,0.48)] px-4 py-6">
       <div
         role="dialog"
+        aria-modal="true"
         aria-labelledby="checklist-lead-magnet-title"
-        className="overflow-hidden rounded-2xl border border-white/20 bg-[var(--color-ink)] text-white shadow-[0_28px_100px_rgba(11,18,32,0.35)]"
+        className="w-full max-w-2xl overflow-hidden rounded-2xl border border-white/20 bg-[var(--color-ink)] text-white shadow-[0_28px_100px_rgba(11,18,32,0.35)]"
       >
-        <div className="flex items-start gap-4 p-5 sm:p-6">
+        <div className="flex items-start gap-4 p-5 sm:p-7">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[var(--color-cyan)]">
             <ClipboardCheck className="h-5 w-5" />
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-cyan)]">
-              Free 2026 checklist
+              Trusted by Businesses Across Nigeria
             </p>
             <h2
               id="checklist-lead-magnet-title"
-              className="mt-2 text-xl font-semibold leading-tight"
+              className="mt-2 text-2xl font-semibold leading-tight sm:text-3xl"
             >
-              Is your business technology actually protected?
+              The Business Technology Health Check&trade;
             </h2>
-            <p className="mt-3 text-sm leading-6 text-white/70">
-              Take the 50-point readiness check for Nigerian companies across
-              IT, cybersecurity, fire safety, CCTV, power, licensing, and
-              disaster recovery.
+            <p className="mt-4 text-sm leading-7 text-white/74 sm:text-base">
+              The same assessment principles used by technology professionals
+              to identify security, infrastructure, and operational risks before
+              they become costly problems.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
                 href="/technology-security-checklist"
                 onClick={closePopup}
-                className="inline-flex h-11 items-center justify-center whitespace-nowrap rounded-full bg-white px-4 text-sm font-semibold text-[#0b1220] transition hover:-translate-y-0.5"
+                className="inline-flex h-12 items-center justify-center whitespace-nowrap rounded-full bg-[linear-gradient(135deg,var(--color-electric),var(--color-cyan))] px-5 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(47,107,255,0.24)] transition hover:-translate-y-0.5"
               >
-                Start checklist
+                Start Free Assessment
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <button
                 type="button"
                 onClick={closePopup}
-                className="inline-flex h-11 items-center justify-center rounded-full border border-white/14 px-4 text-sm font-semibold text-white/78 transition hover:border-white/28 hover:text-white"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-white/14 px-5 text-sm font-semibold text-white/78 transition hover:border-white/28 hover:text-white"
               >
                 Maybe later
               </button>

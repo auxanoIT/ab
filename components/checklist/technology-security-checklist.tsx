@@ -22,6 +22,7 @@ import {
   Zap,
 } from "lucide-react";
 
+import { PartnerLogoMarquee } from "@/components/sections/partner-logo-marquee";
 import {
   checklistCategories,
   checklistMaxScore,
@@ -264,165 +265,141 @@ export function TechnologySecurityChecklist() {
 
   return (
     <div className="bg-[var(--color-background)]">
-      <section className="overflow-hidden bg-white">
-        <div className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8 lg:py-16">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ED6B37]">
-              Free 2026 readiness check
-            </p>
-            <h1 className="mt-5 text-4xl font-semibold leading-tight text-[var(--color-ink)] sm:text-5xl lg:text-6xl">
-              The 2026 Business Technology & Security Readiness Checklist for
-              Nigerian Companies
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--color-muted)] sm:text-lg">
-              Score your business across networks, internet reliability,
-              servers, cybersecurity, backups, fire alarms, CCTV, access
-              control, power, software licensing, and disaster recovery.
-            </p>
+      <section className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-[var(--color-ink)] text-white">
+        <Image
+          src="/image/service_section/Operational_support.jpg"
+          alt="Technical team reviewing business technology and security readiness"
+          fill
+          priority
+          quality={58}
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[rgba(11,18,32,0.58)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.26),rgba(11,18,32,0.76))]" />
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              {[
-                ["50", "practical checks"],
-                ["10", "risk areas"],
-                ["5-8 min", "to complete"],
-              ].map(([value, label]) => (
-                <div
-                  key={label}
-                  className="rounded-xl border border-[color:rgba(11,18,32,0.08)] bg-[var(--color-cloud)] px-4 py-3"
-                >
-                  <p className="text-2xl font-semibold text-[var(--color-ink)]">
-                    {value}
-                  </p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.14em] text-[var(--color-muted)]">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid gap-5">
-            <div className="relative overflow-hidden rounded-2xl border border-[color:rgba(11,18,32,0.08)] bg-[var(--color-ink)] text-white shadow-[0_28px_90px_rgba(11,18,32,0.16)]">
-              <div className="relative h-56 sm:h-64">
-                <Image
-                  src="/image/service_section/Operational_support.jpg"
-                  alt="Technical team reviewing business technology and security readiness"
-                  fill
-                  priority
-                  quality={56}
-                  sizes="(min-width: 1024px) 48vw, 100vw"
-                  className="object-cover opacity-70"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,18,32,0.82),rgba(11,18,32,0.18))]" />
-                <div className="absolute inset-0 flex items-end p-6">
-                  <div>
-                    <p className="text-sm font-semibold text-[var(--color-cyan)]">
-                      Instant score after completion
-                    </p>
-                    <p className="mt-2 max-w-md text-sm leading-7 text-white/72">
-                      Use the result to decide where to strengthen operations
-                      before downtime, breach, data loss, or safety gaps become
-                      expensive.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <form
-              onSubmit={handleGateSubmit}
-              className="rounded-2xl border border-[color:rgba(11,18,32,0.08)] bg-white p-5 shadow-[0_20px_60px_rgba(11,18,32,0.08)] sm:p-6"
+        <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] max-w-5xl flex-col items-center justify-center px-5 py-20 text-center sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-cyan)]">
+            Free 2026 assessment
+          </p>
+          <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight sm:text-6xl lg:text-7xl">
+            2026 Business Technology & Security Checklist
+          </h1>
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-white/82 sm:text-xl">
+            Identify technology, security, infrastructure, and operational risk
+            gaps before they become downtime, data loss, safety exposure, or
+            avoidable business cost.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#checklist-start"
+              style={{ color: "#0b1220" }}
+              className="inline-flex h-14 min-w-52 items-center justify-center rounded-full bg-white px-8 text-sm font-semibold text-black shadow-[0_20px_60px_rgba(0,0,0,0.28)] transition hover:-translate-y-0.5"
             >
-              <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[color:rgba(47,107,255,0.1)] text-[var(--color-electric)]">
-                  <Mail className="h-5 w-5" />
-                </div>
-                <div>
-                  <h2 className="text-xl font-semibold text-[var(--color-ink)]">
-                    Start with a valid business email
-                  </h2>
-                  <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
-                    Your score opens after this step. The checklist runs in the
-                    browser and only submits once when your final result is
-                    ready.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                <TextInput
-                  label="Full name"
-                  value={leadDetails.name}
-                  error={gateErrors.name}
-                  onChange={(value) => updateLeadField("name", value)}
-                  placeholder="Enter your full name"
-                />
-                <TextInput
-                  label="Company"
-                  value={leadDetails.company}
-                  error={gateErrors.company}
-                  onChange={(value) => updateLeadField("company", value)}
-                  placeholder="Enter company name"
-                />
-                <TextInput
-                  label="Business email"
-                  type="email"
-                  value={leadDetails.email}
-                  error={gateErrors.email}
-                  onChange={(value) => updateLeadField("email", value)}
-                  onBlur={() =>
-                    setGateErrors((current) => ({
-                      ...current,
-                      email: getEmailValidationMessage(leadDetails.email),
-                    }))
-                  }
-                  placeholder="name@company.com"
-                />
-                <TextInput
-                  label="Phone"
-                  value={leadDetails.phone}
-                  error={gateErrors.phone}
-                  onChange={(value) => updateLeadField("phone", value)}
-                  placeholder="+234..."
-                />
-              </div>
-
-              <label
-                className={cn(
-                  "mt-4 flex gap-3 rounded-xl border bg-[var(--color-cloud)] p-4 text-sm leading-6 text-[var(--color-muted)]",
-                  gateErrors.marketingConsent
-                    ? "border-red-500"
-                    : "border-[color:rgba(11,18,32,0.08)]",
-                )}
-              >
-                <input
-                  type="checkbox"
-                  checked={leadDetails.marketingConsent}
-                  onChange={(event) =>
-                    updateLeadField("marketingConsent", event.target.checked)
-                  }
-                  className="mt-1 h-4 w-4 shrink-0 rounded border-[color:rgba(11,18,32,0.2)] accent-[var(--color-electric)]"
-                />
-                <span>
-                  I agree to receive my checklist result and practical follow-up
-                  communication from Auxano Solutions.
-                </span>
-              </label>
-              {gateErrors.marketingConsent ? (
-                <p className="mt-2 text-xs font-medium text-red-600">
-                  {gateErrors.marketingConsent}
-                </p>
-              ) : null}
-
-              <button
-                type="submit"
-                className="mt-5 inline-flex h-12 w-full items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--color-electric),var(--color-cyan))] px-6 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(47,107,255,0.24)] transition hover:-translate-y-0.5 sm:w-auto"
-              >
-                Unlock the checklist
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
-            </form>
+              Start Free Assessment
+            </a>
+            <Link
+              href="/book-consultation"
+              className="inline-flex h-14 min-w-52 items-center justify-center rounded-full border border-white/40 px-8 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+            >
+              Speak with Auxano
+            </Link>
           </div>
+        </div>
+      </section>
+
+      <PartnerLogoMarquee />
+
+      <section id="checklist-start" className="py-14 sm:py-20">
+        <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
+          <form
+            onSubmit={handleGateSubmit}
+            className="rounded-2xl border border-[color:rgba(11,18,32,0.08)] bg-white p-5 shadow-[0_24px_80px_rgba(11,18,32,0.1)] sm:p-8"
+          >
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[color:rgba(47,107,255,0.1)] text-[var(--color-electric)]">
+                <Mail className="h-5 w-5" />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold text-[var(--color-ink)]">
+                  Very Simple to Start!
+                </h2>
+              </div>
+            </div>
+
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              <TextInput
+                label="Full name"
+                value={leadDetails.name}
+                error={gateErrors.name}
+                onChange={(value) => updateLeadField("name", value)}
+                placeholder="Enter your full name"
+              />
+              <TextInput
+                label="Company"
+                value={leadDetails.company}
+                error={gateErrors.company}
+                onChange={(value) => updateLeadField("company", value)}
+                placeholder="Enter company name"
+              />
+              <TextInput
+                label="Business email"
+                type="email"
+                value={leadDetails.email}
+                error={gateErrors.email}
+                onChange={(value) => updateLeadField("email", value)}
+                onBlur={() =>
+                  setGateErrors((current) => ({
+                    ...current,
+                    email: getEmailValidationMessage(leadDetails.email),
+                  }))
+                }
+                placeholder="name@company.com"
+              />
+              <TextInput
+                label="Phone"
+                value={leadDetails.phone}
+                error={gateErrors.phone}
+                onChange={(value) => updateLeadField("phone", value)}
+                placeholder="+234..."
+              />
+            </div>
+
+            <label
+              className={cn(
+                "mt-4 flex gap-3 rounded-xl border bg-[var(--color-cloud)] p-4 text-sm leading-6 text-[var(--color-muted)]",
+                gateErrors.marketingConsent
+                  ? "border-red-500"
+                  : "border-[color:rgba(11,18,32,0.08)]",
+              )}
+            >
+              <input
+                type="checkbox"
+                checked={leadDetails.marketingConsent}
+                onChange={(event) =>
+                  updateLeadField("marketingConsent", event.target.checked)
+                }
+                className="mt-1 h-4 w-4 shrink-0 rounded border-[color:rgba(11,18,32,0.2)] accent-[var(--color-electric)]"
+              />
+              <span>
+                I agree to receive my checklist result and practical follow-up
+                communication from Auxano Solutions.
+              </span>
+            </label>
+            {gateErrors.marketingConsent ? (
+              <p className="mt-2 text-xs font-medium text-red-600">
+                {gateErrors.marketingConsent}
+              </p>
+            ) : null}
+
+            <button
+              type="submit"
+              className="mt-5 inline-flex h-12 w-full items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--color-electric),var(--color-cyan))] px-6 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(47,107,255,0.24)] transition hover:-translate-y-0.5 sm:w-auto"
+            >
+              Unlock the checklist
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </button>
+          </form>
         </div>
       </section>
 
