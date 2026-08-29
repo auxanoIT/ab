@@ -10,10 +10,13 @@ import "./globals.css";
 
 import { CookieConsentManager } from "@/components/layout/cookie-consent-manager";
 import { ChecklistLeadMagnetPopup } from "@/components/layout/checklist-lead-magnet-popup";
+import { CrawlableNav } from "@/components/layout/crawlable-nav";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/ui/json-ld";
 import {
+  getBlogPostSlugs,
+  getCaseStudies,
   getFooterColumns,
   getIndustries,
   getNavigation,
@@ -221,6 +224,8 @@ export default async function RootLayout({
     services,
     footerColumns,
     siteSettings,
+    caseStudies,
+    blogSlugs,
   ] = await Promise.all([
     needsSolutions ? getSolutionCategories() : Promise.resolve([]),
     needsIndustries ? getIndustries() : Promise.resolve([]),
@@ -228,6 +233,8 @@ export default async function RootLayout({
     needsSolutions ? getServices() : Promise.resolve([]),
     getFooterColumns(),
     getSiteSettings(),
+    getCaseStudies(),
+    getBlogPostSlugs(),
   ]);
 
   return (
@@ -242,6 +249,12 @@ export default async function RootLayout({
             services={services}
           />
           <main className="flex-1">{children}</main>
+          <CrawlableNav
+            services={services}
+            industries={industries}
+            caseStudies={caseStudies}
+            blogSlugs={blogSlugs}
+          />
           <SiteFooter columns={footerColumns} settings={siteSettings} />
         </div>
         <JsonLd data={buildSiteJsonLd(siteSettings, services)} />
