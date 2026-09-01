@@ -109,16 +109,26 @@ function buildOfferCatalog(services: Service[]) {
   return {
     "@type": "OfferCatalog",
     name: "Auxano IT, ELV, Security, Safety, Network, Software, and Managed Support Services",
-    itemListElement: offers.map((offer) => ({
-      "@type": "Offer",
-      areaServed: "Nigeria",
-      itemOffered: {
-        "@type": "Service",
-        name: offer.name,
-        description: offer.description,
-        category: offer.category,
-        url: offer.url,
-        areaServed: "Nigeria",
+    itemListElement: offers.map((offer, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Offer",
+        areaServed: {
+          "@type": "Country",
+          name: "Nigeria",
+        },
+        itemOffered: {
+          "@type": "Service",
+          name: offer.name,
+          description: offer.description,
+          category: offer.category,
+          url: offer.url,
+          areaServed: {
+            "@type": "Country",
+            name: "Nigeria",
+          },
+        },
       },
     })),
   };
@@ -131,7 +141,7 @@ function buildSiteJsonLd(settings: SiteSettings, services: Service[]) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+        "@type": "Organization",
         "@id": organizationId,
         name: settings.name,
         alternateName: settings.shortName,
@@ -141,6 +151,15 @@ function buildSiteJsonLd(settings: SiteSettings, services: Service[]) {
         description: settings.description,
         email: settings.email,
         telephone: settings.phone,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: settings.address,
+          addressLocality: settings.city,
+          addressCountry: {
+            "@type": "Country",
+            name: settings.country,
+          },
+        },
         contactPoint: [
           {
             "@type": "ContactPoint",
@@ -149,30 +168,6 @@ function buildSiteJsonLd(settings: SiteSettings, services: Service[]) {
             contactType: "sales and technical consultation",
             areaServed: "NG",
             availableLanguage: ["English"],
-          },
-        ],
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: settings.address,
-          addressLocality: settings.city,
-          addressCountry: settings.country,
-        },
-        areaServed: [
-          {
-            "@type": "Country",
-            name: "Nigeria",
-          },
-          {
-            "@type": "City",
-            name: "Lagos",
-          },
-          {
-            "@type": "City",
-            name: "Abuja",
-          },
-          {
-            "@type": "City",
-            name: "Port Harcourt",
           },
         ],
         knowsAbout: [
@@ -192,6 +187,55 @@ function buildSiteJsonLd(settings: SiteSettings, services: Service[]) {
           "Business continuity",
         ],
         hasOfferCatalog: buildOfferCatalog(services),
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": `${absoluteUrl("/")}#local-business`,
+        name: settings.name,
+        url: absoluteUrl("/"),
+        image: absoluteUrl("/opengraph-image"),
+        logo: absoluteUrl("/image/AUxano.webp"),
+        description: settings.description,
+        email: settings.email,
+        telephone: settings.phone,
+        parentOrganization: {
+          "@id": organizationId,
+        },
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: settings.address,
+          addressLocality: settings.city,
+          addressCountry: {
+            "@type": "Country",
+            name: settings.country,
+          },
+        },
+        areaServed: [
+          {
+            "@type": "Country",
+            name: "Nigeria",
+          },
+          {
+            "@type": "City",
+            name: "Lagos",
+          },
+          {
+            "@type": "City",
+            name: "Abuja",
+          },
+          {
+            "@type": "City",
+            name: "Port Harcourt",
+          },
+        ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: settings.phone,
+          email: settings.email,
+          contactType: "customer service",
+          areaServed: "NG",
+          availableLanguage: ["English"],
+        },
       },
       {
         "@type": "WebSite",

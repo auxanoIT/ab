@@ -233,7 +233,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
             availableChannel: {
               "@type": "ServiceChannel",
               serviceUrl,
-              servicePhone: "+234 8062 218 546",
+              servicePhone: {
+                "@type": "ContactPoint",
+                telephone: "+234 8062 218 546",
+                contactType: "sales and technical consultation",
+                areaServed: "NG",
+                availableLanguage: ["English"],
+              },
             },
             audience: service.industries.map((industry) => ({
               "@type": "Audience",
@@ -242,12 +248,14 @@ export default async function ServicePage({ params }: ServicePageProps) {
             url: serviceUrl,
             description: buildServiceSeoDescription(service),
             image: absoluteUrl(heroImage.src),
-            termsOfService: absoluteUrl("/terms"),
             serviceOutput: service.deliverables,
             offers: {
               "@type": "Offer",
               availability: "https://schema.org/InStock",
-              areaServed: "Nigeria",
+              areaServed: {
+                "@type": "Country",
+                name: "Nigeria",
+              },
               url: absoluteUrl("/book-consultation"),
               priceSpecification: {
                 "@type": "PriceSpecification",

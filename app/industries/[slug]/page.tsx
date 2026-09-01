@@ -179,6 +179,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         ]}
       />
       <section className="overflow-hidden bg-white">
+        <h1 className="sr-only">Infrastructure for {industry.title}</h1>
         <div className="relative hidden min-h-[35rem] md:block">
           <Image
             src={industry.heroImage.src}
@@ -193,9 +194,9 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
           <Container className="relative flex min-h-[35rem] items-center">
             <div className="max-w-[34rem]">
-              <h1 className="max-w-[30rem] text-balance text-[2.65rem] font-semibold leading-[1.06] tracking-[-0.04em] text-[var(--color-ink)] lg:text-[3.2rem]">
+              <p className="max-w-[30rem] text-balance text-[2.65rem] font-semibold leading-[1.06] tracking-[-0.04em] text-[var(--color-ink)] lg:text-[3.2rem]">
                 Infrastructure for {industry.title}
-              </h1>
+              </p>
               <p className="mt-5 max-w-xl text-base leading-7 text-[var(--color-muted)]">
                 {industry.shortDescription}
               </p>
@@ -232,9 +233,9 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
           </div>
 
           <Container className="bg-[#f4f6f8] py-10">
-            <h1 className="text-balance text-[2.1rem] font-semibold leading-[1.08] tracking-[-0.04em] text-[var(--color-ink)]">
+            <p className="text-balance text-[2.1rem] font-semibold leading-[1.08] tracking-[-0.04em] text-[var(--color-ink)]">
               Infrastructure for {industry.title}
-            </h1>
+            </p>
             <p className="mt-5 text-base leading-7 text-[var(--color-muted)]">
               {industry.shortDescription}
             </p>

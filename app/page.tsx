@@ -43,17 +43,13 @@ export default async function HomePage() {
         data={[
           {
             "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            "@id": `${absoluteUrl("/")}#organization`,
+            "@type": "WebPage",
+            "@id": absoluteUrl("/"),
             name: "Auxano Solutions Technology Limited",
             url: absoluteUrl("/"),
-            areaServed: [
-              { "@type": "Country", name: "Nigeria" },
-              { "@type": "City", name: "Lagos" },
-              { "@type": "City", name: "Abuja" },
-              { "@type": "City", name: "Port Harcourt" },
-            ],
-            serviceType: [
+            description:
+              "IT infrastructure, CCTV, access control, fire alarm, network cabling, hardware, software licensing, and managed IT support for Nigerian organizations.",
+            about: [
               "Managed IT Support",
               "CCTV Installation",
               "Door Access Control",
@@ -64,6 +60,9 @@ export default async function HomePage() {
               "Software Licensing",
               "IT Audit and Compliance",
             ],
+            provider: {
+              "@id": `${absoluteUrl("/")}#organization`,
+            },
           },
         ]}
       />

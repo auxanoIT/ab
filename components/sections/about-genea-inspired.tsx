@@ -279,6 +279,7 @@ export function AboutGeneaInspired() {
   return (
     <div className="overflow-hidden bg-[#f7faff] text-[var(--color-ink)]">
       <section className="overflow-hidden bg-white">
+        <h1 className="sr-only">Reliable ICT support since 2012.</h1>
         <div className="relative hidden min-h-[35rem] md:block">
           <Image
             src="/image/It_management.jpg"
@@ -298,9 +299,9 @@ export function AboutGeneaInspired() {
               animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h1 className="mt-4 max-w-[30rem] text-balance text-[2.65rem] font-semibold leading-[1.06] tracking-[-0.04em] text-[var(--color-ink)] lg:text-[3.2rem]">
+              <p className="mt-4 max-w-[30rem] text-balance text-[2.65rem] font-semibold leading-[1.06] tracking-[-0.04em] text-[var(--color-ink)] lg:text-[3.2rem]">
                 Reliable ICT support since 2012.
-              </h1>
+              </p>
               <p className="mt-5 max-w-xl text-base leading-7 text-[var(--color-muted)]">
                 Auxano Solutions Technology Limited delivers specialized and
                 cost-effective ICT services that help organizations streamline
@@ -339,9 +340,9 @@ export function AboutGeneaInspired() {
           </div>
 
           <Container className="overflow-hidden bg-[#f4f6f8] py-10">
-            <h1 className="mt-4 max-w-[20rem] text-[1.65rem] font-semibold leading-[1.12] tracking-[-0.04em] text-[var(--color-ink)]">
+            <p className="mt-4 max-w-[20rem] text-[1.65rem] font-semibold leading-[1.12] tracking-[-0.04em] text-[var(--color-ink)]">
               Reliable ICT support since 2012.
-            </h1>
+            </p>
             <p className="mt-5 max-w-[20rem] text-sm leading-7 text-[var(--color-muted)]">
               Auxano delivers cost-effective ICT services that help
               organizations streamline operations, secure assets, and scale
