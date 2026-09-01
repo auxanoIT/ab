@@ -92,7 +92,7 @@ export async function generateMetadata({
 
   return buildMetadata({
     title: `IT Infrastructure for ${industry.title} in Nigeria`,
-    description: `${industry.heroDescription} Auxano supports ${industry.title.toLowerCase()} in Lagos and across Nigeria with IT infrastructure, CCTV, access control, networking, and managed support.`,
+    description: `IT infrastructure for ${industry.title.toLowerCase()} in Nigeria, covering CCTV, access control, networking, managed support, and reliable site operations.`,
     path: industry.href,
     imagePath: industry.heroImage.src,
     imageAlt: industry.heroImage.alt,

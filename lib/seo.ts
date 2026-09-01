@@ -35,7 +35,25 @@ const defaultKeywords = [
   "IT infrastructure services",
   "access control systems",
   "business IT support",
+  "automatic gate"
 ];
+
+const maxMetaDescriptionLength = 158;
+
+function normalizeMetaDescription(description: string) {
+  const normalized = description.replace(/\s+/g, " ").trim();
+
+  if (normalized.length <= maxMetaDescriptionLength) {
+    return normalized;
+  }
+
+  const clipped = normalized.slice(0, maxMetaDescriptionLength + 1);
+  const lastSpace = clipped.lastIndexOf(" ");
+  const trimmed =
+    lastSpace > 120 ? clipped.slice(0, lastSpace) : clipped.slice(0, maxMetaDescriptionLength);
+
+  return `${trimmed.replace(/[,.!?;:]+$/, "")}...`;
+}
 
 export function buildMetadata({
   title,
@@ -51,13 +69,14 @@ export function buildMetadata({
 }: MetadataOptions): Metadata {
   const pageUrl = absoluteUrl(path);
   const imageUrl = absoluteUrl(imagePath);
+  const metaDescription = normalizeMetaDescription(description);
   const mergedKeywords = Array.from(
     new Set([...defaultKeywords, ...keywords].filter(Boolean)),
   );
 
   return {
     title,
-    description,
+    description: metaDescription,
     keywords: mergedKeywords,
     applicationName: "Auxano Solutions",
     authors: [{ name: "Auxano Solutions Technology Limited" }],
@@ -87,7 +106,7 @@ export function buildMetadata({
     },
     openGraph: {
       title,
-      description,
+      description: metaDescription,
       url: pageUrl,
       siteName: "Auxano Solutions",
       type,
@@ -107,7 +126,7 @@ export function buildMetadata({
     twitter: {
       card: "summary_large_image",
       title,
-      description,
+      description: metaDescription,
       images: [
         {
           url: imageUrl,

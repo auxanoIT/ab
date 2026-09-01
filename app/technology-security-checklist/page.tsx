@@ -6,7 +6,7 @@ import { absoluteUrl } from "@/lib/utils";
 export const metadata = buildMetadata({
   title: "2026 Business Technology & Security Checklist",
   description:
-    "Take Auxano's free business technology and security checklist for Nigerian companies. Identify risks across IT infrastructure, cybersecurity, physical security, fire safety, power, licensing, and disaster recovery.",
+    "Take Auxano's free 2026 business technology and security checklist for Nigerian companies across IT, cybersecurity, fire safety, CCTV, and power.",
   path: "/technology-security-checklist",
   keywords: [
     "business technology checklist Nigeria",

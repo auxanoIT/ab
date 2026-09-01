@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "IT, ELV, CCTV, and Fire Alarm Case Studies in Nigeria",
   description:
-    "Explore Auxano case studies in Nigeria across ELV infrastructure, structured cabling, cybersecurity compliance, access control, CCTV surveillance, fire alarm, and enterprise IT deployment.",
+    "Explore Auxano case studies in Nigeria across ELV infrastructure, CCTV, access control, fire alarm, cabling, cybersecurity, and enterprise IT.",
   path: "/case-studies",
   keywords: [
     "IT case studies Nigeria",

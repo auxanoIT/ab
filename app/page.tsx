@@ -11,7 +11,7 @@ export const revalidate = false;
 export const metadata = buildMetadata({
   title: "IT Solutions Company in Nigeria for CCTV, Fire Alarm, and Networks",
   description:
-    "Auxano Solutions is a Lagos-based IT solutions company serving Nigeria with managed IT support, CCTV installation, access control, fire alarm systems, network cabling, hardware, software licensing, and IT consultancy.",
+    "Auxano Solutions delivers managed IT, CCTV, access control, fire alarm, network cabling, hardware, and software licensing services in Nigeria.",
   path: "/",
   keywords: [
     "IT company in Lagos Nigeria",

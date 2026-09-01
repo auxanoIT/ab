@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "About Auxano Solutions, IT and ELV Company in Nigeria",
   description:
-    "Auxano Solutions Technology Limited is a Nigerian IT and ELV solutions company delivering ICT infrastructure, CCTV, access control, fire alarm systems, networking, managed support, and technical project delivery.",
+    "Auxano Solutions is a Nigerian IT and ELV company delivering ICT infrastructure, CCTV, access control, fire alarm, networking, and managed support.",
   path: "/about",
   keywords: [
     "about Auxano Solutions",

@@ -17,7 +17,7 @@ const groupIcons = {
 export const metadata = buildMetadata({
   title: "IT Resources, Case Studies, and Service Guides in Nigeria",
   description:
-    "Explore Auxano resources for IT infrastructure, CCTV, access control, fire alarm systems, network cabling, managed IT support, case studies, and consultation planning in Nigeria.",
+    "Explore Auxano IT resources, service guides, case studies, CCTV, fire alarm, network cabling, and managed support insights for Nigeria.",
   path: "/resources",
   keywords: [
     "IT resources Nigeria",

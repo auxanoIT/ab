@@ -12,7 +12,7 @@ import type { Service, ServiceCategory, SolutionCategory } from "@/lib/types";
 export const metadata = buildMetadata({
   title: "IT, ELV, CCTV, Fire Alarm, and Network Services in Nigeria",
   description:
-    "Explore Auxano's IT infrastructure, CCTV, access control, fire alarm, networking, hardware, software licensing, managed IT support, and consultancy services in Lagos and across Nigeria.",
+    "Explore Auxano IT, ELV, CCTV, fire alarm, access control, network cabling, hardware, software licensing, and managed support services in Nigeria.",
   path: "/services",
   keywords: [
     "IT services Nigeria",

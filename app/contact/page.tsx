@@ -12,7 +12,7 @@ import { absoluteUrl, createWhatsappLink } from "@/lib/utils";
 export const metadata = buildMetadata({
   title: "Contact Auxano Solutions in Lagos, Nigeria",
   description:
-    "Contact Auxano Solutions in Lagos for IT infrastructure, CCTV installation, access control, fire alarm systems, network cabling, software licensing, and managed IT support in Nigeria.",
+    "Contact Auxano Solutions in Lagos for IT infrastructure, CCTV, access control, fire alarm, network cabling, licensing, and managed IT support.",
   path: "/contact",
   keywords: [
     "contact IT company Lagos",

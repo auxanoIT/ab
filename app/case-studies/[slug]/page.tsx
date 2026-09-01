@@ -13,6 +13,7 @@ import {
   getCaseStudies,
 } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
+import type { CaseStudy } from "@/lib/types";
 import { absoluteUrl } from "@/lib/utils";
 
 type CaseStudyPageProps = {
@@ -46,7 +47,7 @@ export async function generateMetadata({
 
   return buildMetadata({
     title: caseStudy.title,
-    description: caseStudy.summary,
+    description: buildCaseStudySeoDescription(caseStudy),
     path: `/case-studies/${caseStudy.slug}`,
     type: "article",
     keywords: [
@@ -55,6 +56,15 @@ export async function generateMetadata({
       ...(caseStudy.relatedServices ?? []),
     ].filter(Boolean),
   });
+}
+
+function buildCaseStudySeoDescription(caseStudy: CaseStudy) {
+  const serviceFocus = caseStudy.relatedServices?.slice(0, 2).join(" and ");
+  const focus = serviceFocus
+    ? serviceFocus.replaceAll("-", " ")
+    : "IT and ELV infrastructure";
+
+  return `See how Auxano delivered ${focus} for ${caseStudy.client} in ${caseStudy.location}, improving security, reliability, documentation, and handover.`;
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {

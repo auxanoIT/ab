@@ -4,7 +4,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Terms",
-  description: "Terms for using the Auxano Solutions website and submitting project inquiries.",
+  description:
+    "Read Auxano Solutions website terms for consultation requests, service inquiries, project scoping, and business technology communications in Nigeria.",
   path: "/terms",
 });
 

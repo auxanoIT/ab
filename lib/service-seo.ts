@@ -182,7 +182,7 @@ export function buildServiceSeoDescription(service: Service) {
   const serviceName = service.title.toLowerCase();
   const audience = service.industries.slice(0, 3).join(", ").toLowerCase();
 
-  return `Auxano Solutions provides ${serviceName} in Lagos and across Nigeria for ${audience || "businesses"}, with planning, supply, installation, documentation, and support handover.`;
+  return `Auxano Solutions delivers ${serviceName} in Lagos and across Nigeria for ${audience || "businesses"}, with scoping, installation, testing, and support.`;
 }
 
 export function buildServiceSeoKeywords(service: Service) {
