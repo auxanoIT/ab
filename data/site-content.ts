@@ -598,6 +598,21 @@ export const footerColumns: FooterColumn[] = [
     ],
   },
   {
+    title: "Services",
+    links: [
+      { label: "CCTV Installation", href: "/services/surveillance-system-cctv" },
+      { label: "Door Access Control", href: "/services/door-access-control" },
+      { label: "Fire Alarm Systems", href: "/services/fire-alarm-safety-systems" },
+      { label: "Structured LAN Cabling", href: "/services/structured-lan-cabling" },
+      { label: "Network Cabling", href: "/services/network-cabling" },
+      { label: "Network Configuration", href: "/services/network-configurations" },
+      { label: "Firewall Licenses", href: "/services/firewall-sales-licenses" },
+      { label: "IT Managed Services", href: "/services/it-managed-services-staff-outsourcing" },
+      { label: "Server Sales & Repair", href: "/services/server-sales-repair" },
+      { label: "IT Consultancy & Audit", href: "/services/it-consultancy-audit-services" },
+    ],
+  },
+  {
     title: "Explore",
     links: [
       { label: "Case Studies", href: "/case-studies" },
