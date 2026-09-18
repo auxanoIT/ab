@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { GoogleRatingBadge } from "@/components/ui/google-rating-badge";
 import type { FooterColumn, SiteSettings } from "@/lib/types";
 import { createWhatsappLink } from "@/lib/utils";
 
@@ -60,6 +61,7 @@ export function SiteFooter({ columns, settings }: SiteFooterProps) {
               WhatsApp Sales
             </ButtonLink>
           </div>
+          <GoogleRatingBadge />
         </div>
 
         <div className="grid gap-10 sm:grid-cols-3">
