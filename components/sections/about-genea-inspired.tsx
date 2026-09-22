@@ -23,6 +23,7 @@ import {
 import { motion, useReducedMotion } from "framer-motion";
 
 import { PartnerLogoMarquee } from "@/components/sections/partner-logo-marquee";
+import { LeadershipProfiles } from "@/components/sections/leadership-profiles";
 import { Container } from "@/components/ui/container";
 import {
   StatMetricIcon,
@@ -117,36 +118,6 @@ const services = [
   },
 ];
 
-const leaders = [
-  {
-    name: "Olatunji Aduloju",
-    role: "Managing Director",
-    office: "Corporate Office, Lagos",
-    contact: "olatunji@auxanosolutions.net",
-    image: "/image/about/Olatunji Aduloju.jpeg",
-  },
-  {
-    name: "Tosin Ayorinde",
-    role: "IT Business & Technical Support Lead",
-    office: "Corporate Office, Lagos",
-    contact: "tosin@auxanosolutions.net",
-    image: "/image/about/Tosin Ayorinde.jpeg",
-  },
-  {
-    name: "Kayode Mejabi",
-    role: "Regional Technical Support Lead",
-    office: "Abuja Office",
-    contact: "kayode@auxanosolutions.net",
-    image: "/image/about/Kayode Mejabi.jpeg",
-  },
-  {
-    name: "Mahmoud Khallaf",
-    role: "Operations & Technical Lead, North Africa",
-    office: "Cairo Office",
-    contact: "mahmoudk@auxanosolutions.net",
-    image: "/image/about/Mahmoud Khallaf.jpeg",
-  },
-];
 
 const offices = [
   {
@@ -519,44 +490,10 @@ export function AboutGeneaInspired() {
         <Container>
           <SectionIntro
             eyebrow="Leadership"
-            title="Office and technical leads for client success."
+            title="Meet our board, leadership and technical team."
             center
           />
-          <div className="mt-11 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {leaders.map((leader, index) => (
-              <Reveal key={leader.name} delay={index * 0.05}>
-                <article className="group overflow-hidden rounded-lg border border-[color:rgba(10,48,71,0.1)] bg-white shadow-[0_20px_55px_rgba(10,48,71,0.08)]">
-                  <div className="relative aspect-[4/4.6] overflow-hidden bg-[#0A3047]">
-                    <Image
-                      src={leader.image}
-                      alt={`${leader.name}, ${leader.role}`}
-                      fill
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <p className="text-sm font-semibold text-[#f97316]">
-                      {leader.role}
-                    </p>
-                    <h3 className="mt-2 text-xl font-semibold text-[var(--color-ink)]">
-                      {leader.name}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
-                      {leader.office}
-                    </p>
-                    <a
-                      href={`mailto:${leader.contact}`}
-                      className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-electric)]"
-                    >
-                      Contact
-                      <ArrowRight className="h-4 w-4" />
-                    </a>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+          <LeadershipProfiles />
         </Container>
       </section>
 

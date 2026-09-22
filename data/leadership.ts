@@ -1,0 +1,68 @@
+export const leaders = [
+  {
+    name: "Olatunji Aduloju",
+    role: "Managing Director",
+    office: "Corporate Office, Lagos",
+    contact: "olatunji@auxanosolutions.net",
+    image: "/image/about/Olatunji Aduloju.jpeg",
+    biography: [
+      "Olatunji Aduloju, DCM, DCE, is the Managing Director of Auxano Solutions Technology Limited. He provides strategic leadership, operational oversight and long-term direction, drawing on a career in data centre management, enterprise infrastructure and mission-critical systems.",
+      "A certified Data Centre Management (DCM) and Data Centre Engineering (DCE) professional, Olatunji brings technical expertise in designing, implementing and managing high-availability infrastructure. His experience includes large-scale technology deployments and data centre operations, with attention to energy efficiency and system resilience.",
+      "Under his leadership, Auxano has expanded its service capabilities and regional presence, delivering infrastructure projects across telecommunications, enterprise IT, security systems and structured cabling. He combines technical knowledge with business planning to help organisations develop reliable and scalable technology environments.",
+      "Olatunji is committed to quality, team development and customer-focused service delivery. He continues to invest in professional development in data centre operations, infrastructure engineering and technology management.",
+    ],
+  },
+  {
+    name: "Tosin Ayorinde",
+    role: "Director, IT Business & Technical Services",
+    office: "Corporate Office, Lagos",
+    contact: "tosin@auxanosolutions.net",
+    image: "/image/about/Tosin Ayorinde.jpeg",
+    biography: [
+      "Tosin Ayorinde is the Director of IT Business & Technical Services at Auxano Solutions Technology Limited. With more than 18 years of experience in IT infrastructure, security and enterprise systems management, he leads technology operations, enterprise service delivery and business transformation initiatives.",
+      "His expertise spans network architecture, data centre operations, cloud and resource migration, structured cabling, enterprise security systems, business continuity planning and large-scale technical support. He has designed and deployed infrastructure and led technology projects across multiple industries.",
+      "Since joining Auxano in 2012, Tosin has held several leadership roles, including Head of Technical Support. He has strengthened service delivery processes, led infrastructure deployments and supported operational improvements across regions. As Director, he oversees cross-functional teams and aligns technical delivery with client business requirements.",
+      "His industry certifications include CCNA, CompTIA Security+, CompTIA Network+, CompTIA A+, CNCI, CNIT, FOA Certified Fiber Optic Technician and Certified Network Infrastructure Design Professional (CNIDP). He has also completed professional certification in fire alarm systems and emergency lighting.",
+      "Tosin holds a bachelor's degree from the University of Ilorin and has completed advanced training at SRH Berlin University of Applied Sciences. He brings a strategic approach to translating technical requirements into practical business outcomes.",
+    ],
+  },
+  {
+    name: "Kayode Mejabi",
+    role: "Regional Technical Support Lead, Northern Region",
+    office: "Abuja Office",
+    contact: "kayode@auxanosolutions.net",
+    image: "/image/about/Kayode Mejabi.jpeg",
+    biography: [
+      "Kayode Mejabi is the Regional Technical Support Lead for Auxano Solutions Technology Limited, overseeing operations from the regional office in Abuja. He combines technical expertise, customer engagement and project execution to support clients across Northern Nigeria.",
+      "Kayode leads technical support, solution implementation and post-deployment optimisation across diverse sectors. He also supports regional business development through presales engineering, solution demonstrations and technical guidance.",
+      "His work includes coordinating deployments, reviewing delivery quality and keeping projects aligned with client expectations. He connects technical requirements with business needs and helps clients move from project planning into day-to-day operation.",
+      "Kayode brings a practical problem-solving approach and a commitment to customer satisfaction to Auxano's regional service delivery.",
+    ],
+  },
+  {
+    name: "Mahmoud Khallaf",
+    role: "Operations & Technical Lead, North Africa",
+    office: "Cairo Office",
+    contact: "mahmoudk@auxanosolutions.net",
+    image: "/image/about/Mahmoud Khallaf.jpeg",
+    biography: [
+      "Mahmoud Khallaf serves as Operations & Technical Lead for North Africa at Auxano Solutions Technology Limited. Based in Egypt, he oversees regional operations, technical service delivery and project execution.",
+      "With a background in IT systems, infrastructure deployment and enterprise support, Mahmoud leads teams responsible for solution implementation, customer support and post-deployment optimisation. He works with business development teams on presales engineering, solution design and technical presentations.",
+      "His hands-on technical experience and structured approach to project management help align delivery with client business objectives. He manages service quality and supports the rollout of mission-critical infrastructure across multiple sectors.",
+      "Mahmoud's leadership supports Auxano's presence in North Africa through coordinated regional operations, technical delivery and customer engagement.",
+    ],
+  },
+  {
+    name: "Bosede Eke-Adepitan",
+    role: "Member, Board of Directors",
+    office: "",
+    contact: "",
+    image: "/image/about/bosede-eke-adepitan.webp",
+    biography: [
+      "Bosede Eke-Adepitan is a member of the Board of Directors of Auxano Solutions Technology Limited. She brings experience in leadership, strategic planning and organisational development across Nigeria's corporate and public sectors.",
+      "Her expertise includes governance, stakeholder engagement and policy implementation, with a career spanning administration, project coordination and capacity building. Her work has focused on improving efficiency, strengthening institutional structures and supporting innovation-driven growth.",
+      "Bosede holds advanced academic and professional qualifications and has participated in leadership and industry development programmes. She is passionate about technology-enabled transformation, ethical leadership, youth empowerment and corporate sustainability.",
+      "At Auxano, she provides strategic guidance and governance oversight, drawing on her experience in public and strategic leadership to support the company's development and long-term value for stakeholders.",
+    ],
+  },
+];
