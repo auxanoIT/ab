@@ -4,7 +4,7 @@ import { absoluteUrl } from "@/lib/utils";
 
 type MetadataOptions = {
   title: string;
-  description: string;
+  description: string | null | undefined;
   path?: string;
   imagePath?: string;
   imageAlt?: string;
@@ -69,7 +69,9 @@ export function buildMetadata({
 }: MetadataOptions): Metadata {
   const pageUrl = absoluteUrl(path);
   const imageUrl = absoluteUrl(imagePath);
-  const metaDescription = normalizeMetaDescription(description);
+  const metaDescription = normalizeMetaDescription(
+    typeof description === "string" && description.trim() ? description : title,
+  );
   const mergedKeywords = Array.from(
     new Set([...defaultKeywords, ...keywords].filter(Boolean)),
   );

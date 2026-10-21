@@ -1,4 +1,5 @@
 import { draftMode } from "next/headers";
+import { withBlogExcerpt } from "@/lib/blog-excerpt";
 
 import {
   blogPosts,
@@ -285,7 +286,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
     tags: ["posts"],
   });
 
-  return content ?? blogPosts;
+  return (content ?? blogPosts).map(withBlogExcerpt);
 }
 
 export async function getBlogPostSlugs(): Promise<string[]> {
@@ -309,7 +310,8 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
     tags: ["posts"],
   });
 
-  return content ?? blogPosts.find((post) => post.slug === slug) ?? null;
+  const post = content ?? blogPosts.find((post) => post.slug === slug);
+  return post ? withBlogExcerpt(post) : null;
 }
 
 export async function getTestimonials(): Promise<Testimonial[]> {
