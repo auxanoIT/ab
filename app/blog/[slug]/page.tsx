@@ -7,6 +7,7 @@ import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import type { PortableTextBlock, TypedObject } from "@portabletext/types";
 
 import { ButtonLink } from "@/components/ui/button-link";
+import { BlogTableOfContents } from "@/components/sections/blog-table-of-contents";
 import { Container } from "@/components/ui/container";
 import { JsonLd } from "@/components/ui/json-ld";
 import { getBlogPostBySlug, getBlogPostSlugs } from "@/lib/content";
@@ -162,9 +163,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </Container>
         </header>
 
-        <section className="py-16 sm:py-20">
-          <Container className="grid gap-10 lg:grid-cols-[18rem_minmax(0,1fr)]">
-            <aside className="lg:sticky lg:top-28 lg:self-start">
+        <section className="pb-16 lg:py-20">
+          <BlogTableOfContents headings={headings} />
+          <Container className="grid gap-10 pt-8 lg:grid-cols-[18rem_minmax(0,1fr)] lg:pt-0">
+            <aside className="hidden lg:sticky lg:top-28 lg:block lg:self-start">
               {headings.length ? (
                 <nav className="rounded-[1.5rem] border border-[color:rgba(11,18,32,0.08)] bg-white p-5 shadow-[0_16px_40px_rgba(11,18,32,0.05)]">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ED6B37]">
@@ -237,7 +239,7 @@ const blogBodyComponents: PortableTextComponents = {
     h2: ({ children, value }) => (
       <h2
         id={getPortableHeadingId(value)}
-        className="group scroll-mt-28 text-3xl font-semibold tracking-[-0.05em] text-[var(--color-ink)]"
+        className="group scroll-mt-40 text-3xl font-semibold tracking-[-0.05em] text-[var(--color-ink)] lg:scroll-mt-28"
       >
         <a
           href={`#${getPortableHeadingId(value)}`}
@@ -250,7 +252,7 @@ const blogBodyComponents: PortableTextComponents = {
     h3: ({ children, value }) => (
       <h3
         id={getPortableHeadingId(value)}
-        className="group scroll-mt-28 text-2xl font-semibold tracking-[-0.04em] text-[var(--color-ink)]"
+        className="group scroll-mt-40 text-2xl font-semibold tracking-[-0.04em] text-[var(--color-ink)] lg:scroll-mt-28"
       >
         <a
           href={`#${getPortableHeadingId(value)}`}
@@ -332,7 +334,7 @@ const blogBodyComponents: PortableTextComponents = {
       return (
         <HeadingTag
           id={id}
-          className="group scroll-mt-28 text-3xl font-semibold tracking-[-0.05em] text-[var(--color-ink)]"
+          className="group scroll-mt-40 text-3xl font-semibold tracking-[-0.05em] text-[var(--color-ink)] lg:scroll-mt-28"
         >
           <a
             href={`#${id}`}
