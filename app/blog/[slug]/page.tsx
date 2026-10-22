@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AlertTriangle, Info, Lightbulb, Quote } from "lucide-react";
@@ -129,32 +130,33 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         ]}
       />
       <article>
-        <header className="bg-[var(--color-cloud)] py-16 sm:py-20">
-          <Container className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ED6B37]">
+        <header className="border-b border-[color:rgba(11,18,32,0.08)] bg-white pb-10 pt-8 sm:pb-14 sm:pt-12">
+          <Container className="max-w-5xl">
+            <nav aria-label="Breadcrumb" className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[var(--color-muted)]">
+              <Link href="/" className="hover:text-[#355c9a]">Home</Link>
+              <span aria-hidden="true">/</span>
+              <Link href="/blog" className="hover:text-[#355c9a]">Blog</Link>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">Article</span>
+            </nav>
+            <div className="mx-auto max-w-4xl">
+              <p className="text-sm font-semibold text-[#ED6B37]">
                 {post.category}
               </p>
-              <h1 className="mt-6 text-balance text-4xl font-semibold tracking-[-0.06em] text-[var(--color-ink)] sm:text-5xl">
+              <h1 className="mt-4 text-pretty text-[30px] font-semibold leading-[1.2] tracking-normal text-[var(--color-ink)] [overflow-wrap:anywhere] sm:text-[40px] lg:text-[48px]">
                 {post.title}
               </h1>
-              <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-[var(--color-muted)]">
-                <span>{formatDate(post.publishedAt)}</span>
-                <span aria-hidden="true">/</span>
-                <span>{post.readingTime}</span>
-                {post.author ? (
-                  <>
-                    <span aria-hidden="true">/</span>
-                    <span>{post.author}</span>
-                  </>
-                ) : null}
+              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 border-b border-[color:rgba(11,18,32,0.1)] pb-6 text-sm leading-6 text-[var(--color-muted)]">
+                {post.author ? <span className="font-semibold text-[#355c9a]">By {post.author}</span> : null}
+                <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
+                {post.readingTime ? <span>{/^\d+$/.test(post.readingTime.trim()) ? `${post.readingTime.trim()} min read` : post.readingTime}</span> : null}
               </div>
-              <p className="mt-8 text-lg leading-8 text-[var(--color-muted)]">
+              <p className="mt-6 text-base leading-8 text-[var(--color-muted)] sm:text-lg">
                 {post.excerpt}
               </p>
             </div>
 
-            <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-white bg-white shadow-[0_24px_70px_rgba(11,18,32,0.08)]">
+            <div className="relative mt-8 aspect-[3/2] overflow-hidden rounded-lg bg-[var(--color-cloud)] sm:mt-10">
               <PostImage post={post} priority />
             </div>
           </Container>
@@ -536,8 +538,8 @@ function PostImage({
       alt={image.alt}
       fill
       priority={priority}
-      sizes="(min-width: 1024px) 55vw, 100vw"
-      className="object-cover"
+      sizes="(min-width: 1024px) 960px, 100vw"
+      className="object-contain"
     />
   );
 }
