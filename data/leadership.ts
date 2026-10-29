@@ -1,6 +1,7 @@
 export const leaders = [
   {
     name: "Olatunji Aduloju",
+    hiddenFromWebsite: true,
     role: "Managing Director",
     office: "Corporate Office, Lagos",
     contact: "olatunji@auxanosolutions.net",
