@@ -8,7 +8,7 @@ import { leaders } from "@/data/leadership";
 export function LeadershipProfiles() {
   return (
     <div className="mt-11 grid items-start gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-      {leaders.map((leader) => (
+      {leaders.filter((leader) => !("hiddenFromWebsite" in leader && leader.hiddenFromWebsite)).map((leader) => (
         <Dialog.Root key={leader.name}>
           <article>
             <div className="relative aspect-square overflow-hidden rounded-lg bg-white">
