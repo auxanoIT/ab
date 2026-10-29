@@ -125,7 +125,7 @@ const offices = [
     location: "Lagos, Nigeria",
     address:
       "26, Adeshina Street, Off Oluwole Philips, Obafemi Awolowo Way, Ikeja, Lagos.",
-    phone: "08034247062",
+    phone: "+234 806 221 8546",
     email: "ask@auxanosolutions.net",
   },
   {
