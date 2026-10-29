@@ -19,7 +19,7 @@ export const siteSettings: SiteSettings = {
   shortName: "Auxano Solutions",
   description:
     "End-to-end IT solutions designed, installed, and supported by experts across infrastructure, networking, hardware, software, and managed services.",
-  phone: "+234 8062 218 546",
+  phone: "+234 806 221 8546",
   email: "ask@auxanosolutions.net",
   address:
     "26A Adeshina Street, Off Oluwole Phillips, Obafemi Awolowo Way, Ikeja",
