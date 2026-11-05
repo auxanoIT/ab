@@ -25,7 +25,11 @@ export async function POST(request: Request) {
     );
   }
 
-  const isHuman = await verifyTurnstile(parsed.data.turnstileToken);
+  const isHuman = await verifyTurnstile(parsed.data.turnstileToken).catch(() => null);
+
+  if (isHuman === null) {
+    return NextResponse.json({ error: "Verification is temporarily unavailable. Please try again." }, { status: 503 });
+  }
 
   if (!isHuman) {
     return NextResponse.json({ error: "Bot verification failed." }, { status: 400 });
@@ -41,15 +45,15 @@ export async function POST(request: Request) {
       { name: "message", value: parsed.data.message },
       { name: "lead_source", value: parsed.data.context },
     ],
-    pageUri: request.url,
+    pageUri: new URL(parsed.data.context === "consultation" ? "/book-consultation" : "/contact", request.url).href,
     pageName: parsed.data.context === "consultation" ? "Book Consultation" : "Contact",
     hutk: parsed.data.hubspotTrackingCookie,
     ipAddress: getRequestIpAddress(request),
     legalConsentOptions: buildHubSpotConsentOptions(),
-  });
+  }).catch(() => false);
 
   if (!hubSpotSuccess) {
-    await sendFallbackEmail("Auxano website lead", [
+    const delivered = await sendFallbackEmail("Auxano website lead", [
       `Context: ${parsed.data.context}`,
       `Name: ${parsed.data.name}`,
       `Company: ${parsed.data.company}`,
@@ -58,7 +62,10 @@ export async function POST(request: Request) {
       `Service: ${parsed.data.serviceInterest}`,
       "",
       parsed.data.message,
-    ]);
+    ]).catch(() => false);
+    if (!delivered) {
+      return NextResponse.json({ error: "Your enquiry could not be delivered. Please try again or contact us directly." }, { status: 503 });
+    }
   }
 
   return NextResponse.json({ ok: true });

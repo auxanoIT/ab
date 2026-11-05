@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
+    "test:leads": "node --test scripts/lead-tracking.test.mjs",
     "lint": "eslint"
   },
   "engines": {
@@ -28,14 +29,22 @@
     "framer-motion": "^12.38.0",
     "lottie-react": "^2.4.1",
     "lucide-react": "^1.7.0",
-    "next": "16.2.6",
+    "next": "16.4.5",
     "next-sanity": "^12.2.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-icons": "^5.6.0",
     "sanity": "^5.19.0",
     "tailwind-merge": "^3.5.0",
-    "zod": "^4.3.6"
+    "zod": "^4.6.7"
+  },
+  "overrides": {
+    "@sanity/runtime-cli": {
+      "adm-zip": "0.6.1"
+    },
+    "@vercel/frameworks": {
+      "js-yaml": "3.15.2"
+    }
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -43,7 +52,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.6",
+    "eslint-config-next": "16.4.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

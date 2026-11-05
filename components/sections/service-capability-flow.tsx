@@ -150,7 +150,7 @@ export function ServiceCapabilityFlow({
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
-                  <ButtonLink href="/book-consultation" className="mt-7">
+                  <ButtonLink href={service.slug === "surveillance-system-cctv" ? "/book-consultation?service=surveillance-system-cctv" : "/book-consultation"} className="mt-7">
                     Make an enquiry
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </ButtonLink>

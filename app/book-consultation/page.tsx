@@ -46,7 +46,11 @@ const stats = [
   },
 ];
 
-export default function BookConsultationPage() {
+export default async function BookConsultationPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const query = await searchParams;
+  // An explicit, single CCTV service slug prefills the existing service choice.
+  // Invalid or repeated values cannot become arbitrary form or analytics data.
+  const initialService = query.service === "surveillance-system-cctv" ? "CCTV & Surveillance" : undefined;
   return (
     <>
       <JsonLd
@@ -146,6 +150,8 @@ export default function BookConsultationPage() {
 
           <div className="rounded-[1.5rem] border border-white/80 bg-white/92 p-5 shadow-[0_30px_90px_rgba(11,18,32,0.11)] backdrop-blur sm:p-7 lg:p-8">
             <LeadForm
+              key={initialService ?? "general"}
+              initialService={initialService}
               context="consultation"
               title="Talk to an Auxano specialist"
               description="Share the project location, required systems, timeline, and any existing issues. Our team will review the request and respond with a practical way forward."

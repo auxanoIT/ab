@@ -38,6 +38,7 @@ export async function verifyTurnstile(token?: string) {
 
   const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
     method: "POST",
+    signal: AbortSignal.timeout(10_000),
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
@@ -71,6 +72,7 @@ export async function submitToHubSpot({
     `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${finalFormId}`,
     {
       method: "POST",
+      signal: AbortSignal.timeout(10_000),
       headers: {
         "Content-Type": "application/json",
       },
@@ -134,15 +136,9 @@ export async function sendFallbackEmail(subject: string, lines: string[]) {
     return false;
   }
 
-  const html = `
-    <div style="font-family:Arial,sans-serif;line-height:1.6">
-      <h2>${subject}</h2>
-      <pre style="white-space:pre-wrap;font-family:Arial,sans-serif">${lines.join("\n")}</pre>
-    </div>
-  `;
-
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
+    signal: AbortSignal.timeout(10_000),
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
@@ -151,7 +147,7 @@ export async function sendFallbackEmail(subject: string, lines: string[]) {
       from,
       to,
       subject,
-      html,
+      text: lines.join("\n"),
     }),
   });
 
