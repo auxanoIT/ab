@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useCallback, useRef, useState, useTransition } from "react";
 import { CalendarDays } from "lucide-react";
 
 import { TurnstileField } from "@/components/forms/turnstile-field";
@@ -9,6 +9,8 @@ import {
   normalizeEmail,
 } from "@/lib/email-validation";
 import { cn, getBrowserCookie } from "@/lib/utils";
+import { leadSchema } from "@/lib/schemas";
+import { trackLead } from "@/lib/lead-analytics";
 
 type LeadFormProps = {
   context: "contact" | "consultation";
@@ -19,6 +21,7 @@ type LeadFormProps = {
   showEyebrow?: boolean;
   submitLabel?: string;
   fullWidthSubmit?: boolean;
+  initialService?: string;
 };
 
 const serviceInterests = [
@@ -39,7 +42,9 @@ export function LeadForm({
   showEyebrow = true,
   submitLabel,
   fullWidthSubmit = false,
+  initialService,
 }: LeadFormProps) {
+  const submissionInFlight = useRef(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -47,6 +52,12 @@ export function LeadForm({
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileResetKey, setTurnstileResetKey] = useState(0);
   const [isPending, startTransition] = useTransition();
+  // A stable callback prevents TurnstileField's effect from removing and
+  // recreating its widget on every status or pending-state render.
+  const handleVerificationError = useCallback(() => {
+    setStatus("error");
+    setMessage("Verification could not load. Please refresh and try again.");
+  }, []);
 
   async function handleSubmit(formData: FormData) {
     setStatus("idle");
@@ -93,29 +104,43 @@ export function LeadForm({
       hubspotTrackingCookie: getBrowserCookie("hubspotutk"),
     };
 
-    const response = await fetch("/api/lead", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    if (!response.ok) {
-      const data = (await response.json().catch(() => null)) as { error?: string } | null;
+    const parsed = leadSchema.safeParse(payload);
+    if (!parsed.success) {
       setStatus("error");
-      setMessage(data?.error ?? "Something went wrong. Please try again.");
-      setTurnstileResetKey((current) => current + 1);
+      setMessage("Please complete all fields and describe your project in at least 10 characters.");
       return;
     }
 
-    setStatus("success");
-    setMessage(
-      context === "consultation"
-        ? "Consultation request received. The team can now coordinate the next discussion."
-        : "Message received. Auxano can now review the brief and respond.",
-    );
-    setTurnstileResetKey((current) => current + 1);
+    try {
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(parsed.data),
+      });
+
+      const data = (await response.json().catch(() => null)) as { ok?: boolean; error?: string } | null;
+      if (!response.ok || data?.ok !== true) {
+        setStatus("error");
+        setMessage(data?.error ?? "Something went wrong. Please try again.");
+        setTurnstileResetKey((current) => current + 1);
+        return;
+      }
+
+      setStatus("success");
+      trackLead(context, parsed.data.serviceInterest);
+      setMessage(
+        context === "consultation"
+          ? "Consultation request received. The team can now coordinate the next discussion."
+          : "Message received. Auxano can now review the brief and respond.",
+      );
+      setTurnstileResetKey((current) => current + 1);
+    } catch {
+      setStatus("error");
+      setMessage("We could not send your request because the connection failed. Your details are still here. Please check your internet connection and try again.");
+      setTurnstileResetKey((current) => current + 1);
+    }
   }
 
   return (
@@ -148,7 +173,19 @@ export function LeadForm({
       </div>
 
       <form
-        action={(formData) => startTransition(() => void handleSubmit(formData))}
+        onSubmit={(event) => {
+          event.preventDefault();
+          if (isPending || submissionInFlight.current) return;
+          const data = new FormData(event.currentTarget);
+          submissionInFlight.current = true;
+          startTransition(async () => {
+            try {
+              await handleSubmit(data);
+            } finally {
+              submissionInFlight.current = false;
+            }
+          });
+        }}
         className="mt-8 grid gap-4 md:grid-cols-2"
       >
         <label className="grid gap-2 text-sm font-medium text-[var(--color-ink)]">
@@ -217,7 +254,7 @@ export function LeadForm({
           Service focus
           <select
             name="serviceInterest"
-            defaultValue="Managed IT Support"
+            defaultValue={initialService && serviceInterests.includes(initialService) ? initialService : "Managed IT Support"}
             className="h-12 rounded-2xl border border-[color:rgba(11,18,32,0.1)] bg-[var(--color-cloud)] px-4 outline-none transition focus:border-[var(--color-electric)]"
           >
             {serviceInterests.map((item) => (
@@ -277,10 +314,7 @@ export function LeadForm({
         <div className="md:col-span-2 flex flex-wrap items-center gap-3">
           <TurnstileField
             onVerify={setTurnstileToken}
-            onError={() => {
-              setStatus("error");
-              setMessage("Verification could not load. Please refresh and try again.");
-            }}
+            onError={handleVerificationError}
             resetKey={turnstileResetKey}
           />
         </div>
@@ -303,6 +337,7 @@ export function LeadForm({
 
       {message ? (
         <p
+          role={status === "error" ? "alert" : "status"}
           className={cn(
             "mt-5 rounded-2xl px-4 py-3 text-sm",
             status === "success"

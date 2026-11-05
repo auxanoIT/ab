@@ -1,5 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": {
+      "fix/auxano-security-dependencies": false
+    }
+  },
   "framework": "nextjs",
   "installCommand": "npm ci",
   "buildCommand": "npm run build"
