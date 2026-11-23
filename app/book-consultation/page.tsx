@@ -48,9 +48,15 @@ const stats = [
 
 export default async function BookConsultationPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const query = await searchParams;
-  // An explicit, single CCTV service slug prefills the existing service choice.
+  // Only a single, allowlisted service slug can prefill the form.
   // Invalid or repeated values cannot become arbitrary form or analytics data.
-  const initialService = query.service === "surveillance-system-cctv" ? "CCTV & Surveillance" : undefined;
+  const initialService = typeof query.service === "string"
+    ? new Map([
+        ["surveillance-system-cctv", "CCTV & Surveillance"],
+        ["fire-alarm-safety-systems", "Fire Alarm & Safety Systems"],
+        ["door-access-control", "Access Control"],
+      ]).get(query.service)
+    : undefined;
   return (
     <>
       <JsonLd

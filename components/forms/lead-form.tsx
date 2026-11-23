@@ -27,6 +27,7 @@ type LeadFormProps = {
 const serviceInterests = [
   "Managed IT Support",
   "CCTV & Surveillance",
+  "Fire Alarm & Safety Systems",
   "Network Infrastructure",
   "Access Control",
   "IT Audit & Compliance",

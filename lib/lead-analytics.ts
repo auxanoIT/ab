@@ -1,5 +1,5 @@
 type FormName = "contact" | "consultation";
-type ServiceType = "cctv" | "managed_it" | "networking" | "access_control" |
+type ServiceType = "cctv" | "fire_alarm" | "managed_it" | "networking" | "access_control" |
   "it_audit" | "business_continuity" | "other";
 type LeadParameters = { form_name: FormName; service_type: ServiceType };
 
@@ -74,6 +74,7 @@ function flush() {
 function serviceType(service: string): ServiceType {
   switch (service) {
     case "CCTV & Surveillance": return "cctv";
+    case "Fire Alarm & Safety Systems": return "fire_alarm";
     case "Managed IT Support": return "managed_it";
     case "Network Infrastructure": return "networking";
     case "Access Control": return "access_control";

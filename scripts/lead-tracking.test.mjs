@@ -21,6 +21,8 @@ function harness({ fetch = async () => Response.json({ ok: true }), available = 
   if (available) browser.gtag = (...args) => events.push(args);
   const jsx = (type, props, key) => ({ type, props: key === undefined ? props : { ...props, key } });
   const react = {
+    useEffect() {},
+    useMemo(callback) { return callback(); },
     useCallback(callback, dependencies) {
       const index = cursor++, previous = active.refs[index];
       if (previous && dependencies.every((value, i) => Object.is(value, previous.dependencies[i]))) return previous.callback;
@@ -112,6 +114,15 @@ function harness({ fetch = async () => Response.json({ ok: true }), available = 
     now = target;
   }
   return { instance, events, browser, timers, delays, advance,
+    enquiryLink(slug) {
+      active = { states: [], setters: [], refs: [] }; cursor = 0;
+      const tree = load('components/sections/service-capability-flow.tsx').ServiceCapabilityFlow({
+        service: { slug, title: 'Test service' },
+        sections: [{ id: 'overview', navLabel: 'Overview', title: 'Overview', lead: 'Details',
+          body: [], image: { src: '/test.webp', alt: 'Test' } }],
+      });
+      return find(tree, 'ButtonLink').props.href;
+    },
     async page(name, query = {}) {
       const tree = await load(`app/${name}/page.tsx`).default({ searchParams: Promise.resolve(query) });
       return find(tree, load('components/forms/lead-form.tsx').LeadForm);
@@ -294,4 +305,35 @@ test('actual route pages fix attribution independently of arbitrary query parame
   assert.equal(cctv.props.initialService, 'CCTV & Surveillance'); assert.equal(cctv.props.context, 'consultation');
   assert.equal(h.instance(cctv.props.context, cctv.props).selectedService(), 'CCTV & Surveillance');
   assert.notEqual(cctv.props.key, (await h.page('book-consultation')).props.key);
+});
+
+for (const [slug, label, category] of [
+  ['fire-alarm-safety-systems', 'Fire Alarm & Safety Systems', 'fire_alarm'],
+  ['door-access-control', 'Access Control', 'access_control'],
+]) test(`${slug}: actual enquiry link, consultation prefill and successful service conversion`, async () => {
+  const h = harness();
+  const href = h.enquiryLink(slug);
+  assert.equal(href, `/book-consultation?service=${slug}`);
+  const query = Object.fromEntries(new URL(href, 'https://auxanosolutions.net').searchParams);
+  const page = await h.page('book-consultation', query);
+  const form = h.instance(page.props.context, page.props);
+  assert.equal(form.selectedService(), label);
+  await form.submit({ serviceInterest: form.selectedService() });
+  assert.deepEqual(JSON.parse(JSON.stringify(h.events)), [
+    ['event', 'generate_lead', { form_name: 'consultation', service_type: category }],
+  ]);
+  assert.notEqual(page.props.key, (await h.page('book-consultation')).props.key);
+});
+
+test('campaign service prefill rejects repeated, conflicting and prototype-like query values', async () => {
+  const h = harness();
+  for (const service of [undefined, 'invalid', '__proto__', 'constructor',
+    ['fire-alarm-safety-systems', 'door-access-control'],
+    ['fire-alarm-safety-systems', 'fire-alarm-safety-systems']]) {
+    const page = await h.page('book-consultation', { service });
+    assert.equal(page.props.initialService, undefined);
+    assert.equal(page.props.context, 'consultation');
+  }
+  assert.equal(h.enquiryLink('network-cabling'), '/book-consultation');
+  assert.equal(h.enquiryLink('surveillance-system-cctv'), '/book-consultation?service=surveillance-system-cctv');
 });
